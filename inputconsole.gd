@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	for i in g.text:
 		texter.append({Vector2(0,-32):"^",Vector2(0,32):"v",Vector2(-32,0):"<",Vector2(32,0):">",Vector2.ZERO:"X"}[i])
 	var s = ""
+	for i in g.pointer:
+		texter.pop_front()
 	for i in texter:
 		s += i
 	text = s
