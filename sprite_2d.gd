@@ -69,6 +69,6 @@ func move():
 		await g.tick
 		if g.playerpos != &"door":
 			return
-		if i > 3:
+		if i > 0:
 			lastmove =Vector2.ZERO
 		g.newposses.clear()
