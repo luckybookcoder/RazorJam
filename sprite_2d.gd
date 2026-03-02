@@ -62,10 +62,13 @@ func move():
 			moves = use
 			for x in i:
 				use.pop_front()
+			
 			return
 	for i in 99:
 		g.newposses.append(position)
 		await g.tick
 		if g.playerpos != &"door":
 			return
+		if i > 3:
+			lastmove =Vector2.ZERO
 		g.newposses.clear()
