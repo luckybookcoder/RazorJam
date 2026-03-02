@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://b3xu2e7q7tkj4"]
+
+[ext_resource type="Script" uid="uid://b0y3wwj43iu3r" path="res://robot.gd" id="1_hppyo"]
+[ext_resource type="Script" uid="uid://rvhgjwdpd1ft" path="res://reverserobot.gd" id="1_wg0iv"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_t5y7p"]
+[ext_resource type="Script" uid="uid://cbpf6bhgtinqg" path="res://oprobot.gd" id="3_1w0mb"]
+[ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="3_t5y7p"]
+[ext_resource type="Script" uid="uid://pdqy5byc3rjm" path="res://startrobot.gd" id="4_imcy2"]
+[ext_resource type="Script" uid="uid://do1yctkehb86b" path="res://rotrobotclock.gd" id="4_ok8r0"]
+[ext_resource type="Script" uid="uid://cglrh2qchtqwm" path="res://rotrobocounter.gd" id="5_audra"]
+[ext_resource type="Script" uid="uid://ynw1flpqhqbo" path="res://droprobot.gd" id="6_x7kom"]
+[ext_resource type="Script" uid="uid://dd43nuwbklfc4" path="res://dubrobot.gd" id="7_qoovb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg0iv"]
+size = Vector2(124, 124)
+
+[node name="Lvl1" type="Node2D" unique_id=733839378]
+
+[node name="Robot" type="CharacterBody2D" parent="." unique_id=525555309 groups=["Robots"]]
+position = Vector2(624, 304)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_wg0iv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot" unique_id=1906059023]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot" unique_id=520754316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=53224774]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot7" type="CharacterBody2D" parent="." unique_id=1491132692 groups=["Robots"]]
+position = Vector2(592, 272)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("3_1w0mb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot7" unique_id=1254111199]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot7" unique_id=1745894717]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot7" unique_id=1044548400]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot8" type="CharacterBody2D" parent="." unique_id=1211370480 groups=["Robots"]]
+position = Vector2(592, 336)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("4_imcy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot8" unique_id=1926596310]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot8" unique_id=905479909]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot8" unique_id=743494539]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot9" type="CharacterBody2D" parent="." unique_id=883804103 groups=["Robots"]]
+position = Vector2(656, 272)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_hppyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot9" unique_id=2054217204]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot9" unique_id=1913466095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot9" unique_id=675659861]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot2" type="CharacterBody2D" parent="." unique_id=1308287878 groups=["Robots"]]
+position = Vector2(592, 304)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("4_ok8r0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot2" unique_id=1916166948]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot2" unique_id=1831798847]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot2" unique_id=1559739376]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot3" type="CharacterBody2D" parent="." unique_id=1152653971 groups=["Robots"]]
+position = Vector2(656, 304)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("5_audra")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot3" unique_id=1902253814]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot3" unique_id=1425279337]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot3" unique_id=77221611]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot4" type="CharacterBody2D" parent="." unique_id=692434713 groups=["Robots"]]
+position = Vector2(624, 272)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_hppyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot4" unique_id=2133795335]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot4" unique_id=1096341357]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot4" unique_id=1583396690]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot5" type="CharacterBody2D" parent="." unique_id=1410123035 groups=["Robots"]]
+position = Vector2(624, 336)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_x7kom")
+dropcount = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot5" unique_id=1373452750]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot5" unique_id=413470858]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot5" unique_id=2085416278]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="Robot6" type="CharacterBody2D" parent="." unique_id=632052063 groups=["Robots"]]
+position = Vector2(656, 336)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("7_qoovb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot6" unique_id=798497664]
+texture = ExtResource("2_t5y7p")
+
+[node name="Control" type="Control" parent="Robot6" unique_id=329794170]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot6" unique_id=1064619904]
+shape = SubResource("RectangleShape2D_wg0iv")
+
+[node name="items" parent="." unique_id=982181225 instance=ExtResource("3_t5y7p")]
+position = Vector2(16, 16)

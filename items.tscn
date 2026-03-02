@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cvr2ca2ctoqmp"]
+
+[ext_resource type="Script" uid="uid://rmjviv5hm8oo" path="res://items.gd" id="1_u5wui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d376"]
+size = Vector2(32, 32)
+
+[node name="items" type="Node2D" unique_id=982181225]
+script = ExtResource("1_u5wui")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1245703775]
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_font_sizes/normal_font_size = 7
+text = "THIS IS AN ITEM"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=793434281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=701785969]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_6d376")

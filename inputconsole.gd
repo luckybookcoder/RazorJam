@@ -9,7 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for i in g.text:
-		texter.append({Vector2(0,-32):"^",Vector2(0,32):"v",Vector2(-32,0):"<",Vector2(32,0):">",Vector2.ZERO:"X"}[i])
+		texter.append({Vector2(0,-32):"^",Vector2(0,32):"v",Vector2(-32,0):"<",Vector2(32,0):">",Vector2.ZERO:"X", "pickup":"PU", "putdown":"PD"}[i])
 	var s = ""
 	for i in g.pointer:
 		texter.pop_front()

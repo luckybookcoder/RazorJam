@@ -1,5 +1,5 @@
 extends Control
-
+var timer = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if g.playerpos == &"door":
 		show()
+		if not timer:
+			timer = true
+			g.time += 1
+		if Input.is_action_just_pressed("backspace") or Input.is_action_just_pressed("cancel"):
+			g.tick.emit()
 	else:
 		hide()
-	print(g.playerpos)
+		timer = false

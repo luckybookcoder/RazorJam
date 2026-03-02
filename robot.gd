@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name robot
-var moves :Array[Vector2] = []
+var moves := []
 var movecheck = moves.duplicate_deep()
 var prev
 var area
@@ -9,6 +9,7 @@ var use = []
 var moving = false
 var pointer = 0
 var currentitem = 0
+var buggy = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"/root/g".move.connect(move) # Replace with function body.
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if $Control.has_focus():
+	if $Control.has_focus() and g.playerpos == &"box":
 		g.focus = $"."
 	if g.focus == $".":
 		$Sprite2D.modulate = Color(1.353, 1.353, 1.353, 1.0)
@@ -48,9 +49,11 @@ func _physics_process(delta: float) -> void:
 				
 			if Input.is_action_just_pressed("backspace"):
 				moves.pop_back()
-		g.text = moves
+		if not buggy:
+			g.text = moves
 		g.pointer = pointer
 		collision_layer = 1
+		
 
 	else:
 		$Sprite2D.modulate = Color(1.0, 1.0, 1.0, 1.0)
@@ -67,12 +70,17 @@ func move():
 		g.newposses.clear()
 		if g.longest < moves.size():
 			g.longest += moves.size()
-		use = moves.duplicate_deep()
+		use = moves
 		collision_layer = 1
-		for i in use.size():
+		for i in 999:
 			await g.tick
 			pointer +=1
 			collision_layer = 3
+			if use.size() <= i:
+				moving = false
+				pointer = 0
+				moves.clear()
+				return
 			if use.get(i) is Vector2:
 				g.newposses.append(position+use.get(i))
 				await get_tree().physics_frame
@@ -94,7 +102,7 @@ func move():
 				if use.get(i) == &"pickup":
 					if area.get_overlapping_areas():
 						var lastitem = currentitem
-						currentitem = area.get_overlapping_areas().front
+						currentitem = area.get_overlapping_areas().front.get_parent()
 						g.itemposses[currentitem] = "held"
 						if lastitem:
 							g.itemposses[lastitem] = position

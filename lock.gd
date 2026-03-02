@@ -12,3 +12,5 @@ func _ready() -> void:
 func locker(a,b,c):
 	if [a,b,c].has(num):
 		locked = true
+	else:
+		print([a,b,c],num,[a,b,c].has(num))
