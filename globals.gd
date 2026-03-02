@@ -17,7 +17,11 @@ func _process(delta: float) -> void:
 		tick.emit()
 		tickwait = false
 	if Input.is_action_just_pressed("ui_accept"):
-		move.emit()
+		if playerpos == &"box":
+			playerpos = &"door"
+			move.emit()
+		else:
+			playerpos = &"box"
 	print(longest)
 
 func wait(time):

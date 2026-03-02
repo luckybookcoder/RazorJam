@@ -44,26 +44,26 @@ func move():
 	g.newposses.clear()
 	if g.longest < moves.size():
 		g.longest += moves.size()
-	use += moves.duplicate_deep()
+	use = moves.duplicate_deep()
 	moves.clear()
 	collision_layer = 1
-	for i in use:
+	for i in use.size():
 		await g.tick
 		collision_layer = 3
-		g.newposses.append(position+i)
+		g.newposses.append(position+use.get(i))
 		await get_tree().physics_frame
 		if g.playerpos == &"door":
-			print(g.newposses)
-			if not g.newposses.count(position+i) > 1:
-				lastmove = i
-				print(lastmove)
-				position += (i)
-				use.pop_front()
+			if not g.newposses.count(position+use.get(i)) > 1:
+				lastmove = use.get(i)
+				position += (use.get(i))
+				print(use)
 				g.newposses.clear()
 		else:
+			moves = use
+			for x in i:
+				use.pop_front()
 			return
 	for i in 99:
-		print(name)
 		g.newposses.append(position)
 		await g.tick
 		if g.playerpos != &"door":
