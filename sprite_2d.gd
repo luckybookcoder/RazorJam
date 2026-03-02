@@ -5,6 +5,7 @@ var movecheck = moves.duplicate_deep()
 var prev
 var area
 var lastmove = Vector2(0,0)
+var use = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"/root/g".move.connect(move) # Replace with function body.
@@ -43,7 +44,7 @@ func move():
 	g.newposses.clear()
 	if g.longest < moves.size():
 		g.longest += moves.size()
-	var use = moves.duplicate_deep()
+	use += moves.duplicate_deep()
 	moves.clear()
 	collision_layer = 1
 	for i in use:
@@ -51,14 +52,20 @@ func move():
 		collision_layer = 3
 		g.newposses.append(position+i)
 		await get_tree().physics_frame
-		print(g.newposses)
-		if not g.newposses.count(position+i) > 1:
-			lastmove = i
-			print(lastmove)
-			position += (i)
-			g.newposses.clear()
+		if g.playerpos == &"door":
+			print(g.newposses)
+			if not g.newposses.count(position+i) > 1:
+				lastmove = i
+				print(lastmove)
+				position += (i)
+				use.pop_front()
+				g.newposses.clear()
+		else:
+			return
 	for i in 99:
 		print(name)
 		g.newposses.append(position)
 		await g.tick
+		if g.playerpos != &"door":
+			return
 		g.newposses.clear()
