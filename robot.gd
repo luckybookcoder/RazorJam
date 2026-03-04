@@ -7,9 +7,11 @@ var area
 var lastmove = Vector2(0,0)
 var use = []
 var moving = false
-var pointer = 0
+var pointer = -1
 var currentitem = 0
 var buggy = false
+var savedtext = false
+var lastcommands = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"/root/g".move.connect(move) # Replace with function body.
@@ -53,16 +55,27 @@ func _physics_process(delta: float) -> void:
 			g.text = moves
 		g.pointer = pointer
 		collision_layer = 1
-		
+		g.lastmoves = lastcommands
+		if currentitem:
+			g.held = g.itemtype
+		else:
+			g.held = "nothing"
 
 	else:
 		$Sprite2D.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		collision_layer = 3
-	position = round(position/32)*32
+	global_position = round(global_position/32)*32
 	if area.get_overlapping_bodies().size() > 1:
 		position -= lastmove
+		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
-		#print(moves)
+#print(moves)
+	print(g.itemposses)
+	if g.playerpos == &"door" and not savedtext:
+		savedtext = true
+		lastcommands = moves.duplicate_deep()
+	else:
+		savedtext = true
 
 func move():
 	if not moving:
@@ -74,42 +87,46 @@ func move():
 		collision_layer = 1
 		for i in 999:
 			await g.tick
-			pointer +=1
 			collision_layer = 3
-			if use.size() <= i:
+			if use.size() <= pointer:
 				moving = false
-				pointer = 0
+				pointer = -1
 				moves.clear()
 				return
-			if use.get(i) is Vector2:
-				g.newposses.append(position+use.get(i))
+			pointer +=1
+			print(use.get(pointer),use.get(i))
+			if use.get(pointer) is Vector2:
+				g.newposses.append(position+use.get(pointer))
 				await get_tree().physics_frame
 				if g.playerpos == &"door":
-					if not g.newposses.count(position+use.get(i)) > 1:
-						lastmove = use.get(i)
-						position += (use.get(i))
+					if not g.newposses.count(position+use.get(pointer)) > 1:
+						lastmove = use.get(pointer)
+						position += (use.get(pointer))
 						g.newposses.clear()
 				else:
 					for x in i+1:
 						use.pop_front()
 					moves = use.duplicate_deep()
 					moving = false
-					pointer = 0
+					pointer = -1
 					return
 			else:
 				g.newposses.append(position)
 				lastmove = Vector2.ZERO
-				if use.get(i) == &"pickup":
+				if use.get(pointer) == &"pickup":
 					if area.get_overlapping_areas():
 						var lastitem = currentitem
-						currentitem = area.get_overlapping_areas().front.get_parent()
+						currentitem = area.get_overlapping_areas().front().get_parent()
 						g.itemposses[currentitem] = "held"
 						if lastitem:
 							g.itemposses[lastitem] = position
-				elif use.get(i) == &"putdown":
+				elif use.get(pointer) == &"putdown":
 					if currentitem:
+						print()
 						g.itemposses[currentitem] = position
 						currentitem = 0
+				else:
+					print(use.get(i))
 		for i in 99:
 			g.newposses.append(position)
 			await g.tick

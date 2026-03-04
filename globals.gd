@@ -1,13 +1,17 @@
 extends Node
 @warning_ignore("unused_signal")
+signal endlvl
 signal tick
 signal move
 signal lock
-#region items by level (long)
 var lvlitems = {1:load("lvl1.tscn")}
-#endregion
+var ticksleft = 0
 var text = []
+var held = ""
+var lastmoves = []
+var itemtype = "books"
 var lvl = 1
+var goals = 0
 var longest = 12
 var tickwait = false
 var newposses = []

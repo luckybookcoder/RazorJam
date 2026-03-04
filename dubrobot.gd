@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	if g.focus == $".":
 		print(text)
 		g.text = text
+	lastmove = Vector2.ZERO
 		
 
 func move():
@@ -36,12 +37,20 @@ func move():
 				moves.clear()
 				return
 			if use.get(i) is Vector2:
-				g.newposses.append(position+use.get(i))
 				await get_tree().physics_frame
 				if g.playerpos == &"door":
 					if not g.newposses.count(position+use.get(i)) > 1:
 						lastmove = use.get(i)
-						move_and_collide(use.get(i))
+						
+						if move_and_collide(use.get(i), true):
+							@warning_ignore("integer_division")
+							if move_and_collide(use.get(i)/Vector2(2,2), true).get_collider():
+								pass
+							else:
+								g.newposses.append(position+use.get(i)/Vector2(2,2))
+								move_and_collide(use.get(i)/2)
+						else:
+							move_and_collide(use.get(i))
 						g.newposses.clear()
 				else:
 					for x in i+1:

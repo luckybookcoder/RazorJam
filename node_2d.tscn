@@ -7,37 +7,31 @@
 [ext_resource type="Script" uid="uid://cb8edmrsldx6y" path="res://lock1.gd" id="5_kdubu"]
 [ext_resource type="Script" uid="uid://by582sousv6np" path="res://posswap.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://cbaclwskws3gy" path="res://clock.gd" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://o5dwg6h0xoh1" path="res://heldconsole.gd" id="8_rj586"]
+[ext_resource type="Script" uid="uid://cg5cf5ahh6iqx" path="res://expectedconsole.gd" id="9_ir8iy"]
+[ext_resource type="Script" uid="uid://cvwny613uumck" path="res://lastcommandsconsole.gd" id="10_hqns4"]
 
 [node name="Main" type="Node2D" unique_id=1373200946]
 script = ExtResource("1_rj586")
 
-[node name="Inputconsole" type="RichTextLabel" parent="." unique_id=1769224364]
-z_index = 1
-offset_right = 80.0
-offset_bottom = 656.0
-mouse_filter = 2
-theme_override_colors/default_color = Color(18.892, 18.892, 0, 1)
-script = ExtResource("3_epypp")
-
-[node name="Control" type="Control" parent="." unique_id=1520843722]
+[node name="Dore controls" type="Control" parent="." unique_id=1520843722]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 27.0
-offset_top = 38.0
-offset_right = 1179.0
-offset_bottom = 686.0
+offset_top = -40.000004
+offset_right = 1152.0
+offset_bottom = 608.0
+scale = Vector2(1.111, 1.111)
 mouse_filter = 2
 script = ExtResource("4_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1781286897]
-visible = false
+[node name="Sprite2D" type="Sprite2D" parent="Dore controls" unique_id=1781286897]
 z_index = 1
 position = Vector2(575.99994, 324)
 scale = Vector2(8.999999, 5.0625)
 texture = ExtResource("1_wtcfe")
 
-[node name="Lock" type="Button" parent="Control" unique_id=2019023124]
+[node name="Lock" type="Button" parent="Dore controls" unique_id=2019023124]
 z_index = 1
 layout_mode = 0
 offset_left = 235.0
@@ -48,10 +42,18 @@ focus_mode = 0
 icon = ExtResource("1_wtcfe")
 script = ExtResource("5_kdubu")
 
-[node name="posswap" type="Button" parent="." unique_id=299381092]
+[node name="Inputconsole" type="RichTextLabel" parent="." unique_id=1769224364]
 z_index = 1
+offset_right = 80.0
+offset_bottom = 255.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(18.892, 18.892, 0, 1)
+script = ExtResource("3_epypp")
+
+[node name="posswap" type="Button" parent="." unique_id=299381092]
+z_index = 2
 offset_top = 602.0
-offset_right = 1152.0
+offset_right = 1280.0
 offset_bottom = 648.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 26
@@ -59,11 +61,30 @@ text = "Go... OUTSIDE THE BOX"
 script = ExtResource("6_kdubu")
 
 [node name="Clock" type="RichTextLabel" parent="." unique_id=888703051]
-z_index = 1
+z_index = 2
 offset_left = 810.0
 offset_top = -1.0
 offset_right = 952.0
 offset_bottom = 39.0
+text = "1:00"
 script = ExtResource("7_d21ai")
+
+[node name="Heldconsole" type="RichTextLabel" parent="." unique_id=643087844]
+offset_top = 256.0
+offset_right = 157.0
+offset_bottom = 374.0
+script = ExtResource("8_rj586")
+
+[node name="Expectedconsole" type="RichTextLabel" parent="." unique_id=246870005]
+offset_left = 394.0
+offset_right = 593.0
+offset_bottom = 46.0
+script = ExtResource("9_ir8iy")
+
+[node name="Lastcommandsconsole" type="RichTextLabel" parent="." unique_id=1119111746]
+offset_top = 375.0
+offset_right = 157.0
+offset_bottom = 600.0
+script = ExtResource("10_hqns4")
 
 [connection signal="pressed" from="posswap" to="posswap" method="_on_pressed"]

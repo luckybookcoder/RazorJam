@@ -1,15 +1,12 @@
-extends Node2D
+extends RichTextLabel
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_child(g.lvlitems[g.lvl].instantiate()) # Replace with function body.
-	g.endlvl.connect(endlvl)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func endlvl():
-	g.lvl += 1
-	add_child(g.lvlitems[g.lvl].instantiate())
+	if g.held:
+		text = str("currently held item:", g.held)

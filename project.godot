@@ -84,6 +84,11 @@ backspace={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Robots"
+2d_physics/layer_7="Goaldetec"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
