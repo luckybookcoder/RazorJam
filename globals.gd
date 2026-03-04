@@ -4,13 +4,14 @@ signal endlvl
 signal tick
 signal move
 signal lock
-var lvlitems = {1:load("lvl1.tscn")}
+var lvlitems = {1:load("lvl1.tscn"), 2:load("res://lvl_editor.tscn")}
+var lvleditem
 var ticksleft = 0
 var text = []
 var held = ""
 var lastmoves = []
 var itemtype = "books"
-var lvl = 1
+var lvl = 2
 var goals = 0
 var longest = 12
 var tickwait = false

@@ -1,5 +1,4 @@
-extends RichTextLabel
-
+extends CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,12 +7,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if g.ticksleft > 0:
-		text = str("Expected moves left in selected robot: ", g.ticksleft)
-	else:
-		text = "No moves left in selected robot. "
-	g.ticksleft = 0
-	if g.playerpos == &"door":
-		show()
-	else:
-		hide()
+	shape.size[get_parent().name] = get_node("..").get_node("..").value*32
+	position[get_parent().name] = (get_node("..").get_node("..").value*16)
+	if name == "left":
+		position.y += 32
+	

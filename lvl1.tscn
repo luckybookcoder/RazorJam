@@ -17,7 +17,7 @@ size = Vector2(704, 32)
 script = ExtResource("1_ok8r0")
 
 [node name="Robot4" type="CharacterBody2D" parent="." unique_id=692434713 groups=["Robots"]]
-position = Vector2(845, 272)
+position = Vector2(832, 8.5)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_hppyo")
 
@@ -41,6 +41,7 @@ focus_mode = 1
 shape = SubResource("RectangleShape2D_wg0iv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=495307686]
+z_index = -3
 position = Vector2(269, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=780008829]
@@ -72,9 +73,11 @@ zoom = Vector2(0.9, 0.9)
 position = Vector2(344, 357)
 
 [node name="Griddisplay" type="Node2D" parent="." unique_id=868282428]
-position = Vector2(271, 16)
+z_index = -2
+position = Vector2(272, 16)
 script = ExtResource("6_audra")
 grid_size = Vector2(20, 20)
+line_size = Vector2(3, 3)
 cell_size = Vector2(32, 32)
 border_color = Color(1, 0, 0, 1)
 vline_color = Color(0, 1, 0, 1)

@@ -44,7 +44,7 @@ script = ExtResource("5_kdubu")
 
 [node name="Inputconsole" type="RichTextLabel" parent="." unique_id=1769224364]
 z_index = 1
-offset_right = 80.0
+offset_right = 157.0
 offset_bottom = 255.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(18.892, 18.892, 0, 1)
@@ -66,6 +66,7 @@ offset_left = 810.0
 offset_top = -1.0
 offset_right = 952.0
 offset_bottom = 39.0
+mouse_filter = 2
 text = "1:00"
 script = ExtResource("7_d21ai")
 
@@ -73,18 +74,23 @@ script = ExtResource("7_d21ai")
 offset_top = 256.0
 offset_right = 157.0
 offset_bottom = 374.0
+mouse_filter = 2
 script = ExtResource("8_rj586")
 
 [node name="Expectedconsole" type="RichTextLabel" parent="." unique_id=246870005]
+z_index = 2
 offset_left = 394.0
-offset_right = 593.0
+offset_right = 632.0
 offset_bottom = 46.0
+mouse_filter = 2
+text = "a"
 script = ExtResource("9_ir8iy")
 
 [node name="Lastcommandsconsole" type="RichTextLabel" parent="." unique_id=1119111746]
 offset_top = 375.0
 offset_right = 157.0
 offset_bottom = 600.0
+mouse_filter = 2
 script = ExtResource("10_hqns4")
 
 [connection signal="pressed" from="posswap" to="posswap" method="_on_pressed"]

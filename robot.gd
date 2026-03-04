@@ -13,13 +13,22 @@ var buggy = false
 var savedtext = false
 var lastcommands = []
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$"/root/g".move.connect(move) # Replace with function body.
+func _init() -> void:
+	g.move.connect(move) # Replace with function body.
 	area = Area2D.new()
 	add_child(area)
+
+func _ready() -> void:
 	area.add_child($CollisionShape2D.duplicate())
 	area.collision_mask = 5
+	$Button.pressed.connect(kill) # Replace with function body.
 
+
+func kill():
+	if g.lvleditem is String:
+		if g.lvleditem == "ERASE":
+			print(98023382)
+			queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if $Control.has_focus() and g.playerpos == &"box":
@@ -70,12 +79,13 @@ func _physics_process(delta: float) -> void:
 		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
 #print(moves)
-	print(g.itemposses)
+	print(g.lastmoves)
 	if g.playerpos == &"door" and not savedtext:
 		savedtext = true
-		lastcommands = moves.duplicate_deep()
+		lastcommands = use.duplicate_deep()
 	else:
-		savedtext = true
+		savedtext = false
+		
 
 func move():
 	if not moving:

@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://b08x454jwjon3"]
+
+[ext_resource type="Script" uid="uid://qv5y88qpy066" path="res://lvl_editor.gd" id="1_jv7us"]
+[ext_resource type="Script" uid="uid://d1r5f8tcoyf8i" path="res://lvleditgrid.gd" id="1_lwlbw"]
+[ext_resource type="Script" uid="uid://dcmwuxg1170v3" path="res://lvleditwall.gd" id="2_ibc2m"]
+[ext_resource type="Script" uid="uid://c3tm23558g6nh" path="res://lvleditbutton.gd" id="2_owks4"]
+[ext_resource type="Script" uid="uid://y4rv13kougav" path="res://lvleditwall2.gd" id="3_0ec8p"]
+[ext_resource type="Script" uid="uid://ustfyb8cmx42" path="res://robotlvledit.gd" id="3_ltt6d"]
+[ext_resource type="Script" uid="uid://cfvbxksrtaqo0" path="res://lvleditmousedetec.gd" id="4_m3nxy"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="5_p06wj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p06wj"]
+size = Vector2(128, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1pr1"]
+size = Vector2(128, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv7us"]
+size = Vector2(32, 128)
+
+[node name="Lvl Editor" type="Node2D" unique_id=416613740]
+script = ExtResource("1_jv7us")
+
+[node name="ITEM" type="Button" parent="." unique_id=621503856]
+offset_right = 44.0
+offset_bottom = 40.0
+text = "item
+"
+script = ExtResource("2_owks4")
+
+[node name="ERASE" type="Button" parent="." unique_id=331008169]
+offset_top = 160.0
+offset_right = 44.0
+offset_bottom = 200.0
+text = "erase"
+script = ExtResource("2_owks4")
+
+[node name="GOAL" type="Button" parent="." unique_id=762648334]
+offset_top = 40.0
+offset_right = 44.0
+offset_bottom = 80.0
+text = "goal"
+script = ExtResource("2_owks4")
+
+[node name="ROBOT" type="OptionButton" parent="." unique_id=1851420723]
+offset_top = 80.0
+offset_right = 116.0
+offset_bottom = 120.0
+selected = 0
+item_count = 8
+popup/item_0/text = "Clean"
+popup/item_0/id = 0
+popup/item_1/text = "Spun⟳"
+popup/item_1/id = 1
+popup/item_2/text = "Spun⟲"
+popup/item_2/id = 2
+popup/item_3/text = "Spun 180°"
+popup/item_3/id = 3
+popup/item_4/text = "Backwards"
+popup/item_4/id = 5
+popup/item_5/text = "Drops"
+popup/item_5/id = 6
+popup/item_6/text = "Skips"
+popup/item_6/id = 7
+popup/item_7/text = "Latestart"
+popup/item_7/id = 8
+script = ExtResource("3_ltt6d")
+
+[node name="WALL" type="Button" parent="." unique_id=512038098]
+offset_top = 120.0
+offset_right = 40.0
+offset_bottom = 160.0
+text = "wall"
+script = ExtResource("2_owks4")
+
+[node name="Griddisplay" type="Node2D" parent="." unique_id=1533209627]
+z_index = -2
+position = Vector2(304, 48)
+script = ExtResource("1_lwlbw")
+grid_size = Vector2(4, 5)
+cell_size = Vector2(32, 32)
+
+[node name="WIDTH" type="SpinBox" parent="Griddisplay" unique_id=563330856]
+offset_top = -30.0
+offset_right = 134.5
+offset_bottom = 1.0
+min_value = 4.0
+max_value = 20.0
+value = 4.0
+prefix = "Box Width"
+
+[node name="x" type="StaticBody2D" parent="Griddisplay/WIDTH" unique_id=623689451]
+
+[node name="top" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=556147109]
+position = Vector2(64, 16)
+shape = SubResource("RectangleShape2D_p06wj")
+script = ExtResource("2_ibc2m")
+
+[node name="bottom" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=1139676585]
+position = Vector2(64, 176)
+shape = SubResource("RectangleShape2D_d1pr1")
+script = ExtResource("3_0ec8p")
+
+[node name="HEIGHT" type="SpinBox" parent="Griddisplay" unique_id=959565565]
+offset_left = -133.0
+offset_right = 2.0
+offset_bottom = 31.0
+min_value = 4.0
+max_value = 16.0
+value = 4.0
+prefix = "Box Height"
+
+[node name="y" type="StaticBody2D" parent="Griddisplay/HEIGHT" unique_id=1087963082]
+position = Vector2(133, -30)
+
+[node name="left" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=2017303642]
+position = Vector2(-16, 96)
+shape = SubResource("RectangleShape2D_jv7us")
+script = ExtResource("2_ibc2m")
+
+[node name="right" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=1572447488]
+position = Vector2(144, 96)
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_jv7us")
+script = ExtResource("3_0ec8p")
+
+[node name="Control" type="Control" parent="Griddisplay" unique_id=310170047]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_m3nxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Griddisplay/Control" unique_id=1781926452]
+position = Vector2(225, 226)
+scale = Vector2(3.515625, 3.515625)
+texture = ExtResource("5_p06wj")

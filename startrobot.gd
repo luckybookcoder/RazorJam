@@ -1,5 +1,5 @@
 extends robot
-@export var startpoint = 4
+@export var count = 4
 var text
 
 func _process(delta: float) -> void:
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func move():
 	for i in moves.size():
-		if i < startpoint-1:
+		if i < count-1:
 			moves.append(moves.pop_front())
 	super()
 

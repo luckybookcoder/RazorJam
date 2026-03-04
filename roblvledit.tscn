@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhaeuqevi6xcm"]
+
+[ext_resource type="Script" uid="uid://b0y3wwj43iu3r" path="res://robot.gd" id="1_3fp2o"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_54bcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em046"]
+size = Vector2(124, 124)
+
+[node name="Rob" type="Node2D" unique_id=2043353554]
+
+[node name="Robot" type="CharacterBody2D" parent="." unique_id=536326822 groups=["Robots"]]
+position = Vector2(-16, -16)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_3fp2o")
+
+[node name="Button" type="Button" parent="Robot" unique_id=348604567]
+modulate = Color(1, 1, 1, 0)
+offset_left = -80.0
+offset_top = -80.0
+offset_right = -48.0
+offset_bottom = -48.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot" unique_id=1674729893]
+texture = ExtResource("2_54bcm")
+
+[node name="Control" type="Control" parent="Robot" unique_id=1147216991]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=601498274]
+shape = SubResource("RectangleShape2D_em046")
+
+[node name="Node2D" type="Node2D" parent="Robot" unique_id=15277068]
+position = Vector2(-64, -64)

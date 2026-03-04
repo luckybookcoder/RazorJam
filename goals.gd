@@ -5,9 +5,13 @@ var herewait = false
 func _ready() -> void:
 	filled = 0
 	g.goals +=1
- # Replace with function body.
+	$Button.pressed.connect(kill) # Replace with function body.
 
 
+func kill():
+	if g.lvleditem is String:
+		if g.lvleditem == "ERASE":
+			queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = round(global_position/32)*32

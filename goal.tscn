@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bu1yd5f31egvu"]
 
 [ext_resource type="Script" uid="uid://8smlkvr31cnf" path="res://goals.gd" id="1_6k3qi"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_0qle8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d376"]
 size = Vector2(32, 32)
@@ -9,12 +10,18 @@ size = Vector2(32, 32)
 z_index = -1
 script = ExtResource("1_6k3qi")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=323096237]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0qle8")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1245703775]
 offset_left = -16.0
 offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-theme_override_font_sizes/normal_font_size = 7
+offset_right = 112.0
+offset_bottom = 112.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/normal_font_size = 35
 text = "THIS IS A GOAL"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=793434281]
@@ -25,3 +32,11 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=701785969]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_6d376")
+
+[node name="Button" type="Button" parent="." unique_id=1079085814]
+modulate = Color(1, 1, 1, 0)
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2
