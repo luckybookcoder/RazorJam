@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 		text = str("Expected moves left in selected robot: ", g.ticksleft)
 	else:
 		text = "No moves left in selected robot. "
+#	print(g.ticksleft)
 	g.ticksleft = 0
 	if g.playerpos == &"door":
 		show()

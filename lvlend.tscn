@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bfe2txc1u1t5t"]
+
+[ext_resource type="Script" uid="uid://cwq2fuh40v5j8" path="res://lvlendpopup.gd" id="1_gx7hd"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_jy6o6"]
+
+[node name="lvlend" type="Node2D" unique_id=1726029624]
+script = ExtResource("1_gx7hd")
+
+[node name="Popup" type="Popup" parent="." unique_id=948489018]
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(800, 329)
+visible = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Popup" unique_id=1889957426]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(400, 150)
+scale = Vector2(6, 2)
+texture = ExtResource("2_jy6o6")
+
+[node name="Reset" type="Button" parent="Popup" unique_id=1843542473]
+offset_left = 434.0
+offset_top = 215.0
+offset_right = 643.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 32
+text = "Restart Level"
+
+[node name="Continue" type="Button" parent="Popup" unique_id=356911363]
+offset_left = 151.0
+offset_top = 215.0
+offset_right = 300.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup" unique_id=856780962]
+offset_left = 125.0
+offset_top = 76.0
+offset_right = 648.0
+offset_bottom = 172.0
+theme_override_font_sizes/normal_font_size = 64
+text = "Level Complete!"

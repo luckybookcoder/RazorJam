@@ -5,7 +5,6 @@ var herewait = false
 func _ready() -> void:
 	filled = 0
 	g.goals +=1
-	$Button.pressed.connect(kill) # Replace with function body.
 
 
 func kill():
@@ -27,4 +26,5 @@ func _process(delta: float) -> void:
 			filled = 0
 			g.goals +=1
 	if herewait and g.playerpos != &"door":
-		g.endlvl.emit()
+		g.lvltext.emit()
+		herewait = false

@@ -8,5 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if g.held:
+	if g.held and g.focus:
 		text = str("currently held item:", g.held)
+		show()
+	else:
+		hide()

@@ -1,18 +1,24 @@
 extends Node
-@warning_ignore("unused_signal")
+@warning_ignore_start("unused_signal")
 signal endlvl
 signal tick
+signal lvltext
 signal move
 signal lock
-var lvlitems = {1:load("lvl1.tscn"), 2:load("res://lvl_editor.tscn")}
+var lvlitems = {1:load("lvl1.tscn"), 2:load("res://lvl2.tscn"), 3:load("res://lvl4.tscn")}
 var lvleditem
 var ticksleft = 0
 var text = []
 var held = ""
+var oldtime = 0
+var lockposses = [Vector2(6,0)]
 var lastmoves = []
 var itemtype = "books"
-var lvl = 2
+var lvl = 1
+var targettime = 30
 var goals = 0
+var money = 0
+var reward = {1:100}
 var longest = 12
 var tickwait = false
 var newposses = []
@@ -33,8 +39,8 @@ func _process(delta: float) -> void:
 	if timeup:
 		timeup = 0
 		timer()
-	await get_node("/root/Main/posswap").button_down
-	await get_node("/root/Main/posswap").button_up
+	await get_node("/root/Main/Canla/posswap").button_down
+	await get_node("/root/Main/Canla/posswap").button_up
 	if playerpos == &"box":
 		if not waiter:
 			playerpos = &"door"
@@ -46,12 +52,12 @@ func _process(delta: float) -> void:
 			var c = rand.pop_front()
 			lock.emit(a,b,c)
 			print([a,b,c].has(1))
-			locked = 1
+			locked = 3
 	elif not locked:
 		print(playerpos)
 		waiter = true
 		playerpos = &"box"
-			
+		focus = null
 		print(playerpos)
 
 func wait(sec:float):

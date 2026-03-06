@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://hf0rdh7wn6nt"]
+
+[ext_resource type="Script" uid="uid://r1vubmkonrvc" path="res://lvl.gd" id="1_13mhm"]
+[ext_resource type="Script" uid="uid://dd43nuwbklfc4" path="res://dubrobot.gd" id="2_g87cy"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="3_sboe7"]
+[ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="4_ynrix"]
+[ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="5_8efx6"]
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="6_h3grg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj1pa"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd407"]
+size = Vector2(288, 32)
+
+[node name="lvl4" type="Node2D" unique_id=2083948528]
+script = ExtResource("1_13mhm")
+
+[node name="Robot4" type="CharacterBody2D" parent="." unique_id=1880074327 groups=["Robots"]]
+position = Vector2(448, 93)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_g87cy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot4" unique_id=1626840965]
+texture = ExtResource("3_sboe7")
+
+[node name="Control" type="Control" parent="Robot4" unique_id=890985550]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot4" unique_id=750272134]
+shape = SubResource("RectangleShape2D_uj1pa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1121146263]
+z_index = -3
+position = Vector2(269, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097840005]
+position = Vector2(144, -17)
+shape = SubResource("RectangleShape2D_wd407")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=260298728]
+position = Vector2(305, 111)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wd407")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324433553]
+position = Vector2(16, 143)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_wd407")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1176054446]
+position = Vector2(176, 271)
+shape = SubResource("RectangleShape2D_wd407")
+
+[node name="items" parent="." unique_id=982181225 instance=ExtResource("4_ynrix")]
+position = Vector2(416, 96)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1486826679]
+position = Vector2(576, 256)
+
+[node name="Goals" parent="." unique_id=155675676 instance=ExtResource("5_8efx6")]
+position = Vector2(383, 96)
+
+[node name="Griddisplay" type="Node2D" parent="." unique_id=1445957357]
+z_index = -2
+position = Vector2(304, 16)
+script = ExtResource("6_h3grg")
+grid_size = Vector2(8, 8)
+line_size = Vector2(3, 3)
+cell_size = Vector2(32, 32)
+border_color = Color(1, 0, 0, 1)
+vline_color = Color(0, 1, 0, 1)
+hline_color = Color(0, 1, 0, 1)

@@ -5,9 +5,6 @@ extends Node2D
 func _process(delta: float) -> void:
 	position = round(position/32)*32
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$Button.pressed.connect(kill) # Replace with function body.
-
 
 func kill():
 	if g.lvleditem is String:

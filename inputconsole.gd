@@ -24,3 +24,7 @@ func _process(delta: float) -> void:
 	text = s
 	empty = true
 	texter = []
+	if g.focus and g.playerpos == &"box":
+		show()
+	else:
+		hide()

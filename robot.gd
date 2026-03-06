@@ -21,7 +21,8 @@ func _init() -> void:
 func _ready() -> void:
 	area.add_child($CollisionShape2D.duplicate())
 	area.collision_mask = 5
-	$Button.pressed.connect(kill) # Replace with function body.
+	if $Button:
+		$Button.pressed.connect(kill) # Replace with function body.
 
 
 func kill():
@@ -79,7 +80,6 @@ func _physics_process(delta: float) -> void:
 		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
 #print(moves)
-	print(g.lastmoves)
 	if g.playerpos == &"door" and not savedtext:
 		savedtext = true
 		lastcommands = use.duplicate_deep()
@@ -98,13 +98,12 @@ func move():
 		for i in 999:
 			await g.tick
 			collision_layer = 3
-			if use.size() <= pointer:
+			if use.size() <= pointer+1:
 				moving = false
 				pointer = -1
 				moves.clear()
 				return
 			pointer +=1
-			print(use.get(pointer),use.get(i))
 			if use.get(pointer) is Vector2:
 				g.newposses.append(position+use.get(pointer))
 				await get_tree().physics_frame
@@ -132,11 +131,8 @@ func move():
 							g.itemposses[lastitem] = position
 				elif use.get(pointer) == &"putdown":
 					if currentitem:
-						print()
 						g.itemposses[currentitem] = position
 						currentitem = 0
-				else:
-					print(use.get(i))
 		for i in 99:
 			g.newposses.append(position)
 			await g.tick

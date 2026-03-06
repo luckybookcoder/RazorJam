@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_aa2cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d376"]
-size = Vector2(32, 32)
+size = Vector2(28, 28)
 
 [node name="items" type="Node2D" unique_id=982181225]
 z_index = -1
@@ -29,13 +29,6 @@ offset_top = -16.0
 offset_right = 112.0
 offset_bottom = 112.0
 scale = Vector2(0.25, 0.25)
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "THIS IS A ITEM"
-
-[node name="Button" type="Button" parent="." unique_id=1519334074]
-modulate = Color(1, 1, 1, 0)
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-mouse_filter = 2

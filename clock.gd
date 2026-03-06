@@ -9,4 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 		@warning_ignore("integer_division")
-		text = str(g.time/30%12 + 1, ":","%02d" % (g.time*2%60))
+		text = str(g.time/60%12 + 1, ":","%02d" % (g.time%60))

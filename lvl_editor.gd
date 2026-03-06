@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 	pass
 
 func clone(pos:Vector2, num := 2):
-	print(g.lvleditem)
 	if g.lvleditem:
 		if g.lvleditem is int:
 			kiddo = load("res://roblvledit.tscn").instantiate()
@@ -27,7 +26,6 @@ func clone(pos:Vector2, num := 2):
 				if "count" in robs[g.lvleditem]:
 					kid.count = num
 			kid.position = pos
-			print(kid)
 		elif g.lvleditem != "ERASE":
 			kid = kids[g.lvleditem].instantiate()
 			add_child(kid)
