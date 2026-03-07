@@ -13,8 +13,8 @@ func _process(delta: float) -> void:
 	shape.size[get_parent().name] = get_node("..").get_node("..").value*32
 	position[get_parent().name] = get_node("..").get_node("..").value*16
 	if other == "y":
-		position[other] = get_node("/root/Main/Canla/Lvl Editor/Griddisplay/HEIGHT").value*32 +16
+		position[other] = get_node("/root/Main/Lvl Editor/Griddisplay/HEIGHT").value*32 +16
 	else:
-		position[other] = get_node("/root/Main/Canla/Lvl Editor/Griddisplay/WIDTH").value*32 +16
+		position[other] = get_node("/root/Main/Lvl Editor/Griddisplay/WIDTH").value*32 +16
 	position.y += 32
 	#print(other)

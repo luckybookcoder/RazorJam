@@ -16,8 +16,6 @@ func _process(delta: float) -> void:
 			g.locks.append(num)
 	else:
 		hide()
-		if g.locks.has(num):
-			print(g.locks.pop_at(g.locks.find(num)))
 	spec()
 	if not locked:
 		pos = Vector2(randi()%8, randi()%5)

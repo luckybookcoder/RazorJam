@@ -19,17 +19,18 @@ func _init() -> void:
 	add_child(area)
 
 func _ready() -> void:
+	g.robots = true
 	area.add_child($CollisionShape2D.duplicate())
 	area.collision_mask = 5
-	if $Button:
-		$Button.pressed.connect(kill) # Replace with function body.
+	if $"../Button":
+		$"../Button".button_down.connect(kill)
+		print(position) # Replace with function body.
 
 
 func kill():
-	if g.lvleditem is String:
-		if g.lvleditem == "ERASE":
-			print(98023382)
-			queue_free()
+	if g.lvlediting:
+		queue_free()
+		print(0924809328402)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if $Control.has_focus() and g.playerpos == &"box":

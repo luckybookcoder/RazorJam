@@ -13,17 +13,6 @@ position = Vector2(-16, -16)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_3fp2o")
 
-[node name="Button" type="Button" parent="Robot" unique_id=348604567]
-modulate = Color(1, 1, 1, 0)
-offset_left = -80.0
-offset_top = -80.0
-offset_right = -48.0
-offset_bottom = -48.0
-mouse_filter = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Robot" unique_id=1674729893]
-texture = ExtResource("2_54bcm")
-
 [node name="Control" type="Control" parent="Robot" unique_id=1147216991]
 layout_mode = 3
 anchors_preset = 15
@@ -43,3 +32,12 @@ shape = SubResource("RectangleShape2D_em046")
 
 [node name="Node2D" type="Node2D" parent="Robot" unique_id=15277068]
 position = Vector2(-64, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot" unique_id=1674729893]
+texture = ExtResource("2_54bcm")
+
+[node name="Button" type="Button" parent="." unique_id=348604567]
+offset_left = -32.0
+offset_top = -32.0
+mouse_filter = 2
+button_mask = 2

@@ -5,10 +5,13 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {1:load("lvl1.tscn"), 2:load("res://lvl2.tscn"), 3:load("res://lvl4.tscn")}
+var lvlitems = {4:load("lvl1.tscn"), 2:load("res://lvl2.tscn"), 3:load("res://lvl4.tscn"), 1:load("res://lvl_editor.tscn")}
 var lvleditem
 var ticksleft = 0
+var lvlediting = false
 var text = []
+var robots = true
+var items = 0
 var held = ""
 var locks = []
 var phonevars = [0,0,0,0,0,0,0,0,0]
@@ -46,10 +49,15 @@ func _process(delta: float) -> void:
 		timer()
 	await get_node("/root/Main/Canla/posswap").button_down
 	await get_node("/root/Main/Canla/posswap").button_up
-	if playerpos == &"box":
+	if lvlediting:
+		if not waiter:
+			lvlediting = false
+			waiter = true
+	elif playerpos == &"box":
 		if not waiter:
 			playerpos = &"door"
 			move.emit()
+			locks.clear()
 			var rand = [1,2,3]#,4,5]#,6,7,8,9]
 			rand.shuffle()
 			var a = rand.pop_front()

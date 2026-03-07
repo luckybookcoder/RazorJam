@@ -5,22 +5,24 @@ var herewait = false
 func _ready() -> void:
 	filled = 0
 	g.goals +=1
+	$Button.pressed.connect(kill)
 
 
 func kill():
-	if g.lvleditem is String:
-		if g.lvleditem == "ERASE":
-			queue_free()
+	if g.lvlediting:
+		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = round(global_position/32)*32
 	if $Area2D.get_overlapping_areas():
-		if not filled:
-			filled = 1
-			g.goals -= 1
-			print()
-			if g.goals == 0:
-				herewait = true
+		await get_tree().process_frame
+		if $Area2D.get_overlapping_areas():
+			if not filled:
+				filled = 1
+				g.goals -= 1
+				print()
+				if g.goals == 0:
+					herewait = true
 	else:
 		if filled:
 			filled = 0
