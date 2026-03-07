@@ -10,9 +10,12 @@
 [ext_resource type="Script" uid="uid://by582sousv6np" path="res://posswap.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://cbaclwskws3gy" path="res://clock.gd" id="7_d21ai"]
 [ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="7_nr8wp"]
+[ext_resource type="Script" uid="uid://dmaip3curbit8" path="res://lock_4.gd" id="8_nr8wp"]
 [ext_resource type="Script" uid="uid://o5dwg6h0xoh1" path="res://heldconsole.gd" id="8_rj586"]
+[ext_resource type="Script" uid="uid://doxo8jbx1mfg6" path="res://lock_5.gd" id="9_d2bti"]
 [ext_resource type="Script" uid="uid://cg5cf5ahh6iqx" path="res://expectedconsole.gd" id="9_ir8iy"]
 [ext_resource type="Script" uid="uid://cvwny613uumck" path="res://lastcommandsconsole.gd" id="10_hqns4"]
+[ext_resource type="Script" uid="uid://c7ltrx8jsixam" path="res://phone.gd" id="10_ta5nu"]
 
 [node name="Main" type="Node2D" unique_id=1373200946]
 script = ExtResource("1_rj586")
@@ -65,7 +68,7 @@ layout_mode = 0
 offset_left = 20.0
 offset_right = 40.0
 offset_bottom = 34.0
-max_value = 9.0
+max_value = 10.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -75,7 +78,7 @@ ticks_position = 3
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 34.0
-max_value = 9.0
+max_value = 10.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -86,7 +89,7 @@ layout_mode = 0
 offset_left = 40.0
 offset_right = 60.0
 offset_bottom = 34.0
-max_value = 9.0
+max_value = 10.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -96,8 +99,8 @@ ticks_position = 3
 anchors_preset = 0
 offset_left = 176.0
 offset_top = 514.0
-offset_right = 216.0
-offset_bottom = 554.0
+offset_right = 304.0
+offset_bottom = 642.0
 script = ExtResource("6_0h7mo")
 
 [node name="Badbutton" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=498321981]
@@ -138,6 +141,109 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 52.0
 offset_bottom = 52.0
+
+[node name="Lock4" type="Control" parent="Canla/Dore controls/Locks" unique_id=952025817]
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("8_nr8wp")
+
+[node name="but1" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1938881899]
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 42.0
+
+[node name="but2" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1723926535]
+layout_mode = 0
+offset_left = 42.0
+offset_right = 84.0
+offset_bottom = 42.0
+
+[node name="but3" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=193078496]
+layout_mode = 0
+offset_left = 84.0
+offset_right = 126.0
+offset_bottom = 42.0
+
+[node name="but4" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=280501976]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 42.0
+offset_bottom = 84.0
+
+[node name="but5" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=731973473]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 84.0
+offset_bottom = 84.0
+
+[node name="but6" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1844626634]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 42.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="but7" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=2083956482]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 42.0
+offset_bottom = 126.0
+
+[node name="but8" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=77759051]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 84.0
+offset_right = 84.0
+offset_bottom = 126.0
+
+[node name="but9" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1934509239]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 84.0
+offset_right = 126.0
+offset_bottom = 126.0
+
+[node name="Lock5" type="Control" parent="Canla/Dore controls/Locks" unique_id=64065941]
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("9_d2bti")
+
+[node name="but1" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1608582585]
+layout_mode = 0
+offset_left = 42.0
+offset_right = 84.0
+offset_bottom = 42.0
+
+[node name="but2" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1179659288]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 42.0
+offset_bottom = 84.0
+
+[node name="but3" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1300088658]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 84.0
+offset_right = 84.0
+offset_bottom = 126.0
+
+[node name="but4" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=314071867]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 42.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls" unique_id=848053549]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 390.0
+offset_right = 1150.0
+offset_bottom = 646.0
+script = ExtResource("10_ta5nu")
 
 [node name="Inputconsole" type="RichTextLabel" parent="Canla" unique_id=1769224364]
 z_index = 1
@@ -190,4 +296,8 @@ offset_bottom = 600.0
 mouse_filter = 2
 script = ExtResource("10_hqns4")
 
+[connection signal="pressed" from="Canla/Dore controls/Locks/Lock5/but1" to="Canla/Dore controls/Locks/Lock5" method="up"]
+[connection signal="pressed" from="Canla/Dore controls/Locks/Lock5/but2" to="Canla/Dore controls/Locks/Lock5" method="left"]
+[connection signal="pressed" from="Canla/Dore controls/Locks/Lock5/but3" to="Canla/Dore controls/Locks/Lock5" method="down"]
+[connection signal="pressed" from="Canla/Dore controls/Locks/Lock5/but4" to="Canla/Dore controls/Locks/Lock5" method="right"]
 [connection signal="pressed" from="Canla/posswap" to="Canla/posswap" method="_on_pressed"]

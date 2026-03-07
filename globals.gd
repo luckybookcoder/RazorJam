@@ -10,11 +10,14 @@ var lvleditem
 var ticksleft = 0
 var text = []
 var held = ""
+var locks = []
+var phonevars = [0,0,0,0,0,0,0,0,0]
 var oldtime = 0
-var lockposses = [Vector2(6,0)]
+var lockposses = [Vector2(6,0),Vector2(7,0)]
 var lastmoves = []
 var itemtype = "books"
 var lvl = 1
+var phone = ('%s %s' %["a","b"])
 var targettime = 30
 var goals = 0
 var money = 0
@@ -36,6 +39,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	if locked:
+		phonetext()
 	if timeup:
 		timeup = 0
 		timer()
@@ -45,23 +50,32 @@ func _process(delta: float) -> void:
 		if not waiter:
 			playerpos = &"door"
 			move.emit()
-			var rand = [1,2,3,4,5,6,7,8,9]
-			#rand.shuffle()
+			var rand = [1,2,3]#,4,5]#,6,7,8,9]
+			rand.shuffle()
 			var a = rand.pop_front()
 			var b = rand.pop_front()
 			var c = rand.pop_front()
 			lock.emit(a,b,c)
 			print([a,b,c].has(1))
 			locked = 3
+			locks.clear()
 	elif not locked:
 		print(playerpos)
 		waiter = true
 		playerpos = &"box"
 		focus = null
 		print(playerpos)
+	
 
 func wait(sec:float):
 	await get_tree().create_timer(sec).timeout
+
+func phonetext():
+	phone = ""
+	for i in 9:
+		if locks.has(i+1):
+			phone += (["correct keyhole:%s" %phonevars[0], "Combo:%03d"%[phonevars[1]],"","","","","","","",].get(i))
+			phone += "\n"
 
 func ticker():
 	timeup = 1

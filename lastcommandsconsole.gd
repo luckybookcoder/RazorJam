@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	var s = "Last commands: "
 	for i in g.pointer-1-texter.size():
 		texter.pop_back()
-		print(g.pointer)
+		#print(g.pointer)
 	for i in texter:
 		s += i
 		if i:

@@ -1,5 +1,5 @@
 extends lock
-var wait = false
+var wait = true
 var clicked = {1:true,2:true,3:true}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,12 +22,19 @@ func spec() -> void:
 	click1()
 	click2()
 	click3()
+	badclick()
+
+func badclick():
+	if wait:
+		wait = false
+		await $Badbutton.button_down
+		g.tick.emit()
+		wait = true
 
 func click1():
 	await $Goodbutton1.button_down
 	clicked[1] = false
 	$Goodbutton1.modulate = Color(0.0, 100.0, 0.0, 1.0)
-	print($Goodbutton1.modulate)
 func click2():
 	await $Goodbutton2.button_down
 	clicked[2] = false
