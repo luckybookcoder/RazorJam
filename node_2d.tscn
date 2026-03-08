@@ -65,10 +65,10 @@ script = ExtResource("5_hqns4")
 
 [node name="Dial1" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=959852102]
 layout_mode = 0
-offset_left = 20.0
-offset_right = 40.0
+offset_right = 20.0
 offset_bottom = 34.0
-max_value = 10.0
+theme_override_constants/center_grabber = 1
+max_value = 9.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -76,9 +76,11 @@ ticks_position = 3
 
 [node name="Dial2" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=320119419]
 layout_mode = 0
-offset_right = 20.0
+offset_left = 20.0
+offset_right = 40.0
 offset_bottom = 34.0
-max_value = 10.0
+theme_override_constants/center_grabber = 1
+max_value = 9.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -89,7 +91,8 @@ layout_mode = 0
 offset_left = 40.0
 offset_right = 60.0
 offset_bottom = 34.0
-max_value = 10.0
+theme_override_constants/center_grabber = 1
+max_value = 9.0
 value = 9.0
 tick_count = 10
 ticks_on_borders = true
@@ -239,10 +242,17 @@ offset_bottom = 84.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls" unique_id=848053549]
 layout_mode = 0
-offset_left = 1022.0
+offset_left = 1025.0
 offset_top = 390.0
-offset_right = 1150.0
+offset_right = 1153.0
 offset_bottom = 646.0
+theme_override_constants/line_separation = -9
+text = "1
+1
+1
+1
+1
+1"
 script = ExtResource("10_ta5nu")
 
 [node name="Inputconsole" type="RichTextLabel" parent="Canla" unique_id=1769224364]

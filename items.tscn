@@ -34,6 +34,7 @@ theme_override_font_sizes/normal_font_size = 35
 text = "THIS IS A ITEM"
 
 [node name="Button" type="Button" parent="." unique_id=734524499]
+modulate = Color(1, 1, 1, 0)
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0

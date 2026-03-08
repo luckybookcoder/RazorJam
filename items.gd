@@ -14,6 +14,10 @@ func kill():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if g.lvlediting:
+		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)
+		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
+			queue_free()
 	if g.itemposses[$"."] is Vector2:
 		position = g.itemposses[$"."]
 		show()

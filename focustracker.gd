@@ -1,5 +1,4 @@
-@tool
-extends GridDisplay
+extends VSlider
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,8 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	grid_size = Vector2($WIDTH.value, $HEIGHT.value)
-	g.lvleditsize = Vector2($WIDTH.value, $HEIGHT.value)*32
-	for i in get_children():
-		if i.has_focus():
-			g.lvleditem = null
+	show()
+	if g.lvleditem is int:
+		value = 1
+	else:
+		if g.lvleditem:
+			value = {"WALL":0, "GOAL":2, "ITEM":3}[g.lvleditem]
+		else:
+			hide()

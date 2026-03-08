@@ -27,5 +27,6 @@ func spec() -> void:
 		$Dial3.editable = false
 	else:
 		$Dial3.editable = true
-	var phoney = (9-key.get(0))*100+(9-key.get(1))*10+key.get(2)
-	phoneify(phoney)
+	if locked:
+		var phoney = (key.get(0))*100+(key.get(1))*10+key.get(2)
+		phoneify(phoney)

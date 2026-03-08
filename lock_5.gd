@@ -12,9 +12,13 @@ func spec() -> void:
 		inputs.clear()
 		length = 0
 		combo.clear()
-		for i in randi_range(3,5):
+		for i in randi_range(4,6):
 			combo.append([Vector2.LEFT,Vector2.RIGHT,Vector2.UP,Vector2.DOWN].get(randi()%4))
 	else:
+		var text = ''
+		for i in combo:
+			text += {Vector2.LEFT:"L", Vector2.RIGHT:"R", Vector2.UP:"U", Vector2.DOWN:"D"}.get(i)
+		phoneify(text)
 		if inputs == combo:
 			unlock()
 		elif inputs.size() == combo.size():

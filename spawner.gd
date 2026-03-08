@@ -19,11 +19,9 @@ func endlvl():
 	print(g.lvl)
 	if get_children().has(popup):
 		popup.queue_free()
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
+	#await get_tree().process_frame
+	#await get_tree().process_frame
+	#await get_tree().process_frame
 	add_child(g.lvlitems[g.lvl].instantiate())
 	g.locked = false
 	g.playerpos = &"box"

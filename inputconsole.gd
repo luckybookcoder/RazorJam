@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for i in g.text:
 		g.ticksleft += 1
-		texter.append({Vector2(0,-32):"^",Vector2(0,32):"v",Vector2(-32,0):"<",Vector2(32,0):">",Vector2.ZERO:"X", "pickup":"PU", "putdown":"PD"}[i])
+		texter.append({Vector2(0,-32):"^",Vector2(0,32):"v",Vector2(-32,0):"<",Vector2(32,0):">",Vector2(0,-64):"^",Vector2(0,64):"v",Vector2(-64,0):"<",Vector2(64,0):">",Vector2.ZERO:"X", "pickup":"PU", "putdown":"PD"}[i])
 	var s = "Current commands: "
 	for i in g.pointer+1:
 		texter.pop_front()

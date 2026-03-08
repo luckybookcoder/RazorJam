@@ -13,6 +13,10 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if g.lvlediting:
+		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)
+		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
+			queue_free()
 	global_position = round(global_position/32)*32
 	if $Area2D.get_overlapping_areas():
 		await get_tree().process_frame

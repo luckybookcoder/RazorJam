@@ -10,13 +10,14 @@ var lvleditem
 var ticksleft = 0
 var lvlediting = false
 var text = []
+var lvleditsize = Vector2.ZERO
 var robots = true
 var items = 0
 var held = ""
 var locks = []
-var phonevars = [0,0,0,0,0,0,0,0,0]
+var phonevars = ["0","0","0",'0','0','0','0','0','0']
 var oldtime = 0
-var lockposses = [Vector2(6,0),Vector2(7,0)]
+var lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(3,0),Vector2(4,0),Vector2(5,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
 var lastmoves = []
 var itemtype = "books"
 var lvl = 1
@@ -58,7 +59,7 @@ func _process(delta: float) -> void:
 			playerpos = &"door"
 			move.emit()
 			locks.clear()
-			var rand = [1,2,3]#,4,5]#,6,7,8,9]
+			var rand = [1,2,3,4,5]#,6,7,8,9]
 			rand.shuffle()
 			var a = rand.pop_front()
 			var b = rand.pop_front()
@@ -82,8 +83,11 @@ func phonetext():
 	phone = ""
 	for i in 9:
 		if locks.has(i+1):
-			phone += (["correct keyhole:%s" %phonevars[0], "Combo:%03d"%[phonevars[1]],"","","","","","","",].get(i))
+			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],phonevars[8]].get(i))
 			phone += "\n"
+			phone += "\n"
+		#else:
+			#print(locks, i+1, locks.has(i+1))
 
 func ticker():
 	timeup = 1

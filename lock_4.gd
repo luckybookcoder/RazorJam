@@ -2,10 +2,18 @@ extends lock
 var waits = {1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true}
 var buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
 var checks = {0:{1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0},1:{1:1,2:0,3:0,4:0,5:1,6:0,7:0,8:0,9:1},2:{1:1,2:0,3:1,4:0,5:1,6:0,7:1,8:0,9:1}}
-var rand = randi()%4
+var rand = randi()%3
 var timer = 0
 
 func spec() -> void:
+	num = 4
+	var text = ''
+	for i in checks[rand]:
+		text += {1:"  ", 0:"X"}[(checks[rand][i])]
+		if i%3 == 0:
+			text += '\n'
+	if locked:
+		phoneify(text)
 	if timer == 9:
 		timer = 0
 		g.tick.emit()
@@ -14,7 +22,6 @@ func spec() -> void:
 		rand = randi()%3
 		buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
 	but1()
-	num = 4
 	but2()
 	but3()
 	but4()

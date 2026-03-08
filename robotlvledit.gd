@@ -8,13 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not has_focus():
+	if not has_focus() or Box.has_focus():
 		selected = -1
 		Box.hide()
 		Box.value = 2
 	else:
 		g.lvleditem = selected
-		if selected >= 5:
+		if selected >= 6:
 			Box.show()
 			$"..".count = Box.value
 		else:

@@ -23,18 +23,26 @@ func _process(delta: float) -> void:
 	else:
 		if posset:
 			posset = false
-			while g.lockposses.has(pos):
-				hide()
-				pos = Vector2(randi()%8, randi()%5)
-				await get_tree().process_frame
-			g.lockposses.append(pos)
-			if g.lockposses.size() == 5:
-				g.lockposses.clear()
-				g.lockposses.append(Vector2(6,0))
-				g.lockposses.append(Vector2(7,0))
+			pos = g.lockposses.pop_at(randi()%g.lockposses.size())
+			#for i in num:
+				#await get_tree().process_frame
+			#while g.lockposses.has(pos):
+				#hide()
+				#pos = Vector2(randi()%8, randi()%5)
+				#
+			#g.lockposses.append(pos)
+			#print(g.lockposses)
+			#if g.lockposses.size() == 7:
+				#g.lockposses.clear()
+				#g.lockposses.append(Vector2(6,0))
+				#g.lockposses.append(Vector2(7,0))
+				#g.lockposses.append(Vector2(7,4))
+				#g.lockposses.append(Vector2(7,3))
 			position = pos*128 
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+			await get_tree().process_frame
+			if true:
+				g.lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(3,0),Vector2(4,0),Vector2(5,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
+
 func spec():
 	pass
 

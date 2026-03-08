@@ -7,7 +7,8 @@ func spec() -> void:
 	if g.playerpos == &"door":
 		delock()
 	num = 1
-	phoneify(pos)
+	if locked:
+		phoneify(pos)
 	
 
 func delock():

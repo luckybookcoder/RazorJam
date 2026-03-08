@@ -25,7 +25,7 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=601498274]
 shape = SubResource("RectangleShape2D_em046")
@@ -36,8 +36,11 @@ position = Vector2(-64, -64)
 [node name="Sprite2D" type="Sprite2D" parent="Robot" unique_id=1674729893]
 texture = ExtResource("2_54bcm")
 
-[node name="Button" type="Button" parent="." unique_id=348604567]
-offset_left = -32.0
-offset_top = -32.0
-mouse_filter = 2
+[node name="Button" type="Button" parent="Robot" unique_id=348604567]
+modulate = Color(1, 1, 1, 0)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+toggle_mode = true
 button_mask = 2
