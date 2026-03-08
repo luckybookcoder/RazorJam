@@ -7,12 +7,14 @@ var count = 2
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	name = "Lvl Editor"
 	super()
 	g.lvlediting = true
 	g.items = 0
 	g.robots = false
 
 func _process(delta: float) -> void:
+	name = "Lvl Editor"
 	if g.lvleditem is int:
 		if g.lvleditem == -1:
 			g.lvleditem = null

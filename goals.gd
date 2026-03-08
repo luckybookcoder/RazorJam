@@ -14,9 +14,13 @@ func kill():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if g.lvlediting:
+		$Button.mouse_filter = Control.MOUSE_FILTER_STOP
 		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)
 		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
 			queue_free()
+	else:
+		if $Button:
+			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	global_position = round(global_position/32)*32
 	if $Area2D.get_overlapping_areas():
 		await get_tree().process_frame
@@ -34,3 +38,6 @@ func _process(delta: float) -> void:
 	if herewait and g.playerpos != &"door":
 		g.lvltext.emit()
 		herewait = false
+
+func _exit_tree() -> void:
+	g.goals -= 1

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ustfyb8cmx42" path="res://robotlvledit.gd" id="3_ltt6d"]
 [ext_resource type="Script" uid="uid://cfvbxksrtaqo0" path="res://lvleditmousedetec.gd" id="4_m3nxy"]
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="5_p06wj"]
+[ext_resource type="Script" uid="uid://8wwu5uqexctn" path="res://heightlabel.gd" id="7_ltt6d"]
 [ext_resource type="Script" uid="uid://btdv4gia0mbfo" path="res://focustracker.gd" id="9_owks4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p06wj"]
@@ -116,17 +117,19 @@ shape = SubResource("RectangleShape2D_d1pr1")
 script = ExtResource("3_0ec8p")
 
 [node name="HEIGHT" type="SpinBox" parent="Griddisplay" unique_id=959565565]
-offset_left = -169.0
-offset_top = -1.0
-offset_right = -32.0
-offset_bottom = 30.0
+offset_left = -32.0
+offset_top = 34.0
+offset_right = 105.0
+offset_bottom = 65.0
+rotation = 3.1415927
 min_value = 4.0
 max_value = 16.0
 value = 6.0
 prefix = "Box Height:"
 
 [node name="y" type="StaticBody2D" parent="Griddisplay/HEIGHT" unique_id=1087963082]
-position = Vector2(169, -31)
+position = Vector2(-32, 66)
+rotation = 3.1415927
 
 [node name="left" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=2017303642]
 position = Vector2(-16, 96)
@@ -138,6 +141,22 @@ position = Vector2(144, 96)
 rotation = 3.1415927
 shape = SubResource("RectangleShape2D_jv7us")
 script = ExtResource("3_0ec8p")
+
+[node name="Sprite2D" type="Polygon2D" parent="Griddisplay" unique_id=731741951]
+position = Vector2(-96, -27)
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+polygon = PackedVector2Array(62, 28.999996, -53, 28.999996, -55, 30.999996, -55, 57.999996, -53, 59.999996, 61.848755, 60.00003, 64, 56.999996, 64, 30.999996)
+uv = PackedVector2Array(123.1, 0, 5, 0, 0.2, 5, 0, 125, 3.7, 128, 123.6, 128, 127.9, 123, 128, 2.9)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7)]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Griddisplay/Sprite2D" unique_id=1954556833]
+offset_left = -52.0
+offset_top = 33.999996
+offset_right = 67.0
+offset_bottom = 65.0
+text = "Box Height: 20"
+script = ExtResource("7_ltt6d")
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Griddisplay" unique_id=310170047]
 clip_contents = true

@@ -12,5 +12,8 @@ func _process(delta: float) -> void:
 	grid_size = Vector2($WIDTH.value, $HEIGHT.value)
 	g.lvleditsize = Vector2($WIDTH.value, $HEIGHT.value)*32
 	for i in get_children():
-		if i.has_focus():
-			g.lvleditem = null
+		
+		if g.lvlediting:
+			i.show()
+		else:
+			i.hide()

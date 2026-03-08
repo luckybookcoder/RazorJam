@@ -20,3 +20,7 @@ func _process(delta: float) -> void:
 		else:
 			Box.hide()
 			Box.value = 2
+	if g.lvlediting:
+		show()
+	else:
+		hide()

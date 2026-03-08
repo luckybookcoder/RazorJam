@@ -33,9 +33,16 @@ func kill():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if g.lvlediting:
+		if $Button:
+			$Button.mouse_filter = Control.MOUSE_FILTER_STOP
+			$Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)
 		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
 			queue_free()
+	else:
+		if $Button:
+			$Control.mouse_filter = Control.MOUSE_FILTER_STOP
+			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if $Control.has_focus() and g.playerpos == &"box" and not g.lvlediting:
 		g.focus = $"."
 	if g.focus == $".":

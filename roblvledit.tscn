@@ -25,7 +25,6 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
-mouse_filter = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=601498274]
 shape = SubResource("RectangleShape2D_em046")

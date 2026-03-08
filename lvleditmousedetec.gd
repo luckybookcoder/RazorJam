@@ -13,6 +13,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	size = Vector2($"../WIDTH".value,$"../HEIGHT".value)*32
 	$Button.size = size
+	if g.lvlediting:
+		mouse_filter = Control.MOUSE_FILTER_PASS
+		$Button.mouse_filter = Control.MOUSE_FILTER_PASS
+	else:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func input() -> void:
 			clone.emit(get_global_mouse_position())

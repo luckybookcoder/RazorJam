@@ -10,3 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if has_focus():
 		g.lvleditem = name
+	if g.lvlediting:
+		show()
+	else:
+		hide()
+	
