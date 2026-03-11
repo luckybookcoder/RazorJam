@@ -9,3 +9,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	text = g.phone
+	if g.locks.has(9):
+		pass

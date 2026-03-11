@@ -1,12 +1,19 @@
 extends lock
 var waits = {1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true}
 var buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
-var checks = {0:{1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0},1:{1:1,2:0,3:0,4:0,5:1,6:0,7:0,8:0,9:1},2:{1:1,2:0,3:1,4:0,5:1,6:0,7:1,8:0,9:1}}
+var checks = {
+	0:{1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0},
+	1:{1:1, 2:0, 3:0, 4:0, 5:1, 6:0, 7:0, 8:0, 9:1},
+	2:{1:1, 2:0, 3:1, 4:0, 5:1, 6:0, 7:1, 8:0, 9:1},
+	3:{1:1, 2:0, 3:1, 4:1, 5:0, 6:0, 7:0, 8:1, 9:1},
+	4:{1:1, 2:1, 3:1, 4:0, 5:0, 6:0, 7:1, 8:0, 9:1},
+	5:{1:1, 2:1, 3:1, 4:1, 5:0, 6:1, 7:1, 8:1, 9:1}
+	}
 var rand = randi()%3
 var timer = 0
 
 func spec() -> void:
-	num = 4
+	num = 5
 	var text = ''
 	for i in checks[rand]:
 		text += {1:"  ", 0:"X"}[(checks[rand][i])]
@@ -14,12 +21,19 @@ func spec() -> void:
 			text += '\n'
 	if locked:
 		phoneify(text)
+	#if Input.is_action_just_pressed("backspace"):
+		#var array = []
+		#for i in buts:
+			#array.append({1:0,0:1}[buts[i]%2])
+		#print(array)
 	if timer == 9:
 		timer = 0
 		g.tick.emit()
+		rand = randi()%6
+		buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
 	if not locked:
 		timer = 0
-		rand = randi()%3
+		rand = randi()%6
 		buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
 	but1()
 	but2()

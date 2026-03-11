@@ -5,7 +5,7 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {4:load("lvl1.tscn"), 2:load("res://lvl2.tscn"), 3:load("res://lvl4.tscn"), 1:load("res://lvl_editor.tscn")}
+var lvlitems = {1:load("lvl1.tscn"),5:load("lvl5.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 4:load("res://lvl4.tscn"), 6:load("res://lvl_editor.tscn")}
 var lvleditem
 var ticksleft = 0
 var lvlediting = false
@@ -14,10 +14,13 @@ var lvleditsize = Vector2.ZERO
 var robots = true
 var items = 0
 var held = ""
+var reset = true
+var reset1 = true
+var reset2 = true
 var locks = []
-var phonevars = ["0","0","0",'0','0','0','0','0','0']
+var phonevars = ["0",0,"0",'0','0','0','0','0','0']
 var oldtime = 0
-var lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(3,0),Vector2(4,0),Vector2(5,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
+var lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(5,0),Vector2(7,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
 var lastmoves = []
 var itemtype = "books"
 var lvl = 1
@@ -45,6 +48,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if locked:
 		phonetext()
+	if reset1 and reset2:
+		reset = true
 	if timeup:
 		timeup = 0
 		timer()
@@ -59,7 +64,14 @@ func _process(delta: float) -> void:
 			playerpos = &"door"
 			move.emit()
 			locks.clear()
-			var rand = [1,2,3,4,5]#,6,7,8,9]
+			var rand = []
+			if lvl > 4:
+				rand = [1,2,3,4,5,6,7,8,9]
+			elif g.lvl > 1:
+				for i in lvl*2:
+					rand.append(i+1)
+			else:
+				rand = [1,2,3]
 			rand.shuffle()
 			var a = rand.pop_front()
 			var b = rand.pop_front()
@@ -83,7 +95,7 @@ func phonetext():
 	phone = ""
 	for i in 9:
 		if locks.has(i+1):
-			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],phonevars[8]].get(i))
+			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],""].get(i))
 			phone += "\n"
 			phone += "\n"
 		#else:

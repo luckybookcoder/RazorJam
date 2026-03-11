@@ -8,7 +8,5 @@ func move():
 	for i in moves.size():
 		if moves[i] is Vector2:
 			moves[i] *= -1
-		else:
-			moves[i] = {"PU":"PD", "PD":"PU"}[moves[i]]
 	print(moves)
 	super()

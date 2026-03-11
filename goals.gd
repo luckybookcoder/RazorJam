@@ -40,4 +40,5 @@ func _process(delta: float) -> void:
 		herewait = false
 
 func _exit_tree() -> void:
-	g.goals -= 1
+	if not filled:
+		g.goals -= 1

@@ -8,11 +8,11 @@ func spec() -> void:
 		delock()
 	num = 1
 	if locked:
-		phoneify(pos)
-	
+		phoneify(str(int(pos.x+1), ">, ", int(pos.y), "v"))
+	$badButton.global_position = Vector2.ZERO
 
 func delock():
-	await $".".pressed
+	await $Goodbutton.pressed
 	if locked == true:
 		locked = false
 		g.locked -= 1

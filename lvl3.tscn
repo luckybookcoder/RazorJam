@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://c7rr3blqc1u03"]
+
+[ext_resource type="Script" uid="uid://b0y3wwj43iu3r" path="res://robot.gd" id="1_rv5w0"]
+[ext_resource type="Script" uid="uid://r1vubmkonrvc" path="res://lvl.gd" id="1_wbmbh"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_wbmbh"]
+[ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="3_qm84j"]
+[ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="4_k1nkc"]
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="5_rnbdc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei1o7"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xblbo"]
+size = Vector2(160, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcw3h"]
+size = Vector2(26, 26)
+
+[node name="Lvl3" type="Node2D" unique_id=1006200995]
+script = ExtResource("1_wbmbh")
+
+[node name="Robot1" type="CharacterBody2D" parent="." unique_id=166920295 groups=["Robots"]]
+position = Vector2(351, 64)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot1" unique_id=746216950]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot1" unique_id=1403349672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot1" unique_id=154227175]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot2" type="CharacterBody2D" parent="." unique_id=819261106 groups=["Robots"]]
+position = Vector2(384, 64)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot2" unique_id=928685482]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot2" unique_id=832046018]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot2" unique_id=488999908]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot3" type="CharacterBody2D" parent="." unique_id=1755057401 groups=["Robots"]]
+position = Vector2(415, 63)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot3" unique_id=385103776]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot3" unique_id=2048680823]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot3" unique_id=638772396]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot4" type="CharacterBody2D" parent="." unique_id=411874847 groups=["Robots"]]
+position = Vector2(320, 95)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot4" unique_id=1423810111]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot4" unique_id=1962929392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot4" unique_id=1682899058]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot5" type="CharacterBody2D" parent="." unique_id=67219719 groups=["Robots"]]
+position = Vector2(385, 96)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot5" unique_id=524309317]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot5" unique_id=1568919372]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot5" unique_id=90206415]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot6" type="CharacterBody2D" parent="." unique_id=593721998 groups=["Robots"]]
+position = Vector2(417, 96)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot6" unique_id=1456818409]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot6" unique_id=832476793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot6" unique_id=1911501797]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot7" type="CharacterBody2D" parent="." unique_id=156550073 groups=["Robots"]]
+position = Vector2(351, 95)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot7" unique_id=1301964266]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot7" unique_id=220812535]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot7" unique_id=1102648090]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot8" type="CharacterBody2D" parent="." unique_id=1219266016 groups=["Robots"]]
+position = Vector2(320, 64)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot8" unique_id=765210836]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot8" unique_id=1299867094]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot8" unique_id=1478092464]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot9" type="CharacterBody2D" parent="." unique_id=937627586 groups=["Robots"]]
+position = Vector2(320, 128)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot9" unique_id=607838396]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot9" unique_id=1899709011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot9" unique_id=545278956]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="Robot10" type="CharacterBody2D" parent="." unique_id=1757968152 groups=["Robots"]]
+position = Vector2(417, 128)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_rv5w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot10" unique_id=1269829197]
+texture = ExtResource("2_wbmbh")
+
+[node name="Control" type="Control" parent="Robot10" unique_id=2093560086]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Alright. Lets try something a little more complicated"
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot10" unique_id=1835227501]
+shape = SubResource("RectangleShape2D_ei1o7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1562959526]
+z_index = -3
+position = Vector2(269, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1532200814]
+position = Vector2(80, -15)
+shape = SubResource("RectangleShape2D_xblbo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1484070722]
+position = Vector2(51, 16)
+shape = SubResource("RectangleShape2D_jcw3h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1532757042]
+position = Vector2(147, 16)
+shape = SubResource("RectangleShape2D_jcw3h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=150723148]
+position = Vector2(176, 49)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_xblbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1219014527]
+position = Vector2(16, 81)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_xblbo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=986050518]
+position = Vector2(112, 145)
+shape = SubResource("RectangleShape2D_xblbo")
+
+[node name="items" parent="." unique_id=982181225 instance=ExtResource("3_qm84j")]
+position = Vector2(353, 129)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1498090702]
+position = Vector2(576, 256)
+
+[node name="Goals" parent="." unique_id=1765395935 instance=ExtResource("4_k1nkc")]
+position = Vector2(351, 31)
+
+[node name="items2" parent="." unique_id=378579539 instance=ExtResource("3_qm84j")]
+position = Vector2(385, 128)
+
+[node name="Goals2" parent="." unique_id=1070443166 instance=ExtResource("4_k1nkc")]
+position = Vector2(385, 32)
+
+[node name="Griddisplay" type="Node2D" parent="." unique_id=1148899465]
+z_index = -2
+position = Vector2(304, 16)
+script = ExtResource("5_rnbdc")
+grid_size = Vector2(4, 4)
+line_size = Vector2(3, 3)
+cell_size = Vector2(32, 32)
+border_color = Color(1, 0, 0, 1)
+vline_color = Color(0, 1, 0, 1)
+hline_color = Color(0, 1, 0, 1)

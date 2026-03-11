@@ -13,6 +13,7 @@ config_version=5
 config/name="Razorjam"
 run/main_scene="uid://b0c8hdfwqyb4o"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/max_fps=20
 config/icon="res://icon.svg"
 
 [autoload]
