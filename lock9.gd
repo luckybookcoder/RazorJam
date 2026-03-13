@@ -57,14 +57,15 @@ func _ready() -> void:
 		if i is Button:
 			print(Callable(self,i.name.replace("Button","b")))
 			i.button_down.connect(Callable(self,i.name.replace("Button","b")))
-
+var wait = false
 func spec():
 	num = 9
 	if not locked:
-		for i in ons:
-			ons[i] = false
+		#for i in ons:
+			#ons[i] = false
+		show()
 		ticks = 0
-		rand = randi()%5+1
+		rand = 5
 	var good = patterns[rand].size()
 	var fails = 2
 	for i in ons:
@@ -75,8 +76,8 @@ func spec():
 				fails -= 1
 	if fails < 0:
 		g.tick.emit()
-		for i in ons:
-			ons[i] = false
+		#for i in ons:
+			#ons[i] = false
 		ticks = 0
 		rand = randi()%5+1
 	#if Input.is_action_just_pressed("cancel"):
@@ -85,6 +86,68 @@ func spec():
 			#if ons[i]:
 				#array.append(i)
 		#print(array)
+		#*-*-*
+		#|X|X|
+		#*-*-*
+		#|X|X|
+		#*-*-*
+	var text = ""
+	var looks = {
+	"H1":false,"H2":false,
+
+	"V2":false,
+	"D7":false,"D3":false,
+	"V4":false,
+	"D8":false,"D4":false,
+	"V6":false,
+
+	"H3":false,"H4":false,
+
+	"V1":false,
+	"D5":false,"D1":false,
+	"V3":false,
+	"D2":false,"D6":false,
+	"V5":false,
+
+	"H5":false,"H6":false,
+	}
+	for i in patterns[rand]:
+		looks[i] = true
+	for i in looks:
+		if i.contains("D") and looks[i]:
+			await g.wait(.001)
+			if looks[{"D2"="D6","D6"="D2","D5"="D1","D1"="D5","D8"="D4","D7"="D3","D4"="D8","D3"="D7"}[i]]:
+				text += " X"
+			elif ["D1","D2","D3","D4"].has(i):
+				text += " /"
+			else:
+				text += " \\"
+		elif i.contains("D"):
+			text += ""
+		elif looks[i]:
+			if i.contains("H"):
+				text += "*--"
+				if int(i.replace("H",""))%2 == 0:
+					text += "*\n"
+			elif i.contains("V"):
+				if int(i.replace("V","")) > 4:
+					
+					text += "  |\n"
+				else:
+					text += "|"
+		else:
+			if i.contains("H"):
+				text += "*  [font_size=8] [/font_size]"
+				if int(i.replace("H",""))%2 == 0:
+					text += "*\n"
+			elif i.contains("V"):
+				if int(i.replace("V","")) > 4:
+					text += "\n"
+				text += ""
+	text = text.replace(" X X"," X")
+	print()
+	$"../../RichTextLabel".text = text
+
 	if good < 1:
 		unlock()
 	for i in get_children():
@@ -104,7 +167,6 @@ func spec():
 						i.modulate = Color(0.0, 18.892, 0.0, 1.0)
 					else:
 						i.modulate = Color(0.0, 0.0, 0.0, 1.0)
-	show()
 
 func merge():
 	var con = (butposses[but1]+butposses[but2])/Vector2(2,2)

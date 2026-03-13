@@ -4,13 +4,13 @@ var correct = &"CATS"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spec() -> void:
+	num = 8
 	if not locked:
 		#shift = randi()%25 + 1
 		var x = ""
 		for i in randi_range(4,8):
 			x += char(("abcdefghijklmnopqrstuvwxyz".unicode_at(randi()%26) - 65) % 26 + 65)
 		correct = x
-	num = 8
 	#show()
 	if $TextEdit.has_focus():
 		g.reset = false

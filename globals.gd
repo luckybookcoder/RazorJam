@@ -65,13 +65,14 @@ func _process(delta: float) -> void:
 			move.emit()
 			locks.clear()
 			var rand = []
-			if lvl > 4:
-				rand = [1,2,3,4,5,6,7,8,9]
-			elif g.lvl > 1:
-				for i in lvl*2:
-					rand.append(i+1)
-			else:
-				rand = [1,2,3]
+			rand = [1,2,3,4,5,6,7,8,9]
+			#if lvl > 4:
+				#rand = [1,2,3,4,5,6,7,8,9]
+			#elif g.lvl > 1:
+				#for i in lvl*2:
+					#rand.append(i+1)
+			#else:
+				#rand = [1,2,3]
 			rand.shuffle()
 			var a = rand.pop_front()
 			var b = rand.pop_front()
@@ -95,7 +96,7 @@ func phonetext():
 	phone = ""
 	for i in 9:
 		if locks.has(i+1):
-			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],""].get(i))
+			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],phonevars[8]].get(i))
 			phone += "\n"
 			phone += "\n"
 		#else:

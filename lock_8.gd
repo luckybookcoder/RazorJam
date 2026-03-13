@@ -5,6 +5,7 @@ var result
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spec() -> void:
+	num = 6
 	if not locked:
 		result = &""
 		#shift = randi()%25 + 1
@@ -32,7 +33,6 @@ func spec() -> void:
 		g.reset1 = false
 	else:
 		g.reset1 = true
-	num = 6
 	#show()
 	$RichTextLabel.text = result
 	if ($TextEdit.text).capitalize() == (correct).capitalize():
