@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bwxf1q50k54og" path="res://locks/lock_3.gd" id="6_0h7mo"]
 [ext_resource type="Script" uid="uid://by582sousv6np" path="res://lvls/posswap.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://cbaclwskws3gy" path="res://ui/clock.gd" id="7_d21ai"]
-[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="7_nr8wp"]
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="7_nr8wp"]
 [ext_resource type="Script" uid="uid://dmaip3curbit8" path="res://locks/lock_4.gd" id="8_nr8wp"]
 [ext_resource type="Script" uid="uid://o5dwg6h0xoh1" path="res://consoles/heldconsole.gd" id="8_rj586"]
 [ext_resource type="Script" uid="uid://doxo8jbx1mfg6" path="res://locks/lock_5.gd" id="9_d2bti"]

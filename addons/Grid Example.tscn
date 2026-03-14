@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://pph58tngsd7w"]
 
-[ext_resource type="Script" path="res://addons/grid_display/grid_display.gd" id="1_qchgr"]
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="1_qchgr"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=158162844]
 
-[node name="Grid Display" type="Node2D" parent="."]
+[node name="Grid Display" type="Node2D" parent="." unique_id=501878077]
 script = ExtResource("1_qchgr")
 grid_size = Vector2(8, 10)
 line_size = Vector2(1, 1)

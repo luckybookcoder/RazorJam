@@ -10,7 +10,7 @@ var lvleditem
 var ticksleft = 0
 var lvlediting = false
 var text = []
-var lvleditsize = Vector2.ZERO
+var lvleditsize:Vector2 = Vector2.ZERO
 var robots = true
 var items = 0
 var held = ""

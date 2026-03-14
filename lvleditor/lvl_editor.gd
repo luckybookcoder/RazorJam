@@ -1,4 +1,4 @@
-extends "lvl.gd"
+extends Lvl
 var kiddo
 var kid
 var kids = {"ITEM":load("res://items.tscn"), "GOAL":load("res://goal.tscn"), "WALL": load('res://wall.tscn')}

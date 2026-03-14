@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blnfiruyo4s28"]
+
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="1_mr7aw"]
+
+[node name="GridDisplayScene" type="Node2D" unique_id=563195535]
+script = ExtResource("1_mr7aw")
