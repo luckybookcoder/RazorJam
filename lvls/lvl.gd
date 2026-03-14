@@ -1,3 +1,4 @@
+class_name Lvl
 extends Node2D
 
 
