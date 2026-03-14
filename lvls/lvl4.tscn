@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://hf0rdh7wn6nt"]
 
-[ext_resource type="Script" uid="uid://r1vubmkonrvc" path="res://lvl.gd" id="1_13mhm"]
-[ext_resource type="Script" uid="uid://dd43nuwbklfc4" path="res://dubrobot.gd" id="2_g87cy"]
+[ext_resource type="Script" uid="uid://r1vubmkonrvc" path="res://lvls/lvl.gd" id="1_13mhm"]
+[ext_resource type="Script" uid="uid://dd43nuwbklfc4" path="res://robots/dubrobot.gd" id="2_g87cy"]
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="3_sboe7"]
-[ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="4_ynrix"]
-[ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="5_8efx6"]
+[ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://lvlobjects/items.tscn" id="4_ynrix"]
+[ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://lvlobjects/goal.tscn" id="5_8efx6"]
 [ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="6_h3grg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj1pa"]
