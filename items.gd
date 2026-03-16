@@ -14,6 +14,9 @@ func kill():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if g.focus:
+		if g.focus.global_position.distance_to(global_position) < 32:
+			g.onitem = true
 	if g.lvlediting:
 		$Button.mouse_filter = Control.MOUSE_FILTER_STOP
 		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)

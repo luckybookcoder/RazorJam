@@ -16,7 +16,7 @@ func spec() -> void:
 	num = 5
 	var text = ''
 	for i in checks[rand]:
-		text += {1:"  ", 0:"X"}[(checks[rand][i])]
+		text += {1:"O", 0:"X"}[(checks[rand][i])]
 		if i%3 == 0:
 			text += '\n'
 	if locked:

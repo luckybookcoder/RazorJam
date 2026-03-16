@@ -7,11 +7,12 @@ var result
 func spec() -> void:
 	num = 6
 	if not locked:
+		$TextEdit.text = ''
 		result = &""
-		#shift = randi()%25 + 1
 		var x = ""
+		var arr = ["a",'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',"z"]
 		for i in randi_range(4,8):
-			x += char("abcdefghijklmnopqrstuvwxyz".unicode_at(randi()%26))
+			x += arr.pop_at(randi()%arr.size())
 		correct = x
 		
 		var array = []
@@ -28,12 +29,31 @@ func spec() -> void:
 		reverse = correct
 		correct = result
 		result = reverse
+	else:
+		var numed = ""
+		for i in result:
+			var numer = correct.find(i)
+			numed += str(numer+1)
+		phoneify(numed)
 	if $TextEdit.has_focus():
 		g.reset = false
 		g.reset1 = false
+		if Input.is_key_label_pressed(KEY_ESCAPE):
+			set_focus_mode(Control.FOCUS_ALL)
+			grab_focus()
+			set_focus_mode(Control.FOCUS_NONE)
 	else:
 		g.reset1 = true
 	#show()
-	$RichTextLabel.text = result
 	if ($TextEdit.text).capitalize() == (correct).capitalize():
-		print("Y")
+		unlock()
+	elif ($TextEdit.text).length() == (correct).length():
+		print(correct, correct.capitalize(), $TextEdit.text, ($TextEdit.text).capitalize())
+		$TextEdit.text = ''
+		result = &""
+		var x = ""
+		var arr = ["a",'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',"z"]
+		for i in randi_range(4,8):
+			x += arr.pop_at(randi()%arr.size())
+		correct = x
+	$RichTextLabel.text = str(result)

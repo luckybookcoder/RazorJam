@@ -6,10 +6,15 @@ extends lock
 func spec() -> void:
 	if g.playerpos == &"door":
 		delock()
+		bad()
 	num = 1
 	if locked:
 		phoneify(str(int(pos.x+1), ">, ", int(pos.y), "v"))
 	$badButton.global_position = Vector2.ZERO
+func bad():
+	await $badButton.pressed
+	posset = true
+	g.tick.emit()
 
 func delock():
 	await $Goodbutton.pressed

@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bwxf1q50k54og" path="res://lock_3.gd" id="6_0h7mo"]
 [ext_resource type="Script" uid="uid://by582sousv6np" path="res://posswap.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://cbaclwskws3gy" path="res://clock.gd" id="7_d21ai"]
-[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/addons/grid_display/grid_display.gd" id="7_nr8wp"]
+[ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="7_nr8wp"]
 [ext_resource type="Script" uid="uid://dmaip3curbit8" path="res://lock_4.gd" id="8_nr8wp"]
 [ext_resource type="Script" uid="uid://o5dwg6h0xoh1" path="res://heldconsole.gd" id="8_rj586"]
 [ext_resource type="Script" uid="uid://doxo8jbx1mfg6" path="res://lock_5.gd" id="9_d2bti"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://c7ltrx8jsixam" path="res://phone.gd" id="10_ta5nu"]
 [ext_resource type="Script" uid="uid://bn2jscifcso1p" path="res://lock_7.gd" id="11_k73cj"]
 [ext_resource type="Script" uid="uid://dkyr3442e4em7" path="res://lock9.gd" id="13_fs4d3"]
+[ext_resource type="Script" uid="uid://dpwm51dm14syk" path="res://overlapconsole.gd" id="19_7vxoj"]
 
 [node name="Main" type="Node2D" unique_id=1373200946]
 script = ExtResource("1_rj586")
@@ -36,6 +37,7 @@ mouse_filter = 2
 script = ExtResource("4_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls" unique_id=1781286897]
+visible = false
 position = Vector2(575.99994, 324)
 scale = Vector2(8.999999, 5.0625)
 texture = ExtResource("1_wtcfe")
@@ -421,24 +423,6 @@ offset_top = 32.0
 offset_right = 52.0
 offset_bottom = 52.0
 
-[node name="Lock8" type="Control" parent="Canla/Dore controls/Locks" unique_id=377242037]
-anchors_preset = 0
-offset_left = 130.0
-offset_right = 258.0
-offset_bottom = 128.0
-script = ExtResource("11_k73cj")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock8" unique_id=818387042]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 64.0
-
-[node name="TextEdit" type="TextEdit" parent="Canla/Dore controls/Locks/Lock8" unique_id=814947667]
-layout_mode = 0
-offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 128.0
-
 [node name="Lock9" type="Control" parent="Canla/Dore controls/Locks" unique_id=882431381]
 anchors_preset = 0
 offset_left = 258.0
@@ -740,21 +724,185 @@ theme_override_font_sizes/normal_font_size = 33
 text = "--"
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls" unique_id=848053549]
+[node name="Lock8" type="Control" parent="Canla/Dore controls/Locks" unique_id=377242037]
+anchors_preset = 0
+offset_left = 130.0
+offset_right = 258.0
+offset_bottom = 128.0
+script = ExtResource("11_k73cj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock8" unique_id=818387042]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="TextEdit" type="TextEdit" parent="Canla/Dore controls/Locks/Lock8" unique_id=814947667]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Phone" type="RichTextLabel" parent="Canla/Dore controls" unique_id=848053549]
+z_index = 4
 layout_mode = 0
 offset_left = 1024.0
 offset_top = -1.0
 offset_right = 1152.0
 offset_bottom = 639.0
-theme_override_constants/line_separation = -9
+theme_override_constants/line_separation = -11
 bbcode_enabled = true
-text = "1
-1
-1
-1
-1
-1"
 script = ExtResource("10_ta5nu")
+
+[node name="1" type="Control" parent="Canla/Dore controls/Phone" unique_id=360123843]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 34.0
+tooltip_text = "wall of keyholes with one correct one. the top left one is 1>,0v"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/1" unique_id=898749158]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="2" type="Control" parent="Canla/Dore controls/Phone" unique_id=1472596224]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 20.0
+tooltip_text = "3 dial combination lock. just set the dials to the right numbers"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/2" unique_id=791266426]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="3" type="Control" parent="Canla/Dore controls/Phone" unique_id=1731438573]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 76.0
+tooltip_text = "Click the buttons in the order shown. pretty simple"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/3" unique_id=1486499847]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="4" type="Control" parent="Canla/Dore controls/Phone" unique_id=10005989]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 20.0
+tooltip_text = "4-way push lock. push it Up, Down, Left, or Right in the order given. press the middle button if you mess up"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/4" unique_id=454451984]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="5" type="Control" parent="Canla/Dore controls/Phone" unique_id=497680092]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 48.0
+tooltip_text = "3x3 grid of buttons. when you click one,
+it and the ones next to it light up. light up all of the Xs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/5" unique_id=530107420]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="6" type="Control" parent="Canla/Dore controls/Phone" unique_id=1617731075]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 20.0
+tooltip_text = "Anagram textlock. arrange the letters in the order given
+ (eg: borot 32145 is robot), and dont expect an actual word"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/6" unique_id=909329475]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="7" type="Control" parent="Canla/Dore controls/Phone" unique_id=1919823382]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 20.0
+offset_right = 128.0
+offset_bottom = 90.0
+tooltip_text = "6x6 grid. the number grid given shows the number
+of adjacent correct buttons on the square
+corresponding to the given number, including said square"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/7" unique_id=407419575]
+visible = false
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="8" type="Control" parent="Canla/Dore controls/Phone" unique_id=624078719]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 76.0
+tooltip_text = "9 small buttons in a grid with lines between them.
+make the connections given by clicking adjacent buttons"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/8" unique_id=1383285036]
+z_index = -2
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
+
+[node name="9" type="Control" parent="Canla/Dore controls/Phone" unique_id=758575761]
+z_index = -2
+clip_contents = true
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 20.0
+tooltip_text = "Ceaser cypher textlock. shift the letters on the lock 
+by the given number
+(eg: shift -2 means move all letters 2 back in the alphabet) 
+for your convenience: the alphabet
+abcdefghijklmnopqrstuvwxyz"
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls/Phone/9" unique_id=654957068]
+visible = false
+position = Vector2(63, -1)
+scale = Vector2(1.546875, 1.28125)
+texture = ExtResource("1_wtcfe")
 
 [node name="Griddisplay" type="Node2D" parent="Canla/Dore controls" unique_id=912280881]
 script = ExtResource("7_nr8wp")
@@ -768,7 +916,7 @@ hline_color = Color(0, 1, 0, 1)
 [node name="Inputconsole" type="RichTextLabel" parent="Canla" unique_id=1769224364]
 z_index = 1
 offset_right = 157.0
-offset_bottom = 255.0
+offset_bottom = 201.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(18.892, 18.892, 0, 1)
 script = ExtResource("3_epypp")
@@ -794,11 +942,18 @@ text = "1:00"
 script = ExtResource("7_d21ai")
 
 [node name="Heldconsole" type="RichTextLabel" parent="Canla" unique_id=643087844]
-offset_top = 256.0
+offset_top = 200.0
 offset_right = 157.0
-offset_bottom = 374.0
+offset_bottom = 318.0
 mouse_filter = 2
 script = ExtResource("8_rj586")
+
+[node name="Overlapconsole" type="RichTextLabel" parent="Canla" unique_id=1426567523]
+offset_left = 2.0
+offset_top = 319.0
+offset_right = 158.0
+offset_bottom = 453.0
+script = ExtResource("19_7vxoj")
 
 [node name="Expectedconsole" type="RichTextLabel" parent="Canla" unique_id=246870005]
 z_index = 2
@@ -810,7 +965,7 @@ text = "a"
 script = ExtResource("9_ir8iy")
 
 [node name="Lastcommandsconsole" type="RichTextLabel" parent="Canla" unique_id=1119111746]
-offset_top = 375.0
+offset_top = 460.0
 offset_right = 157.0
 offset_bottom = 600.0
 mouse_filter = 2

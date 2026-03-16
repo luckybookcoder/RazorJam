@@ -5,10 +5,15 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {1:load("lvl1.tscn"),5:load("lvl5.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 4:load("res://lvl4.tscn"), 6:load("res://lvl_editor.tscn")}
+var lvlitems = {8:load("lvl8.tscn"),5:load("lvl5.tscn"),6:load("lvl6.tscn"), 7:load("res://lvl_7.tscn"), 4:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), 9:load("res://lvl_editor.tscn")}
 var lvleditem
 var ticksleft = 0
 var lvlediting = false
+var onitem = false
+var ondoor = false
+var ongoal = false
+var oncharge = false
+const goaltypes = {"books":"bookshelf", "laundry":"hamper", "dishes":"dishwasher"}
 var text = []
 var lvleditsize = Vector2.ZERO
 var robots = true
@@ -20,9 +25,11 @@ var reset2 = true
 var locks = []
 var phonevars = ["0",0,"0",'0','0','0','0','0','0']
 var oldtime = 0
+#region potential positions of locks
 var lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(5,0),Vector2(7,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
+#endregion
 var lastmoves = []
-var itemtype = "books"
+var itemtype = ["books", "laundry", "dishes"][randi()%3]
 var lvl = 1
 var phone = ('%s %s' %["a","b"])
 var targettime = 30

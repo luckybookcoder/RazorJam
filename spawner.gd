@@ -3,7 +3,8 @@ var popup
 var inc = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_child(g.lvlitems[g.lvl].instantiate()) # Replace with function body.
+	add_child(load("menu.tscn").instantiate())
+	$Canla.hide() # Replace with function body.
 	g.endlvl.connect(endlvl)
 	g.lvltext.connect(lvlend)
 
