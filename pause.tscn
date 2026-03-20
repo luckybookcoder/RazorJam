@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bf5pucu5xvq1g"]
+
+[ext_resource type="Script" uid="uid://clntfllfbq2an" path="res://pause.gd" id="1_6eyaj"]
+[ext_resource type="Script" uid="uid://dktla0lsqn872" path="res://pausefocus.gd" id="1_aq7p1"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_6eyaj"]
+
+[node name="Pause" type="Node2D" unique_id=1459839539]
+script = ExtResource("1_6eyaj")
+
+[node name="Control" type="Control" parent="." unique_id=1357262498]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -72.0
+offset_right = 1257.0
+offset_bottom = 794.0
+focus_mode = 2
+script = ExtResource("1_aq7p1")
+
+[node name="Popup" type="Popup" parent="." unique_id=403126439]
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1280, 720)
+visible = true
+transient_to_focused = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Popup" unique_id=1427223055]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(624.39996, 342.03198)
+scale = Vector2(3.85, 2.313)
+texture = ExtResource("2_6eyaj")
+
+[node name="Button" type="Button" parent="Popup" unique_id=1504223423]
+z_index = 1
+offset_left = 412.3999
+offset_top = 232.03204
+offset_right = 821.4
+offset_bottom = 307.03204
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+
+[node name="Button2" type="Button" parent="Popup" unique_id=655276934]
+z_index = 1
+offset_left = 416.3999
+offset_top = 362.03198
+offset_right = 825.4
+offset_bottom = 437.03198
+theme_override_font_sizes/font_size = 48
+text = "Exit to menu"
+
+[node name="Button3" type="Button" parent="Popup" unique_id=750854812]
+offset_left = 622.0
+offset_top = 326.0
+offset_right = 630.0
+offset_bottom = 334.0

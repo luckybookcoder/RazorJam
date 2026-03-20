@@ -9,6 +9,14 @@ size = Vector2(28, 28)
 [node name="onoffdoor" type="Node2D" unique_id=1364583490]
 script = ExtResource("1_v6xrn")
 
+[node name="Button" type="Button" parent="." unique_id=79818075]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 1
+button_mask = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318303540]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 scale = Vector2(0.25, 0.25)
@@ -16,11 +24,11 @@ texture = ExtResource("2_0phs7")
 
 [node name="DOOR" type="RichTextLabel" parent="Sprite2D" unique_id=702034088]
 z_index = 2
-offset_left = -60.0
+offset_left = -64.0
 offset_top = -64.0
-offset_right = 68.0
+offset_right = 64.0
 offset_bottom = 64.0
-mouse_filter = 2
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 32
 text = "THIS IS A DOOR"
 
@@ -32,15 +40,16 @@ collision_mask = 0
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_50cdl")
 
-[node name="Button" type="Button" parent="." unique_id=79818075]
-modulate = Color(1, 1, 1, 0)
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-button_mask = 2
-
 [node name="Area2D2" type="Area2D" parent="." unique_id=843010306]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1340936438]
 shape = SubResource("RectangleShape2D_50cdl")
+
+[node name="Control" type="Control" parent="." unique_id=26581695]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 1

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="5_p06wj"]
 [ext_resource type="Script" uid="uid://8wwu5uqexctn" path="res://heightlabel.gd" id="7_ltt6d"]
 [ext_resource type="Script" uid="uid://btdv4gia0mbfo" path="res://focustracker.gd" id="9_owks4"]
+[ext_resource type="Script" uid="uid://bv7ry2alixh1t" path="res://lvleditmenuify.gd" id="11_f8cvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p06wj"]
 size = Vector2(128, 32)
@@ -90,7 +91,7 @@ script = ExtResource("2_owks4")
 z_index = -2
 position = Vector2(400, 80)
 script = ExtResource("1_lwlbw")
-grid_size = Vector2(4, 5)
+grid_size = Vector2(6, 6)
 cell_size = Vector2(32, 32)
 
 [node name="WIDTH" type="SpinBox" parent="Griddisplay" unique_id=563330856]
@@ -184,8 +185,22 @@ offset_left = 38.0
 offset_top = 80.0
 offset_right = 54.0
 offset_bottom = 215.0
+mouse_filter = 2
 max_value = 3.0
 value = 3.0
+editable = false
+scrollable = false
 tick_count = 4
 ticks_on_borders = true
 script = ExtResource("9_owks4")
+
+[node name="Button" type="Button" parent="." unique_id=1590438116]
+offset_left = 887.0
+offset_right = 1152.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 72
+text = "Back to 
+Menu"
+script = ExtResource("11_f8cvi")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

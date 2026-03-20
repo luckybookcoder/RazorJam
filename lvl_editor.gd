@@ -12,9 +12,11 @@ func _ready() -> void:
 	g.lvlediting = true
 	g.items = 0
 	g.robots = false
+	g.playerpos = &"editor"
 
 func _process(delta: float) -> void:
 	name = "Lvl Editor"
+	print()
 	if g.lvleditem is int:
 		if g.lvleditem == -1:
 			g.lvleditem = null
@@ -41,3 +43,8 @@ func clone(pos:Vector2):
 				g.itemposses.set(kid, pos)
 			kid.position = pos
 			print(kid.position)
+
+func _exit_tree() -> void:
+	g.lvlediting = false
+	g.items = 0
+	g.robots = false

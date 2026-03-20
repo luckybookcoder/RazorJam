@@ -39,7 +39,8 @@ func Button1():
 		$Button1.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button2():
@@ -48,7 +49,8 @@ func Button2():
 		$Button2.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button3():
@@ -56,7 +58,8 @@ func Button3():
 		pointer = max(pointer, order[2]+1)
 		$Button3.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
-		pointer = 0
+		if not g.realtime:
+			pointer = 0
 		g.tick.emit()
 		black()
 
@@ -66,7 +69,8 @@ func Button4():
 		$Button4.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button5():
@@ -75,7 +79,8 @@ func Button5():
 		$Button5.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button6():
@@ -84,7 +89,8 @@ func Button6():
 		$Button6.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button7():
@@ -93,7 +99,8 @@ func Button7():
 		$Button7.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button8():
@@ -102,7 +109,8 @@ func Button8():
 		$Button8.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button9():
@@ -111,7 +119,8 @@ func Button9():
 		$Button9.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()
 
 func Button10():
@@ -120,5 +129,6 @@ func Button10():
 		$Button10.modulate = Color(0.0, 18.892, 0.0, 1.0)
 	else:
 		pointer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		black()

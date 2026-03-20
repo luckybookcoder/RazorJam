@@ -14,5 +14,6 @@ func next():
 	print("AAA")
 
 func same():
-	g.lvl -= 1
+	if g.lvl is int:
+		g.lvl -= 1
 	g.endlvl.emit()

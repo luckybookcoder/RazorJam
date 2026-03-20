@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 		show()
 		if not timer:
 			timer = true
-			g.time += 1
+			if not g.realtime:
+				g.time += 1
 		if Input.is_action_just_pressed("backspace") or Input.is_action_just_pressed("cancel") and g.reset:
 			g.tick.emit()
 	else:

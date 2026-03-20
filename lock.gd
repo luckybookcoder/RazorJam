@@ -55,7 +55,8 @@ func unlock():
 	if locked == true:
 		locked = false
 		g.locked -= 1
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 
 func die():
 	locked = false

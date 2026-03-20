@@ -15,7 +15,7 @@ size = Vector2(124, 124)
 size = Vector2(224, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pk2x"]
-size = Vector2(92, 32)
+size = Vector2(92, 28)
 
 [node name="lvl7" type="Node2D" unique_id=251254852]
 script = ExtResource("1_31kc1")

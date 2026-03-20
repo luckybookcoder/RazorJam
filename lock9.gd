@@ -58,12 +58,15 @@ func _ready() -> void:
 			i.button_down.connect(Callable(self,i.name.replace("Button","b")))
 var wait = false
 func spec():
+	print(but1)
 	num = 8
 	if not locked:
 		for i in ons:
 			ons[i] = false
 		ticks = 0
 		rand = randi()%5+1
+		but1 = null
+		but2 = null
 	var good = patterns[rand].size()
 	var fails = 0
 	for i in ons:
@@ -73,11 +76,15 @@ func spec():
 			else:
 				fails -= 1
 	if fails < 0:
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		for i in ons:
 			ons[i] = false
 		ticks = 0
 		rand = randi()%5+1
+		await get_tree().process_frame
+		but1 = null
+		but2 = null
 	#if Input.is_action_just_pressed("cancel"):
 		#var array = []
 		#for i in ons:
@@ -106,9 +113,13 @@ func spec():
 				else:
 					i.disabled = false
 					if but1 == i:
-						i.modulate = Color(0.0, 18.892, 0.0, 1.0)
+						i.disabled = true
+						i.modulate = Color(0.0, 18.892, 0.0, 3)
 					else:
 						i.modulate = Color(0.0, 0.0, 0.0, 1.0)
+			else:
+				i.modulate = Color(0.0, 0.0, 0.0, 1.0)
+				i.disabled = false
 	var text = ""
 	var looks = {
 	"H1":false,"H2":false,

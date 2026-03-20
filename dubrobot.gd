@@ -26,7 +26,7 @@ func move():
 		moving = true
 		g.newposses.clear()
 		if g.longest < moves.size():
-			g.longest += moves.size()
+			g.longest = moves.size()
 		use = moves
 		collision_layer = 1
 		for i in 999:
@@ -49,7 +49,7 @@ func move():
 						if move_and_collide(use.get(pointer), true):
 							@warning_ignore("integer_division")
 							if move_and_collide(use.get(pointer)/Vector2(2,2), true):
-								print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa")
+								pass
 							else:
 								g.newposses.append(position+use.get(pointer)/Vector2(2,2))
 								print("aaaaaaa")

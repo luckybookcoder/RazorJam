@@ -5,7 +5,7 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {8:load("lvl8.tscn"),5:load("lvl5.tscn"),6:load("lvl6.tscn"), 7:load("res://lvl_7.tscn"), 4:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), 9:load("res://lvl_editor.tscn")}
+var lvlitems = {8:load("lvl8.tscn"),4:load("lvl5.tscn"),6:load("lvl6.tscn"), 7:load("res://lvl_7.tscn"), 5:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), "editor":load("res://lvl_editor.tscn")}
 var lvleditem
 var ticksleft = 0
 var lvlediting = false
@@ -36,7 +36,7 @@ var targettime = 30
 var goals = 0
 var money = 0
 var reward = {1:100}
-var longest = 12
+var longest = 0
 var tickwait = false
 var newposses = []
 var playerpos = &"box"
@@ -47,12 +47,30 @@ var waiter = false
 var time = 0
 var timeup = 0
 var itemposses := {}
+var simplemode = false
+var realtime = 0
+var volume = 100
+var maxlvl = 1
+var realtimetick = 0
+var realtimecheck = true
+var realtimetime = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tick.connect(ticker)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	print(realtime,realtimetick)
+	if lvl is int:
+		maxlvl = max(lvl, maxlvl)
+	if realtime and (playerpos == "door" or playerpos == "box"):
+		match playerpos:
+			"door":
+				realtimetick += delta
+			"box":
+				realtimetick += delta/3
+	if realtimetick >= 10:
+		realtimer()
 	if locked:
 		phonetext()
 	if reset1 and reset2:
@@ -72,14 +90,22 @@ func _process(delta: float) -> void:
 			move.emit()
 			locks.clear()
 			var rand = []
-			rand = [1,2,3,4,5,6,7,8,9]
-			#if lvl > 4:
-				#rand = [1,2,3,4,5,6,7,8,9]
-			#elif g.lvl > 1:
-				#for i in lvl*2:
-					#rand.append(i+1)
-			#else:
-				#rand = [1,2,3]
+			#rand = [1,2,3,4,5,6,7,8,9]
+			if lvl is String:
+				rand = [1,2,3,4,5,6,7,8,9]
+			else:
+				if lvl > 4:
+					rand = [1,2,3,4,5,6,7,8,9]
+				elif lvl > 1:
+					for i in lvl*2:
+						rand.append(i+1)
+				else:
+					rand = [1,2,3]
+			if simplemode:
+				for i in range(rand.size(), -1, -1):
+					if i >= 6:
+						rand.pop_back()
+				print(rand)
 			rand.shuffle()
 			var a = rand.pop_front()
 			var b = rand.pop_front()
@@ -93,7 +119,6 @@ func _process(delta: float) -> void:
 		waiter = true
 		playerpos = &"box"
 		focus = null
-		print(playerpos)
 	
 
 func wait(sec:float):
@@ -109,8 +134,14 @@ func phonetext():
 		#else:
 			#print(locks, i+1, locks.has(i+1))
 
+func realtimer():
+	realtimetime += 1
+	tick.emit()
+	realtimetick = 0
+
 func ticker():
 	timeup = 1
 
 func timer():
 	time +=1
+	longest = 0

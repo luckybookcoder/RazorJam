@@ -68,7 +68,8 @@ func badclick():
 	if wait:
 		wait = false
 		await $Badbutton.button_down
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		reset()
 		wait = true
 

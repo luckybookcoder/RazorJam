@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 	await get_tree().process_frame
 	for i in ["onitem","ondoor","ongoal","oncharge"]:
 		if g.get(i):
-			print(i, g.itemtype,g.goaltypes[g.itemtype])
 			words += {"onitem":g.itemtype,'ondoor':"Door",'ongoal':g.goaltypes[g.itemtype],'oncharge':"Charging station"}[i]
 	if words == "Other objects:":
 		words += "Nothing"

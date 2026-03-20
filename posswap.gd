@@ -9,18 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if g.lvlediting:
-		text = "Test your level"
-		if (g.robots and g.goals and g.items >= g.goals):
-			disabled = false
-			tooltip_text = ""
-		else:
-			if not g.robots:
-				tooltip_text = "You need at least one robot!"
-			elif not g.goals:
-				tooltip_text = "You need at least one goal!"
-			else:
-				tooltip_text = "You need as many items as goals!"
-			disabled = true
+		show()
+		text = "Test your level!"
 	else:
 		tooltip_text = ""
 		disabled = false

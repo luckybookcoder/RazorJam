@@ -26,9 +26,10 @@ func spec() -> void:
 		#for i in buts:
 			#array.append({1:0,0:1}[buts[i]%2])
 		#print(array)
-	if timer == 9:
+	if timer == 9 and not g.simplemode or timer == 12 and g.simplemode:
 		timer = 0
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		rand = randi()%6
 		buts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
 	if not locked:

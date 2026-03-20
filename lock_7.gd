@@ -30,11 +30,12 @@ func spec() -> void:
 		elif char_code >= 97 and char_code <= 122:
 			result += char((char_code - 97 + shift) % 26 + 97)
 	$RichTextLabel.text = str(result, "\n", correct)
-	if ($TextEdit.text).capitalize() == (correct).capitalize():
+	if ($TextEdit.text).to_lower() == (correct).to_lower():
 		unlock()
 	elif $TextEdit.text.length() == correct.length():
 		$TextEdit.text = ""
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		
 	if locked:
 		var phone = ((26-shift))

@@ -45,10 +45,10 @@ func spec() -> void:
 	else:
 		g.reset1 = true
 	#show()
-	if ($TextEdit.text).capitalize() == (correct).capitalize():
+	if ($TextEdit.text).to_lower() == (correct).to_lower():
 		unlock()
 	elif ($TextEdit.text).length() == (correct).length():
-		print(correct, correct.capitalize(), $TextEdit.text, ($TextEdit.text).capitalize())
+		print(correct, correct.to_lower(), $TextEdit.text, ($TextEdit.text).to_lower())
 		$TextEdit.text = ''
 		result = &""
 		var x = ""

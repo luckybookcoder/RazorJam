@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 		#print(g.pointer)
 	for i in texter:
 		s += i
-		if i:
-			empty = false
+	if s != "Last commands: ":
+		empty = false
 		
 	text = s
 	if g.focus and not empty:

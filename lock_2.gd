@@ -26,7 +26,8 @@ func pressed():
 	if $Dial1.value == key.get(0) and $Dial2.value == key.get(1) and $Dial3.value == key.get(2):
 		unlock()
 	else:
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()
 		key = [randi()%10,randi()%10,randi()%10]
 		while $Dial1.value == key.get(0) or $Dial2.value == key.get(1) or $Dial3.value == key.get(2):
 			key = [randi()%10,randi()%10,randi()%10]

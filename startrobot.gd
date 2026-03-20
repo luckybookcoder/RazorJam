@@ -1,5 +1,5 @@
 extends robot
-@export var count = 4
+@export var count = 4##the starting point for the robot, as long as it has that many commands. for every command past this number, the robot will move the front to the back
 var text
 
 func _process(delta: float) -> void:
@@ -15,5 +15,3 @@ func move():
 		if i < count-1:
 			moves.append(moves.pop_front())
 	super()
-
-#func move2():

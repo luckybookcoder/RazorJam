@@ -24,7 +24,8 @@ func spec() -> void:
 		elif inputs.size() == combo.size() or $Reset.button_pressed:
 			inputs.clear()
 			$Reset.button_pressed = false
-			g.tick.emit()
+			if not g.realtime:
+				g.tick.emit()
 			shuffle()
 
 func shuffle():

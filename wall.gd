@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
 			queue_free()
 	else:
+		buttonoff()
+		
+func buttonoff():
 		if $Button:
 			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 # Called when the node enters the scene tree for the first time.

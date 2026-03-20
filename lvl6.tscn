@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://rvhgjwdpd1ft" path="res://reverserobot.gd" id="5_45jih"]
 [ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="5_eesp2"]
 [ext_resource type="Script" uid="uid://ynw1flpqhqbo" path="res://droprobot.gd" id="6_g6if3"]
+[ext_resource type="Script" uid="uid://pdqy5byc3rjm" path="res://startrobot.gd" id="8_eesp2"]
+[ext_resource type="PackedScene" uid="uid://b05j04h58w06t" path="res://charge.tscn" id="9_2ibix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ibix"]
 size = Vector2(124, 124)
@@ -147,6 +149,41 @@ position = Vector2(546, 289)
 
 [node name="Goals3" parent="." unique_id=1600836716 instance=ExtResource("4_g6if3")]
 position = Vector2(545, 256)
+
+[node name="Robot7" type="CharacterBody2D" parent="." unique_id=47366172 groups=["Robots"]]
+position = Vector2(320, 288)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("8_eesp2")
+count = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Robot7" unique_id=1837575511]
+texture = ExtResource("2_u7ife")
+
+[node name="Control" type="Control" parent="Robot7" unique_id=1476586224]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot7" unique_id=18497859]
+shape = SubResource("RectangleShape2D_2ibix")
+
+[node name="items4" parent="." unique_id=1215516812 instance=ExtResource("3_45jih")]
+position = Vector2(321, 288)
+
+[node name="Charger" parent="." unique_id=872837921 instance=ExtResource("9_2ibix")]
+position = Vector2(386, 256)
+
+[node name="Goals4" parent="." unique_id=1795978170 instance=ExtResource("4_g6if3")]
+position = Vector2(352, 257)
 
 [node name="Griddisplay" type="Node2D" parent="." unique_id=146742038]
 z_index = -2

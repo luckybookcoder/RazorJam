@@ -4,6 +4,7 @@ extends lock
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spec() -> void:
+	$Griddisplay.global_position = Vector2.ZERO
 	if g.playerpos == &"door":
 		delock()
 		bad()
@@ -11,14 +12,17 @@ func spec() -> void:
 	if locked:
 		phoneify(str(int(pos.x+1), ">, ", int(pos.y), "v"))
 	$badButton.global_position = Vector2.ZERO
+
 func bad():
 	await $badButton.pressed
 	posset = true
-	g.tick.emit()
+	if not g.realtime:
+			g.tick.emit()
 
 func delock():
 	await $Goodbutton.pressed
 	if locked == true:
 		locked = false
 		g.locked -= 1
-		g.tick.emit()
+		if not g.realtime:
+			g.tick.emit()

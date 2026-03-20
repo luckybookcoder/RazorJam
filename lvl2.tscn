@@ -92,13 +92,13 @@ position = Vector2(350, 62)
 position = Vector2(350, 94)
 
 [node name="Wall3" parent="." unique_id=451410767 instance=ExtResource("6_3pm5q")]
-position = Vector2(286, 158)
+position = Vector2(288, 160)
 
 [node name="Wall4" parent="." unique_id=1628319073 instance=ExtResource("6_3pm5q")]
-position = Vector2(318, 159)
+position = Vector2(320, 160)
 
 [node name="Wall5" parent="." unique_id=1422745667 instance=ExtResource("6_3pm5q")]
-position = Vector2(352, 125)
+position = Vector2(352, 127)
 
 [node name="Wall6" parent="." unique_id=1782658831 instance=ExtResource("6_3pm5q")]
-position = Vector2(352, 157)
+position = Vector2(352, 160)

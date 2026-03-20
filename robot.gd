@@ -13,6 +13,8 @@ var buggy = false
 var savedtext = false
 var lastcommands = []
 var ghost
+var but = false
+var alltick = 0
 # Called when the node enters the scene tree for the first time.
 func _init() -> void:
 	g.move.connect(move) # Replace with function body.
@@ -24,7 +26,7 @@ func _init() -> void:
 	ghost.top_level = true
 
 func _ready() -> void:
-	var but = false
+	
 	for i in get_children():
 		if i is Button:
 			but = true
@@ -33,6 +35,7 @@ func _ready() -> void:
 	area.collision_mask = 5
 	ghost.texture = $Sprite2D.texture
 	ghost.modulate.a = .8
+	ghost.hide()
 	if but:
 		$"Button".pressed.connect(kill)
 		print(position) # Replace with function body.
@@ -45,10 +48,32 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	var but = false
-	for i in get_children():
-		if i is Button:
-			but = true
+	if Input.is_action_pressed("all"):
+		if g.playerpos == &"box":
+			if Input.is_action_just_pressed("left"):
+				moves.append(Vector2.LEFT*32)
+				alltick +=1
+			if Input.is_action_just_pressed("right"):
+				moves.append(Vector2.RIGHT*32)
+				alltick +=1
+			if Input.is_action_just_pressed("up"):
+				moves.append(Vector2.UP*32)
+				alltick +=1
+			if Input.is_action_just_pressed("down"):
+				moves.append(Vector2.DOWN*32)
+				alltick +=1
+			if Input.is_action_just_pressed("cancel"):
+				moves.append(Vector2.ZERO)
+				alltick +=1
+			if Input.is_action_just_pressed("pickup"):
+				moves.append("pickup")
+				alltick +=1
+			if Input.is_action_just_pressed("putdown"):
+				moves.append("putdown")
+				alltick +=1
+			if Input.is_action_just_pressed("backspace") and alltick > 0:
+				moves.pop_back()
+				alltick -= 1
 	if g.lvlediting:
 		if but:
 			$Button.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -58,7 +83,7 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 	else:
 		if but:
-			$Button.mouse_filter = Control.MOUSE_FILTER_STOP
+			$Control.mouse_filter = Control.MOUSE_FILTER_STOP
 			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if $Control.has_focus() and g.playerpos == &"box" and not g.lvlediting:
 		g.focus = $"."
@@ -69,31 +94,47 @@ func _physics_process(delta: float) -> void:
 		else:
 			ghost.hide()
 		$Sprite2D.modulate = Color(1.353, 1.353, 1.353, 1.0)
-		if g.playerpos == &"box":
+		if g.playerpos == &"box" and not Input.is_action_pressed("all"):
+			print(alltick)
 			if Input.is_action_just_pressed("left"):
 				moves.append(Vector2.LEFT*32)
 				g.waiter = false
+				alltick = 0
 			if Input.is_action_just_pressed("right"):
 				moves.append(Vector2.RIGHT*32)
 				g.waiter = false
+				
+				alltick = 0
 			if Input.is_action_just_pressed("up"):
 				moves.append(Vector2.UP*32)
 				g.waiter = false
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 			if Input.is_action_just_pressed("down"):
 				moves.append(Vector2.DOWN*32)
 				g.waiter = false
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 			if Input.is_action_just_pressed("cancel"):
 				moves.append(Vector2.ZERO)
 				g.waiter = false
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 			if Input.is_action_just_pressed("pickup"):
 				moves.append("pickup")
 				g.waiter = false
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 			if Input.is_action_just_pressed("putdown"):
 				moves.append("putdown")
 				g.waiter = false
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 				
 			if Input.is_action_just_pressed("backspace"):
 				moves.pop_back()
+				if not Input.is_action_pressed("all"):
+					alltick = 0
 		if not buggy:
 			g.text = moves
 		g.pointer = pointer
@@ -111,6 +152,7 @@ func _physics_process(delta: float) -> void:
 	global_position = round(global_position/32)*32
 	if area.get_overlapping_bodies().size() > 1:
 		position -= lastmove
+		print("WHYYYY")
 		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
 #print(moves)
@@ -119,6 +161,8 @@ func _physics_process(delta: float) -> void:
 		lastcommands = use.duplicate_deep()
 	else:
 		savedtext = false
+	if g.longest < moves.size()  - (pointer+1):
+		g.longest = moves.size()  - (pointer+1)
 	
 	
 
@@ -127,8 +171,6 @@ func move():
 		prevplace = global_position
 		moving = true
 		g.newposses.clear()
-		if g.longest < moves.size():
-			g.longest += moves.size()
 		use = moves
 		collision_layer = 1
 		for i in 999:
@@ -143,11 +185,13 @@ func move():
 			if use.get(pointer) is Vector2:
 				g.newposses.append(position+use.get(pointer))
 				await get_tree().physics_frame
+				print(use.get(pointer))
 				if g.playerpos == &"door":
 					if not g.newposses.count(position+use.get(pointer)) > 1:
 						lastmove = use.get(pointer)
 						position += (use.get(pointer))
 						g.newposses.clear()
+						print(position)
 				else:
 					for x in i+1:
 						use.pop_front()
