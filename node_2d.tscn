@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bn2jscifcso1p" path="res://lock_7.gd" id="11_k73cj"]
 [ext_resource type="Script" uid="uid://dkyr3442e4em7" path="res://lock9.gd" id="13_fs4d3"]
 [ext_resource type="Script" uid="uid://dpwm51dm14syk" path="res://overlapconsole.gd" id="19_7vxoj"]
+[ext_resource type="Script" uid="uid://dsy2a0c4s8dl5" path="res://text.gd" id="22_ei405"]
 
 [node name="Main" type="Node2D" unique_id=1373200946]
 script = ExtResource("1_rj586")
@@ -37,6 +38,7 @@ mouse_filter = 2
 script = ExtResource("4_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls" unique_id=1781286897]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(575.99994, 324)
 scale = Vector2(8.999999, 5.0625)
@@ -57,31 +59,6 @@ offset_right = 363.0
 offset_bottom = 776.0
 script = ExtResource("5_kdubu")
 
-[node name="Griddisplay" type="Node2D" parent="Canla/Dore controls/Locks/Lock" unique_id=912280881]
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
-position = Vector2(-235, -648)
-script = ExtResource("7_nr8wp")
-grid_size = Vector2(9, 5)
-line_size = Vector2(3, 3)
-cell_size = Vector2(128, 128)
-border_color = Color(1, 0, 0, 1)
-vline_color = Color(0, 1, 0, 1)
-hline_color = Color(0, 1, 0, 1)
-
-[node name="badButton" type="Button" parent="Canla/Dore controls/Locks/Lock" unique_id=1037062164]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -235.0
-offset_top = -648.0
-offset_right = 916.0
-offset_bottom = -7.0
-
-[node name="Goodbutton" type="Button" parent="Canla/Dore controls/Locks/Lock" unique_id=972904584]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-
 [node name="Lock2" type="Control" parent="Canla/Dore controls/Locks" unique_id=1676882245]
 anchors_preset = 0
 offset_left = 590.0
@@ -93,9 +70,10 @@ script = ExtResource("5_hqns4")
 
 [node name="Dial1" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=959852102]
 layout_mode = 0
-offset_top = 30.0
-offset_right = 20.0
-offset_bottom = 64.0
+offset_left = 3.5
+offset_top = 33.5
+offset_right = 23.5
+offset_bottom = 67.5
 scale = Vector2(0.75, 0.75)
 theme_override_constants/center_grabber = 1
 max_value = 9.0
@@ -106,10 +84,10 @@ ticks_position = 3
 
 [node name="Dial2" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=320119419]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 30.0
-offset_right = 40.0
-offset_bottom = 64.0
+offset_left = 23.5
+offset_top = 33.5
+offset_right = 43.5
+offset_bottom = 67.5
 scale = Vector2(0.75, 0.75)
 theme_override_constants/center_grabber = 1
 max_value = 9.0
@@ -120,10 +98,10 @@ ticks_position = 3
 
 [node name="Dial3" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=628363798]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 30.0
-offset_right = 60.0
-offset_bottom = 64.0
+offset_left = 43.5
+offset_top = 33.5
+offset_right = 63.5
+offset_bottom = 67.5
 scale = Vector2(0.75, 0.75)
 theme_override_constants/center_grabber = 1
 max_value = 9.0
@@ -134,10 +112,10 @@ ticks_position = 3
 
 [node name="Text1" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1053560891]
 layout_mode = 0
-offset_left = 3.5
-offset_top = 12.0
-offset_right = 43.5
-offset_bottom = 52.0
+offset_left = 7.0
+offset_top = 15.5
+offset_right = 47.0
+offset_bottom = 55.5
 scale = Vector2(0.375, 0.375)
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
@@ -145,10 +123,10 @@ text = "9"
 
 [node name="Text2" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1116929604]
 layout_mode = 0
-offset_left = 23.5
-offset_top = 12.0
-offset_right = 63.5
-offset_bottom = 52.0
+offset_left = 27.0
+offset_top = 15.5
+offset_right = 67.0
+offset_bottom = 55.5
 scale = Vector2(0.375, 0.375)
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
@@ -156,10 +134,10 @@ text = "9"
 
 [node name="Text3" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1216450011]
 layout_mode = 0
-offset_left = 43.5
-offset_top = 12.0
-offset_right = 83.5
-offset_bottom = 52.0
+offset_left = 47.0
+offset_top = 15.5
+offset_right = 87.0
+offset_bottom = 55.5
 scale = Vector2(0.375, 0.375)
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
@@ -167,10 +145,10 @@ text = "9"
 
 [node name="Button" type="Button" parent="Canla/Dore controls/Locks/Lock2" unique_id=280013046]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 105.5
-offset_bottom = 30.5
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 34.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 16
 text = "Enter"
@@ -930,7 +908,7 @@ z_index = 1
 offset_right = 157.0
 offset_bottom = 201.0
 mouse_filter = 2
-theme_override_colors/default_color = Color(18.892, 18.892, 0, 1)
+theme_override_colors/default_color = Color(0, 18.892157, 0, 1)
 script = ExtResource("3_epypp")
 
 [node name="posswap" type="Button" parent="Canla" unique_id=299381092]
@@ -982,6 +960,28 @@ offset_right = 157.0
 offset_bottom = 600.0
 mouse_filter = 2
 script = ExtResource("10_hqns4")
+
+[node name="Text" type="RichTextLabel" parent="Canla" unique_id=592080553]
+visible = false
+z_index = 7
+offset_left = 4.0
+offset_top = 390.0
+offset_right = 1150.0
+offset_bottom = 636.0
+focus_mode = 1
+theme_override_font_sizes/normal_font_size = 32
+text = "Ok, so im going to type some random stuff to test things: AAAAAAAAAAAa AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+visible_characters = 264
+visible_characters_behavior = 1
+visible_ratio = 1.0476191
+script = ExtResource("22_ei405")
+
+[node name="Sprite2D" type="Sprite2D" parent="Canla/Text" unique_id=1747254367]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = -1
+position = Vector2(504.5, 24.500008)
+scale = Vector2(10.8203125, 4.1953125)
+texture = ExtResource("1_wtcfe")
 
 [connection signal="pressed" from="Canla/Dore controls/Locks/Lock4/but1" to="Canla/Dore controls/Locks/Lock4" method="up"]
 [connection signal="pressed" from="Canla/Dore controls/Locks/Lock4/but2" to="Canla/Dore controls/Locks/Lock4" method="left"]

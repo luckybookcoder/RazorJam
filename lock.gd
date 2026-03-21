@@ -11,10 +11,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if locked:
+		if num > 1:
+			g.truelockposses[num] = global_position
 		show()
 		if not g.locks.has(num):
 			g.locks.append(num)
 	else:
+		g.truelockposses[num] = null
 		hide()
 	spec()
 	if not locked:

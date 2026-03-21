@@ -95,7 +95,6 @@ func _physics_process(delta: float) -> void:
 			ghost.hide()
 		$Sprite2D.modulate = Color(1.353, 1.353, 1.353, 1.0)
 		if g.playerpos == &"box" and not Input.is_action_pressed("all"):
-			print(alltick)
 			if Input.is_action_just_pressed("left"):
 				moves.append(Vector2.LEFT*32)
 				g.waiter = false
@@ -152,7 +151,6 @@ func _physics_process(delta: float) -> void:
 	global_position = round(global_position/32)*32
 	if area.get_overlapping_bodies().size() > 1:
 		position -= lastmove
-		print("WHYYYY")
 		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
 #print(moves)
@@ -185,13 +183,11 @@ func move():
 			if use.get(pointer) is Vector2:
 				g.newposses.append(position+use.get(pointer))
 				await get_tree().physics_frame
-				print(use.get(pointer))
 				if g.playerpos == &"door":
 					if not g.newposses.count(position+use.get(pointer)) > 1:
 						lastmove = use.get(pointer)
 						position += (use.get(pointer))
 						g.newposses.clear()
-						print(position)
 				else:
 					for x in i+1:
 						use.pop_front()

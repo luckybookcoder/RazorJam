@@ -58,7 +58,6 @@ func _ready() -> void:
 			i.button_down.connect(Callable(self,i.name.replace("Button","b")))
 var wait = false
 func spec():
-	print(but1)
 	num = 8
 	if not locked:
 		for i in ons:
