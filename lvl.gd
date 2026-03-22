@@ -1,8 +1,9 @@
 extends Node2D
-
+@export var num:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	g.endlvl.connect(endlvl)
 	for i in get_children():
 		if i is robot:
@@ -13,4 +14,7 @@ func _ready() -> void:
 
 
 func endlvl():
+	if g.lvl != num:
+		g.lvlsdone[num] = true
+		print(num)
 	queue_free()

@@ -32,8 +32,9 @@ func _process(delta: float) -> void:
 func toggle():
 	if $Area2D.collision_layer:
 		$Area2D.collision_layer = 0
-		$Sprite2D.hide()
+		$Sprite2D/DOOR.text = "This door be OPEN"
 	else:
+		$Sprite2D/DOOR.text = "This door be Closd"
 		$Area2D.collision_layer = 1
 		$Sprite2D.show()
 

@@ -15,6 +15,8 @@ var lastcommands = []
 var ghost
 var but = false
 var alltick = 0
+var shader_material
+var ghostcheck = false
 # Called when the node enters the scene tree for the first time.
 func _init() -> void:
 	g.move.connect(move) # Replace with function body.
@@ -26,7 +28,11 @@ func _init() -> void:
 	ghost.top_level = true
 
 func _ready() -> void:
-	
+	shader_material = ShaderMaterial.new()
+	var rand = Vector4(randf_range(.1,1),randf_range(.1,1),randf_range(.1,1),1)
+	shader_material.shader = preload('res://roboshade.gdshader')
+	shader_material.set_shader_parameter("rand", rand)
+	$Sprite2D.material = shader_material
 	for i in get_children():
 		if i is Button:
 			but = true
@@ -48,6 +54,7 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	modulate = Color.WHITE
 	if Input.is_action_pressed("all"):
 		if g.playerpos == &"box":
 			if Input.is_action_just_pressed("left"):
@@ -93,7 +100,7 @@ func _physics_process(delta: float) -> void:
 			ghost.show()
 		else:
 			ghost.hide()
-		$Sprite2D.modulate = Color(1.353, 1.353, 1.353, 1.0)
+		shader_material.set_shader_parameter("highlight", true)
 		if g.playerpos == &"box" and not Input.is_action_pressed("all"):
 			if Input.is_action_just_pressed("left"):
 				moves.append(Vector2.LEFT*32)
@@ -145,7 +152,7 @@ func _physics_process(delta: float) -> void:
 			g.held = "nothing"
 
 	else:
-		$Sprite2D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		shader_material.set_shader_parameter("highlight", false)
 		collision_layer = 3
 		ghost.hide()
 	global_position = round(global_position/32)*32
@@ -159,6 +166,14 @@ func _physics_process(delta: float) -> void:
 		lastcommands = use.duplicate_deep()
 	else:
 		savedtext = false
+	if not ghostcheck:
+		ghostcheck = 2
+		prevplace = global_position
+	if g.playerpos == &"box" and ghostcheck == 2:
+		ghostcheck -=1
+	if g.playerpos == &"door" and ghostcheck == 1:
+		ghostcheck -= 1
+		
 	if g.longest < moves.size()  - (pointer+1):
 		g.longest = moves.size()  - (pointer+1)
 	

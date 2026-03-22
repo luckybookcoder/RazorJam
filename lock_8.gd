@@ -8,7 +8,7 @@ func spec() -> void:
 	num = 6
 	if not locked:
 		$TextEdit.text = ''
-		result = &""
+		result = ""
 		var x = ""
 		var arr = ["a",'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',"z"]
 		for i in randi_range(4,8):
@@ -48,9 +48,8 @@ func spec() -> void:
 	if ($TextEdit.text).to_lower() == (correct).to_lower():
 		unlock()
 	elif ($TextEdit.text).length() == (correct).length():
-		print(correct, correct.to_lower(), $TextEdit.text, ($TextEdit.text).to_lower())
 		$TextEdit.text = ''
-		result = &""
+		result = ""
 		var x = ""
 		var arr = ["a",'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',"z"]
 		for i in randi_range(4,8):

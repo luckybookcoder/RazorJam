@@ -16,6 +16,7 @@ size = Vector2(384, 32)
 
 [node name="lvl2" type="Node2D" unique_id=2083948528]
 script = ExtResource("1_nm8qd")
+num = 2
 
 [node name="Robot4" type="CharacterBody2D" parent="." unique_id=1880074327 groups=["Robots"]]
 position = Vector2(480, 160)

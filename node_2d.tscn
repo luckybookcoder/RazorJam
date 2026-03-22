@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://c24wdglct3nwc" path="res://spawner.gd" id="1_rj586"]
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://b315mcwaabfr5" path="res://lock_8.gd" id="2_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://bvr8u6c1ampqi" path="res://addons/grid_display/grid_display.svg" id="3_2nhjh"]
 [ext_resource type="Script" uid="uid://h5yko22qhau1" path="res://inputconsole.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://dbe44bkmmtgh7" path="res://door.gd" id="4_bjha6"]
 [ext_resource type="Script" uid="uid://decf0fhup0fv8" path="res://doorbase.gd" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://dd142w03epnes" path="res://lock_2.gd" id="5_hqns4"]
 [ext_resource type="Script" uid="uid://cb8edmrsldx6y" path="res://lock1.gd" id="5_kdubu"]
@@ -23,6 +25,17 @@
 [ext_resource type="Script" uid="uid://dpwm51dm14syk" path="res://overlapconsole.gd" id="19_7vxoj"]
 [ext_resource type="Script" uid="uid://dsy2a0c4s8dl5" path="res://text.gd" id="22_ei405"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjha6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2nhjh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Main" type="Node2D" unique_id=1373200946]
 script = ExtResource("1_rj586")
 
@@ -37,18 +50,18 @@ offset_bottom = 648.0
 mouse_filter = 2
 script = ExtResource("4_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="Canla/Dore controls" unique_id=1781286897]
-visible = false
-modulate = Color(0, 0, 0, 1)
-position = Vector2(575.99994, 324)
-scale = Vector2(8.999999, 5.0625)
-texture = ExtResource("1_wtcfe")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Canla/Dore controls" unique_id=948967766]
+position = Vector2(579.5, 326.99994)
+scale = Vector2(2.4850185, 1.4044942)
+sprite_frames = SubResource("SpriteFrames_bjha6")
+script = ExtResource("4_bjha6")
 
 [node name="Locks" type="Control" parent="Canla/Dore controls" unique_id=1879896222]
 z_index = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Lock" type="Control" parent="Canla/Dore controls/Locks" unique_id=309161071]
 self_modulate = Color(1, 1, 1, 0)
@@ -158,6 +171,7 @@ anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 100.0
 script = ExtResource("10_flf07")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button1" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=276433416]
 layout_mode = 0
@@ -165,6 +179,7 @@ offset_left = 17.0
 offset_top = 5.0
 offset_right = 37.0
 offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=306674377]
 layout_mode = 0
@@ -172,6 +187,7 @@ offset_left = 84.0
 offset_top = 5.0
 offset_right = 104.0
 offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=1472443125]
 layout_mode = 0
@@ -179,6 +195,7 @@ offset_left = 17.0
 offset_top = 29.0
 offset_right = 37.0
 offset_bottom = 49.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=1369571635]
 layout_mode = 0
@@ -186,6 +203,7 @@ offset_left = 84.0
 offset_top = 29.0
 offset_right = 104.0
 offset_bottom = 49.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button5" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=1915993026]
 layout_mode = 0
@@ -193,6 +211,7 @@ offset_left = 17.0
 offset_top = 53.0
 offset_right = 37.0
 offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button6" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=1347171744]
 layout_mode = 0
@@ -200,6 +219,7 @@ offset_left = 84.0
 offset_top = 53.0
 offset_right = 104.0
 offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button7" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=192425098]
 layout_mode = 0
@@ -207,6 +227,7 @@ offset_left = 17.0
 offset_top = 78.0
 offset_right = 37.0
 offset_bottom = 98.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button8" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=1782922976]
 layout_mode = 0
@@ -214,6 +235,7 @@ offset_left = 84.0
 offset_top = 78.0
 offset_right = 104.0
 offset_bottom = 98.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button9" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=24734378]
 layout_mode = 0
@@ -221,6 +243,7 @@ offset_left = 17.0
 offset_top = 102.0
 offset_right = 37.0
 offset_bottom = 122.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button10" type="Button" parent="Canla/Dore controls/Locks/Lock3" unique_id=854084342]
 layout_mode = 0
@@ -228,24 +251,28 @@ offset_left = 84.0
 offset_top = 102.0
 offset_right = 104.0
 offset_bottom = 122.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Lock4" type="Control" parent="Canla/Dore controls/Locks" unique_id=64065941]
 anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("9_d2bti")
+metadata/_edit_use_anchors_ = true
 
 [node name="but1" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1608582585]
 layout_mode = 0
 offset_left = 42.0
 offset_right = 84.0
 offset_bottom = 42.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but2" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1179659288]
 layout_mode = 0
 offset_top = 42.0
 offset_right = 42.0
 offset_bottom = 84.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but3" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=1300088658]
 layout_mode = 0
@@ -253,6 +280,7 @@ offset_left = 42.0
 offset_top = 84.0
 offset_right = 84.0
 offset_bottom = 126.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but4" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=314071867]
 layout_mode = 0
@@ -260,6 +288,7 @@ offset_left = 84.0
 offset_top = 42.0
 offset_right = 126.0
 offset_bottom = 84.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Reset" type="Button" parent="Canla/Dore controls/Locks/Lock4" unique_id=730554352]
 layout_mode = 0
@@ -270,35 +299,41 @@ offset_bottom = 85.0
 scale = Vector2(0.6, 0.6)
 toggle_mode = true
 text = "Reset"
+metadata/_edit_use_anchors_ = true
 
 [node name="Lock5" type="Control" parent="Canla/Dore controls/Locks" unique_id=952025817]
 anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("8_nr8wp")
+metadata/_edit_use_anchors_ = true
 
 [node name="but1" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1938881899]
 layout_mode = 0
 offset_right = 42.0
 offset_bottom = 42.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but2" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1723926535]
 layout_mode = 0
 offset_left = 42.0
 offset_right = 84.0
 offset_bottom = 42.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but3" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=193078496]
 layout_mode = 0
 offset_left = 84.0
 offset_right = 126.0
 offset_bottom = 42.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but4" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=280501976]
 layout_mode = 0
 offset_top = 42.0
 offset_right = 42.0
 offset_bottom = 84.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but5" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=731973473]
 layout_mode = 0
@@ -306,6 +341,7 @@ offset_left = 42.0
 offset_top = 42.0
 offset_right = 84.0
 offset_bottom = 84.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but6" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1844626634]
 layout_mode = 0
@@ -313,12 +349,14 @@ offset_left = 84.0
 offset_top = 42.0
 offset_right = 126.0
 offset_bottom = 84.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but7" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=2083956482]
 layout_mode = 0
 offset_top = 84.0
 offset_right = 42.0
 offset_bottom = 126.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but8" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=77759051]
 layout_mode = 0
@@ -326,6 +364,7 @@ offset_left = 42.0
 offset_top = 84.0
 offset_right = 84.0
 offset_bottom = 126.0
+metadata/_edit_use_anchors_ = true
 
 [node name="but9" type="Button" parent="Canla/Dore controls/Locks/Lock5" unique_id=1934509239]
 layout_mode = 0
@@ -333,6 +372,7 @@ offset_left = 84.0
 offset_top = 84.0
 offset_right = 126.0
 offset_bottom = 126.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Lock6" type="Control" parent="Canla/Dore controls/Locks" unique_id=463720256]
 anchors_preset = 0
@@ -340,17 +380,20 @@ offset_left = 130.0
 offset_right = 258.0
 offset_bottom = 128.0
 script = ExtResource("2_rjqkl")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock6" unique_id=1599739574]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="Canla/Dore controls/Locks/Lock6" unique_id=1411765959]
 layout_mode = 0
 offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 128.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Lock7" type="Control" parent="Canla/Dore controls/Locks" unique_id=723975231]
 anchors_preset = 0
@@ -425,6 +468,7 @@ layout_mode = 0
 offset_top = 2.0
 offset_right = 22.0
 offset_bottom = 24.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Canla/Dore controls/Locks/Lock9" unique_id=1186128531]
 layout_mode = 0
@@ -444,6 +488,7 @@ layout_mode = 0
 offset_top = 51.5
 offset_right = 22.0
 offset_bottom = 73.5
+metadata/_edit_use_anchors_ = true
 
 [node name="Button5" type="Button" parent="Canla/Dore controls/Locks/Lock9" unique_id=2144303999]
 layout_mode = 0
@@ -464,6 +509,7 @@ layout_mode = 0
 offset_top = 103.0
 offset_right = 22.0
 offset_bottom = 125.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button8" type="Button" parent="Canla/Dore controls/Locks/Lock9" unique_id=814681735]
 layout_mode = 0
@@ -490,6 +536,7 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 33
 text = "--"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="V2" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock9" unique_id=1380124464]
 layout_mode = 0
@@ -502,6 +549,7 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 33
 text = "--"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="V3" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock9" unique_id=2079741682]
 layout_mode = 0
@@ -719,17 +767,20 @@ offset_left = 130.0
 offset_right = 258.0
 offset_bottom = 128.0
 script = ExtResource("11_k73cj")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock8" unique_id=818387042]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="Canla/Dore controls/Locks/Lock8" unique_id=814947667]
 layout_mode = 0
 offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 128.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Phone" type="RichTextLabel" parent="Canla/Dore controls" unique_id=848053549]
 z_index = 4
@@ -962,7 +1013,6 @@ mouse_filter = 2
 script = ExtResource("10_hqns4")
 
 [node name="Text" type="RichTextLabel" parent="Canla" unique_id=592080553]
-visible = false
 z_index = 7
 offset_left = 4.0
 offset_top = 390.0
@@ -970,10 +1020,10 @@ offset_right = 1150.0
 offset_bottom = 636.0
 focus_mode = 1
 theme_override_font_sizes/normal_font_size = 32
-text = "Ok, so im going to type some random stuff to test things: AAAAAAAAAAAa AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-visible_characters = 264
+bbcode_enabled = true
+text = "BOOTING:Startup.MP3[font_size=1]  [/font_size].[font_size=1]  [/font_size].[font_size=1]  [/font_size]."
+visible_characters = 28
 visible_characters_behavior = 1
-visible_ratio = 1.0476191
 script = ExtResource("22_ei405")
 
 [node name="Sprite2D" type="Sprite2D" parent="Canla/Text" unique_id=1747254367]
@@ -982,6 +1032,15 @@ z_index = -1
 position = Vector2(504.5, 24.500008)
 scale = Vector2(10.8203125, 4.1953125)
 texture = ExtResource("1_wtcfe")
+
+[node name="advance" type="RichTextLabel" parent="Canla/Text" unique_id=1400311223]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 197.0
+offset_right = 1148.0
+offset_bottom = 237.0
+mouse_filter = 2
+text = "Click to advance"
 
 [connection signal="pressed" from="Canla/Dore controls/Locks/Lock4/but1" to="Canla/Dore controls/Locks/Lock4" method="up"]
 [connection signal="pressed" from="Canla/Dore controls/Locks/Lock4/but2" to="Canla/Dore controls/Locks/Lock4" method="left"]

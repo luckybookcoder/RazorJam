@@ -43,9 +43,6 @@ func bad():
 
 func delock():
 	if locked == true:
-		for i in 10:
-			modulate.a -= .1
-			await get_tree().process_frame
 		locked = false
 		modulate.a = 1
 		g.locked -= 1

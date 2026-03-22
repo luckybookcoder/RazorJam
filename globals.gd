@@ -33,9 +33,17 @@ var lastmoves = []
 var itemtype = ["books", "laundry", "dishes"][randi()%3]
 var lvl = 1
 var phone = ('%s %s' %["a","b"])
-var targettime = 30
+var targettime = {
+	1:6,
+	2:17,
+	3:13,
+	4:22,
+	5:19,
+	6:8,
+	7:17
+}
 var goals = 0
-var money = 0
+var earned = {}
 var reward = {1:100}
 var longest = 0
 var tickwait = false
@@ -51,18 +59,19 @@ var itemposses := {}
 var simplemode = false
 var realtime = 0
 var volume = 100
-var maxlvl = 1
+var lvlsdone = {}
 var realtimetick = 0
 var realtimecheck = true
 var realtimetime = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for i in 20:
+		lvlsdone.get_or_add(i+1, false)
 	tick.connect(ticker)
+	endlvl.connect(cash)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	if lvl is int:
-		maxlvl = max(lvl, maxlvl)
 	if realtime and (playerpos == "door" or playerpos == "box"):
 		match playerpos:
 			"door":
@@ -142,6 +151,11 @@ func realtimer():
 
 func ticker():
 	timeup = 1
+
+func cash():
+	itemtype = ["books", "laundry", "dishes"][randi()%3]
+	var money = lvl
+	earned.set(money,min(1.0,1))
 
 func timer():
 	time +=1

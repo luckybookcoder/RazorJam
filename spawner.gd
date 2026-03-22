@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset") and g.reset and g.lvl:
 		if not g.lvl is String:
 			g.lvl -= 1
-		g.time = min(g.time, g.oldtime+3)
 		g.endlvl.emit()
 	if Input.is_action_just_pressed("pause") and g.playerpos != &"menu":
 		add_child(load('pause.tscn').instantiate())
@@ -29,7 +28,7 @@ func endlvl():
 	g.longest = 0
 	if g.lvl is int:
 		g.lvl += 1
-	g.oldtime = g.time
+	g.time = 0
 	if get_children().has(popup):
 		popup.queue_free()
 	$Canla.show()
