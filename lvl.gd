@@ -14,6 +14,7 @@ func _ready() -> void:
 
 
 func endlvl():
+	
 	if g.lvl != num:
 		g.lvlsdone[num] = true
 		print(num)

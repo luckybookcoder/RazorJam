@@ -6,12 +6,96 @@
 [ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="3_t5y7p"]
 [ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="5_audra"]
 [ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="6_audra"]
+[ext_resource type="Texture2D" uid="uid://civn7ktfebyhd" path="res://selecttutorial (2).png" id="7_uxqa1"]
+[ext_resource type="Texture2D" uid="uid://dgf76bpnkyke7" path="res://selecttutorial (1).png" id="9_47wc7"]
+[ext_resource type="Texture2D" uid="uid://bus6b4qcm8f03" path="res://movetutorial (9).png" id="10_qp8hx"]
+[ext_resource type="Texture2D" uid="uid://cpalxfgokpdud" path="res://clickrobo.png" id="10_x4f86"]
+[ext_resource type="Texture2D" uid="uid://unuwk77n0b13" path="res://movetutorial (1).png" id="11_g6lpu"]
+[ext_resource type="Texture2D" uid="uid://ckelyv6g7c708" path="res://movetutorial (3).png" id="12_x4f86"]
+[ext_resource type="Texture2D" uid="uid://4ylgevv4cloo" path="res://movetutorial (4).png" id="13_4cw48"]
+[ext_resource type="Texture2D" uid="uid://nx7o6vxqoquy" path="res://movetutorial (5).png" id="14_185cb"]
+[ext_resource type="Texture2D" uid="uid://y26mex1r4mbn" path="res://movetutorial (6).png" id="15_6rc4t"]
+[ext_resource type="Texture2D" uid="uid://civbswnt0hv06" path="res://movetutorial (7).png" id="16_p0ddo"]
+[ext_resource type="Texture2D" uid="uid://dt43u128fefht" path="res://movetutorial (8).png" id="17_82dvn"]
+[ext_resource type="Texture2D" uid="uid://djp2wpqvaarff" path="res://pupdtutorial (2).png" id="18_skckv"]
+[ext_resource type="Texture2D" uid="uid://ftlvbl4luseg" path="res://pupdtutorial (4).png" id="19_nd36l"]
+[ext_resource type="Texture2D" uid="uid://cuacm4crpcb5l" path="res://pupdtutorial (3).png" id="20_w0sjv"]
+[ext_resource type="Texture2D" uid="uid://c6jnq03apd0h4" path="res://pupdtutorial (1).png" id="21_cgsym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg0iv"]
 size = Vector2(124, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imcy2"]
 size = Vector2(384, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7a5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uxqa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x4f86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_47wc7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdub0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qp8hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g6lpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x4f86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4cw48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_185cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6rc4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p0ddo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_82dvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_185cb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_skckv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w0sjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nd36l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cgsym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Lvl1" type="Node2D" unique_id=733839378]
 script = ExtResource("1_ok8r0")
@@ -84,3 +168,24 @@ cell_size = Vector2(32, 32)
 border_color = Color(1, 0, 0, 1)
 vline_color = Color(0, 1, 0, 1)
 hline_color = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1420734170]
+position = Vector2(1007.8, 31.800003)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_f7a5t")
+autoplay = "default"
+frame = 1
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1499342489]
+position = Vector2(1007.8, 130.8)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_bdub0")
+autoplay = "default"
+frame_progress = 0.9675851
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1100101635]
+position = Vector2(1007.8, 281.8)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_185cb")
+autoplay = "default"
+frame_progress = 0.10862474

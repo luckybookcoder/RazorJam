@@ -1,4 +1,4 @@
-extends "lvl.gd"
+extends Node2D
 var kiddo
 var kid
 var kids = {"ITEM":load("res://items.tscn"), "GOAL":load("res://goal.tscn"), "WALL": load('res://wall.tscn')}
@@ -8,7 +8,10 @@ var count = 2
 
 func _ready() -> void:
 	name = "Lvl Editor"
-	super()
+	g.endlvl.connect(endlvl)
+	for i in get_children():
+		if i is robot:
+			i.get_node("Control").tooltip_text = '' # Replace with function body.
 	g.lvlediting = true
 	g.items = 0
 	g.robots = false
@@ -43,6 +46,9 @@ func clone(pos:Vector2):
 				g.itemposses.set(kid, pos)
 			kid.position = pos
 			print(kid.position)
+
+func endlvl():
+	queue_free()
 
 func _exit_tree() -> void:
 	g.lvlediting = false

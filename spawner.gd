@@ -32,6 +32,7 @@ func endlvl():
 	if get_children().has(popup):
 		popup.queue_free()
 	$Canla.show()
+	$"Canla/Dore controls".hide()
 	#await get_tree().process_frame
 	#await get_tree().process_frame
 	#await get_tree().process_frame

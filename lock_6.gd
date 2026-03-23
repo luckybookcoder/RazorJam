@@ -17,8 +17,10 @@ func spec() -> void:
 	for i in order.size():
 		phone += str(order[i]+1)
 		if i%2 == 0:
-			if order[i] == 9:
-				phone += (" ")
+			if order[i] == 0:
+				phone += ("   [font_size=10] [/font_size]")
+			elif order[i] == 9:
+				phone += ("  [font_size=10] [/font_size]")
 			else:
 				phone += ("   ")
 		else:

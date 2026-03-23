@@ -22,12 +22,11 @@ g="*uid://cbdoud7po4iee"
 
 [debug]
 
-settings/stdout/print_fps=true
 gdscript/warnings/unused_parameter=0
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor]
 
@@ -37,6 +36,10 @@ version_control/autoload_on_startup=true
 [global_group]
 
 Robots="Await group signal tick to move"
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
 
 [input]
 

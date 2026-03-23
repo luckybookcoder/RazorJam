@@ -9,8 +9,8 @@ func _process(delta: float) -> void:
 		global_position = get_meta("pos")*128
 	show()
 	for i in g.truelockposses:
-		if g.truelockposses[i]:
-			if g.truelockposses[i].distance_to( get_meta("pos")*128) < 16:
+		if g.truelockposses[i] != null:
+			if g.truelockposses[i].distance_to( get_meta("pos")*128) < 64:
 				hide()
 
 func open():
