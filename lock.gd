@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 		if not g.locks.has(num):
 			g.locks.append(num)
 	else:
-		g.truelockposses[num] = null
+		if not g.locks.size():
+			g.truelockposses[num] = null
 		hide()
 	spec()
 	if not locked:
@@ -42,9 +43,10 @@ func _process(delta: float) -> void:
 				#g.lockposses.append(Vector2(7,3))
 			position = pos*128 
 			await get_tree().process_frame
-			if true:
-				g.lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(5,0),Vector2(7,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),]
-
+			
+			for x in 8:
+				for y in 5:
+					g.lockposses.append(Vector2(x,y))
 func spec():
 	pass
 

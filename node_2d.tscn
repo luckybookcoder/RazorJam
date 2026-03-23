@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://dbe44bkmmtgh7" path="res://door.gd" id="4_bjha6"]
 [ext_resource type="Texture2D" uid="uid://dpv8tkigud443" path="res://pixil-frame-2.png" id="4_ornx7"]
 [ext_resource type="Script" uid="uid://decf0fhup0fv8" path="res://doorbase.gd" id="4_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://bmhbv7528oy6e" path="res://pixil-frame-1.png" id="5_cnnru"]
 [ext_resource type="Script" uid="uid://dd142w03epnes" path="res://lock_2.gd" id="5_hqns4"]
 [ext_resource type="Script" uid="uid://cb8edmrsldx6y" path="res://lock1.gd" id="5_kdubu"]
 [ext_resource type="Script" uid="uid://bwxf1q50k54og" path="res://lock_3.gd" id="6_0h7mo"]
@@ -30,9 +29,40 @@
 [ext_resource type="Texture2D" uid="uid://87m86qdwsv71" path="res://pixil-frame-4.png" id="11_fbwgr"]
 [ext_resource type="Script" uid="uid://bn2jscifcso1p" path="res://lock_7.gd" id="11_k73cj"]
 [ext_resource type="Script" uid="uid://dkyr3442e4em7" path="res://lock9.gd" id="13_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://cnck1ixeg21aj" path="res://Speen (2).png" id="14_wqmsq"]
+[ext_resource type="Texture2D" uid="uid://2kc7ryl4n4bp" path="res://Speen (3).png" id="15_fkgk1"]
+[ext_resource type="Texture2D" uid="uid://uw5ccj51266a" path="res://Speen (4).png" id="16_qgxp6"]
+[ext_resource type="Texture2D" uid="uid://dor55pks4iqu7" path="res://Speen (5).png" id="17_akb8o"]
+[ext_resource type="Texture2D" uid="uid://bv38ahwdkcg3r" path="res://Speen (6).png" id="18_t3mf0"]
 [ext_resource type="Script" uid="uid://dpwm51dm14syk" path="res://overlapconsole.gd" id="19_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://tuinkd8feqcl" path="res://Speen (7).png" id="19_kejda"]
+[ext_resource type="Texture2D" uid="uid://dosm6abrpem6w" path="res://Speen (8).png" id="20_uqk8q"]
+[ext_resource type="Texture2D" uid="uid://b45bvr22iwnto" path="res://Speen (9).png" id="21_6uidu"]
 [ext_resource type="Script" uid="uid://dsy2a0c4s8dl5" path="res://text.gd" id="22_ei405"]
+[ext_resource type="Texture2D" uid="uid://kk1l2bqhaks3" path="res://Speen (10).png" id="22_qu7as"]
+[ext_resource type="Texture2D" uid="uid://c1pok4rvwabow" path="res://Speen (11).png" id="23_lyuya"]
+[ext_resource type="Texture2D" uid="uid://cedou82103y14" path="res://Speen (12).png" id="24_5fipt"]
 [ext_resource type="FontFile" uid="uid://cfda2e0j8epqw" path="res://at01.ttf" id="24_bjha6"]
+[ext_resource type="Texture2D" uid="uid://cdmhoseruyx14" path="res://Speen (13).png" id="25_j02gt"]
+[ext_resource type="Texture2D" uid="uid://b6oiv0ov0extl" path="res://Speen (14).png" id="26_thyvg"]
+[ext_resource type="Texture2D" uid="uid://gtfhxcuno2pb" path="res://Speen (15).png" id="27_nsnm2"]
+[ext_resource type="Texture2D" uid="uid://c1b2chwxgxv4n" path="res://Speen (16).png" id="28_f8kvm"]
+[ext_resource type="Texture2D" uid="uid://078bi6clgey3" path="res://Speen (17).png" id="29_3hhlv"]
+[ext_resource type="Texture2D" uid="uid://b0ihhrwwb2w02" path="res://Speen (18).png" id="30_d88dk"]
+[ext_resource type="Texture2D" uid="uid://cj6yd8xp4iwei" path="res://Speen (19).png" id="31_122lf"]
+[ext_resource type="Texture2D" uid="uid://cshfsckjnp2v5" path="res://Speen (20).png" id="32_r3ryn"]
+[ext_resource type="Texture2D" uid="uid://dk2ouggow0i38" path="res://Speen (21).png" id="33_7ct8v"]
+[ext_resource type="Texture2D" uid="uid://b8beununnchvu" path="res://Speen (22).png" id="34_sg3tl"]
+[ext_resource type="Texture2D" uid="uid://cor832mdt2cte" path="res://Speen (23).png" id="35_0fsb4"]
+[ext_resource type="Texture2D" uid="uid://cdx1yrjtvu5fk" path="res://Speen (24).png" id="36_vl5tj"]
+[ext_resource type="Texture2D" uid="uid://bpjt608lhr71h" path="res://Speen (25).png" id="37_16pp4"]
+[ext_resource type="Texture2D" uid="uid://dc7fgyhgoo8nv" path="res://Speen (26).png" id="38_5od4l"]
+[ext_resource type="Texture2D" uid="uid://d5auvupjhjx7" path="res://Speen (27).png" id="39_4himb"]
+[ext_resource type="Texture2D" uid="uid://bfn8rtaxiebmf" path="res://Speen (28).png" id="40_fv7tb"]
+[ext_resource type="Texture2D" uid="uid://csnkl3fl03v2u" path="res://Speen (29).png" id="41_1m5r5"]
+[ext_resource type="Texture2D" uid="uid://uxjthlf21egf" path="res://Speen (30).png" id="42_2wyoe"]
+[ext_resource type="Texture2D" uid="uid://cmitpn5fr6l3i" path="res://Speen (1).png" id="43_5cr6e"]
+[ext_resource type="Script" uid="uid://2wgnr7x6448x" path="res://dial.gd" id="44_fm8k7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7mj2a"]
 animations = [{
@@ -44,7 +74,7 @@ animations = [{
 "texture": ExtResource("4_ornx7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_cnnru")
+"texture": ExtResource("8_q5dlx")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_540hr")
@@ -74,7 +104,105 @@ animations = [{
 }],
 "loop": false,
 "name": &"open",
-"speed": 7.0
+"speed": 9.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n63ng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_wqmsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fkgk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qgxp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_akb8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t3mf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kejda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uqk8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6uidu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qu7as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lyuya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5fipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_j02gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_thyvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nsnm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f8kvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3hhlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_d88dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_122lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r3ryn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7ct8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sg3tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0fsb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vl5tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_16pp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5od4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4himb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fv7tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1m5r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_2wyoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5cr6e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
 }]
 
 [sub_resource type="FontVariation" id="FontVariation_bjha6"]
@@ -100,6 +228,8 @@ position = Vector2(576.64996, 326.99994)
 scale = Vector2(1.0883522, 1.1)
 sprite_frames = SubResource("SpriteFrames_7mj2a")
 animation = &"close"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("4_bjha6")
 
 [node name="Locks" type="Control" parent="Canla/Dore controls" unique_id=1879896222]
@@ -118,6 +248,7 @@ offset_bottom = 776.0
 script = ExtResource("5_kdubu")
 
 [node name="Lock2" type="Control" parent="Canla/Dore controls/Locks" unique_id=1676882245]
+clip_contents = true
 anchors_preset = 0
 offset_left = 590.0
 offset_top = 212.0
@@ -126,87 +257,80 @@ offset_bottom = 276.0
 scale = Vector2(2, 2)
 script = ExtResource("5_hqns4")
 
-[node name="Dial1" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=959852102]
-layout_mode = 0
-offset_left = 1.5
-offset_top = 33.5
-offset_right = 21.5
-offset_bottom = 67.5
-scale = Vector2(0.75, 0.75)
-theme_override_constants/center_grabber = 1
-max_value = 9.0
-value = 9.0
-tick_count = 10
-ticks_on_borders = true
-ticks_position = 3
+[node name="Dial1" type="AnimatedSprite2D" parent="Canla/Dore controls/Locks/Lock2" unique_id=529017165]
+position = Vector2(49.600006, 31.099998)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_n63ng")
+frame = 20
+script = ExtResource("44_fm8k7")
 
-[node name="Dial2" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=320119419]
-layout_mode = 0
-offset_left = 21.5
-offset_top = 33.5
-offset_right = 41.5
-offset_bottom = 67.5
-scale = Vector2(0.75, 0.75)
-theme_override_constants/center_grabber = 1
-max_value = 9.0
-value = 9.0
-tick_count = 10
-ticks_on_borders = true
-ticks_position = 3
+[node name="Up" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial1" unique_id=1611952965]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -31.333334
+offset_right = -32.0
+offset_bottom = -10.000006
 
-[node name="Dial3" type="VSlider" parent="Canla/Dore controls/Locks/Lock2" unique_id=628363798]
-layout_mode = 0
-offset_left = 41.5
-offset_top = 33.5
-offset_right = 61.5
-offset_bottom = 67.5
-scale = Vector2(0.75, 0.75)
-theme_override_constants/center_grabber = 1
-max_value = 9.0
-value = 9.0
-tick_count = 10
-ticks_on_borders = true
-ticks_position = 3
+[node name="Down" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial1" unique_id=551196618]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -8.0
+offset_right = -32.0
+offset_bottom = 13.333328
+metadata/_edit_use_anchors_ = true
 
-[node name="Text1" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1053560891]
-layout_mode = 0
-offset_left = 6.5
-offset_top = 15.5
-offset_right = 46.5
-offset_bottom = 55.5
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("24_bjha6")
-theme_override_font_sizes/normal_font_size = 17
-text = "9"
+[node name="Dial2" type="AnimatedSprite2D" parent="Canla/Dore controls/Locks/Lock2" unique_id=1337260330]
+position = Vector2(69.600006, 31.199997)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_n63ng")
+frame = 23
+frame_progress = 0.43901026
+script = ExtResource("44_fm8k7")
 
-[node name="Text2" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1116929604]
-layout_mode = 0
-offset_left = 26.5
-offset_top = 15.5
-offset_right = 66.5
-offset_bottom = 55.5
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("24_bjha6")
-theme_override_font_sizes/normal_font_size = 17
-text = "9"
+[node name="Up" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial2" unique_id=1672876212]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -31.333334
+offset_right = -32.0
+offset_bottom = -10.000006
+metadata/_edit_use_anchors_ = true
 
-[node name="Text3" type="RichTextLabel" parent="Canla/Dore controls/Locks/Lock2" unique_id=1216450011]
-layout_mode = 0
-offset_left = 46.5
-offset_top = 15.5
-offset_right = 86.5
-offset_bottom = 55.5
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("24_bjha6")
-theme_override_font_sizes/normal_font_size = 17
-text = "9"
+[node name="Down" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial2" unique_id=108557865]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -8.0
+offset_right = -32.0
+offset_bottom = 13.333328
+metadata/_edit_use_anchors_ = true
+
+[node name="Dial3" type="AnimatedSprite2D" parent="Canla/Dore controls/Locks/Lock2" unique_id=338050810]
+position = Vector2(89.600006, 31.09999)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_n63ng")
+frame = 23
+frame_progress = 0.43901026
+script = ExtResource("44_fm8k7")
+
+[node name="Up" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial3" unique_id=1783054599]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -31.333334
+offset_right = -32.0
+offset_bottom = -10.000006
+
+[node name="Down" type="Button" parent="Canla/Dore controls/Locks/Lock2/Dial3" unique_id=916275173]
+modulate = Color(1, 1, 1, 0)
+offset_left = -52.0
+offset_top = -8.0
+offset_right = -32.0
+offset_bottom = 13.333328
 
 [node name="Button" type="Button" parent="Canla/Dore controls/Locks/Lock2" unique_id=280013046]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 34.0
+offset_left = 5.5
+offset_top = 45.0
+offset_right = 111.5
+offset_bottom = 76.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("24_bjha6")
 theme_override_font_sizes/font_size = 28

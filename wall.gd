@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready() -> void:
-	$Button.pressed.connect(kill)
+	if $Button:
+		$Button.pressed.connect(kill)
 
 
 func kill():

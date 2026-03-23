@@ -15,9 +15,12 @@ func spec() -> void:
 		while $Dial1.value == key.get(0) or $Dial2.value == key.get(1) or $Dial3.value == key.get(2):
 			key = [randi()%10,randi()%10,randi()%10]
 	num = 2
-	$Text1.text = str(int($Dial1.value))
-	$Text2.text = str(int($Dial2.value))
-	$Text3.text = str(int($Dial3.value))
+	var buten = false
+	for i in get_children():
+		if i is AnimatedSprite2D:
+			if i.is_playing():
+				buten = true
+	$Button.disabled = buten
 	if locked:
 		var phoney = (key.get(0))*100+(key.get(1))*10+key.get(2)
 		phoneify(phoney)

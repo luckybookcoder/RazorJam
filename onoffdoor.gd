@@ -28,15 +28,18 @@ func _process(delta: float) -> void:
 			counter = 0
 			wait = true
 			toggle()
+	if $Area2D.collision_layer:
+		$Sprite2D.frame = 1
+	else:
+		$Sprite2D.frame = 0
 
 func toggle():
 	if $Area2D.collision_layer:
 		$Area2D.collision_layer = 0
-		$Sprite2D/DOOR.text = "This door be OPEN"
+		$Sprite2D.frame = 0
 	else:
-		$Sprite2D/DOOR.text = "This door be Closd"
 		$Area2D.collision_layer = 1
-		$Sprite2D.show()
+		$Sprite2D.frame = 1
 
 func tick():
 	counter += 1

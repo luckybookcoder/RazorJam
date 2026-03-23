@@ -26,9 +26,7 @@ var reset2 = true
 var locks = []
 var phonevars = ["0",0,"0",'0','0','0','0','0','0']
 var oldtime = 0
-#region potential positions of locks
-var lockposses = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(5,0),Vector2(7,0),Vector2(0,1),Vector2(1,1),Vector2(2,1),Vector2(3,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(0,2),Vector2(1,2),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(0,3),Vector2(1,3),Vector2(2,3),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(0,4),Vector2(1,4),Vector2(2,4),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(6,4),Vector2(7,3),Vector2(7,4),]
-#endregion
+var lockposses = []
 var lastmoves = []
 var itemtype = ["books", "laundry", "dishes"][randi()%3]
 var lvl = 1
@@ -65,6 +63,9 @@ var realtimecheck = true
 var realtimetime = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for x in 8:
+		for y in 5:
+			lockposses.append(Vector2(x,y))
 	for i in 20:
 		lvlsdone.get_or_add(i+1, false)
 	tick.connect(ticker)
