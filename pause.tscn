@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://clntfllfbq2an" path="res://pause.gd" id="1_6eyaj"]
 [ext_resource type="Script" uid="uid://dktla0lsqn872" path="res://pausefocus.gd" id="1_aq7p1"]
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_6eyaj"]
+[ext_resource type="FontFile" uid="uid://cfda2e0j8epqw" path="res://at01.ttf" id="4_8u653"]
 
 [node name="Pause" type="Node2D" unique_id=1459839539]
 script = ExtResource("1_6eyaj")
@@ -33,24 +34,29 @@ texture = ExtResource("2_6eyaj")
 
 [node name="Button" type="Button" parent="Popup" unique_id=1504223423]
 z_index = 1
-offset_left = 412.3999
-offset_top = 232.03204
-offset_right = 821.4
-offset_bottom = 307.03204
-theme_override_font_sizes/font_size = 48
+offset_left = 412.0
+offset_top = 211.0
+offset_right = 821.0001
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("4_8u653")
+theme_override_font_sizes/font_size = 75
 text = "Continue"
 
 [node name="Button2" type="Button" parent="Popup" unique_id=655276934]
 z_index = 1
-offset_left = 416.3999
-offset_top = 362.03198
-offset_right = 825.4
-offset_bottom = 437.03198
-theme_override_font_sizes/font_size = 48
+offset_left = 412.0
+offset_top = 400.0
+offset_right = 821.0001
+offset_bottom = 475.0
+theme_override_fonts/font = ExtResource("4_8u653")
+theme_override_font_sizes/font_size = 75
 text = "Exit to menu"
 
 [node name="Button3" type="Button" parent="Popup" unique_id=750854812]
-offset_left = 622.0
-offset_top = 326.0
-offset_right = 630.0
-offset_bottom = 334.0
+offset_left = 412.0
+offset_top = 304.0
+offset_right = 821.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("4_8u653")
+theme_override_font_sizes/font_size = 75
+text = "Restart"

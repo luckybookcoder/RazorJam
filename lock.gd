@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 				#g.lockposses.append(Vector2(7,4))
 				#g.lockposses.append(Vector2(7,3))
 			position = pos*128 
-			await get_tree().process_frame
+			await g.wait(5)
 			
 			for x in 8:
 				for y in 5:

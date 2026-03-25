@@ -5,7 +5,7 @@ var poppers = []
 
 func _physics_process(delta: float) -> void:
 	super(delta)
-	buggy = true
+	buggy = 2
 	if g.focus == $".":
 		g.text = poppers
 	if not moving:

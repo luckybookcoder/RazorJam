@@ -9,7 +9,7 @@ var use = []
 var moving = false
 var pointer = -1
 var currentitem = 0
-var buggy = false
+var buggy = 0
 var savedtext = false
 var lastcommands = []
 var ghost
@@ -17,29 +17,41 @@ var but = false
 var alltick = 0
 var shader_material
 var ghostcheck = false
+var droneplay = true
+
 # Called when the node enters the scene tree for the first time.
 func _init() -> void:
 	g.move.connect(move) # Replace with function body.
 	area = Area2D.new()
 	add_child(area)
-	ghost = Sprite2D.new()
+	ghost = AnimatedSprite2D.new()
 	add_child(ghost)
+	ghost.sprite_frames = load("res://droneframes.tres")
+	ghost.global_scale = Vector2.ONE
 	ghost.scale = Vector2.ONE/4.0
 	ghost.top_level = true
 
 func _ready() -> void:
+	$Sprite2D.free()
+	var sprite = AnimatedSprite2D.new()
+	add_child(sprite)
+	sprite.name = "Sprite2D"
+	sprite.visibility_layer = 9
+	sprite.sprite_frames = load("res://droneframes.tres")
+	sprite.global_scale = Vector2.ONE
 	shader_material = ShaderMaterial.new()
 	var rand = Vector4(randf_range(.1,1),randf_range(.1,1),randf_range(.1,1),1)
 	shader_material.shader = preload('res://roboshade.gdshader')
 	shader_material.set_shader_parameter("rand", rand)
 	$Sprite2D.material = shader_material
+	print($Sprite2D)
 	for i in get_children():
 		if i is Button:
 			but = true
 	g.robots = true
 	area.add_child($CollisionShape2D.duplicate())
 	area.collision_mask = 5
-	ghost.texture = $Sprite2D.texture
+	ghost.play("ghost")
 	ghost.modulate.a = .8
 	ghost.hide()
 	if but:
@@ -54,6 +66,19 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if g.playerpos == &"door":
+		$Sprite2D.play_backwards()
+		droneplay = true
+	elif droneplay && g.playerpos == &"box":
+		droneplay = false
+		$Sprite2D.play()
+		print("falling")
+	if g.playerpos != &"box" and g.playerpos != &"door":
+		$Sprite2D.stop()
+		droneplay = true
+	if buggy:
+		if not randi()%10:
+			add_child(load("glitch.tscn").instantiate())
 	modulate = Color.WHITE
 	if Input.is_action_pressed("all"):
 		if g.playerpos == &"box":
@@ -141,7 +166,7 @@ func _physics_process(delta: float) -> void:
 				moves.pop_back()
 				if not Input.is_action_pressed("all"):
 					alltick = 0
-		if not buggy:
+		if buggy < 2:
 			g.text = moves
 		g.pointer = pointer
 		collision_layer = 1

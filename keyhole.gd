@@ -10,8 +10,9 @@ func _process(delta: float) -> void:
 	show()
 	for i in g.truelockposses:
 		if g.truelockposses[i] != null:
-			if g.truelockposses[i].distance_to( get_meta("pos")*128) < 64:
-				hide()
+			if i > 1:
+				if g.truelockposses[i].distance_to( get_meta("pos")*128) < 64:
+					hide()
 
 func open():
 	get_child(0).frame = 0

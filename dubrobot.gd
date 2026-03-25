@@ -2,7 +2,7 @@ extends robot
 var text = []
 
 func _process(delta: float) -> void:
-	buggy = true
+	buggy = 2
 	text = moves.duplicate_deep()
 	for i in text.size():
 		if text[i] is Vector2:

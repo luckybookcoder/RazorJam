@@ -9,7 +9,7 @@ func _ready() -> void:
 	g.playerpos = &"menu"
 	esc()
 	await $"Popup/Button3".pressed
-	g.lvl -= 1
+	#g.lvl -= 1
 	g.endlvl.emit()
 
 func esc():

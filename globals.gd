@@ -26,23 +26,34 @@ var reset2 = true
 var locks = []
 var phonevars = ["0",0,"0",'0','0','0','0','0','0']
 var oldtime = 0
+var automove = true
 var lockposses = []
 var lastmoves = []
 var itemtype = ["books", "laundry", "dishes"][randi()%3]
 var lvl = 1
-var phone = ('%s %s' %["a","b"])
+var phone = ''
 var targettime = {
-	1:6,
-	2:17,
-	3:13,
-	4:22,
-	5:19,
-	6:8,
-	7:17
+	1:6.0,
+	2:17.0,
+	3:13.0,
+	4:22.0,
+	5:19.0,
+	6:8.0,
+	7:17.0
 }
 var goals = 0
 var earned = {}
-var reward = {1:100}
+var reward = {
+	1:100,
+	2:120,
+	3:135,
+	4:150,
+	
+	5:200,
+	6:220,
+	7:235,
+	8:250,
+	}
 var longest = 0
 var tickwait = false
 var newposses = []
@@ -57,7 +68,7 @@ var itemposses := {}
 var simplemode = false
 var realtime = 0
 var volume = 100
-var lvlsdone = {}
+var lvlsdone = {0:true}
 var realtimetick = 0
 var realtimecheck = true
 var realtimetime = 0
@@ -66,10 +77,10 @@ func _ready():
 	for x in 8:
 		for y in 5:
 			lockposses.append(Vector2(x,y))
-	for i in 20:
+	for i in 12:
 		lvlsdone.get_or_add(i+1, false)
 	tick.connect(ticker)
-	endlvl.connect(cash)
+	lvltext.connect(cash)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -125,6 +136,15 @@ func _process(delta: float) -> void:
 			locked = 3
 			locks.clear()
 	elif not locked:
+		if automove:
+			for i in longest:
+				print("?")
+				#if i > 30:
+					#break
+				await get_tree().process_frame
+				tick.emit()
+				
+			
 		print(playerpos)
 		waiter = true
 		playerpos = &"box"
@@ -156,7 +176,8 @@ func ticker():
 func cash():
 	itemtype = ["books", "laundry", "dishes"][randi()%3]
 	var money = lvl
-	earned.set(money,min(1.0,1))
+	print(money,reward, reward[money], time,targettime[money], targettime)
+	earned.set(money,reward[money]*min(1.0,targettime[money]/time))
 
 func timer():
 	time +=1

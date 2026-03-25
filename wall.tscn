@@ -1,28 +1,13 @@
 [gd_scene format=3 uid="uid://6vjwuuqsvlq3"]
 
 [ext_resource type="Script" uid="uid://bxpk0o8w4okco" path="res://wall.gd" id="1_y4f30"]
-[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_iuee5"]
+[ext_resource type="Texture2D" uid="uid://bxlyg4ntueuw6" path="res://pixil-frame-0(35).png" id="2_y4f30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xduj2"]
 size = Vector2(28, 28)
 
 [node name="Wall" type="Node2D" unique_id=1139635499]
 script = ExtResource("1_y4f30")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=750028918]
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_iuee5")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=155050980]
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 112.0
-offset_bottom = 112.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 35
-text = "THIS IS A WALL"
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=712465869]
 position = Vector2(-16, -16)
@@ -39,3 +24,6 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 button_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=959709329]
+texture = ExtResource("2_y4f30")

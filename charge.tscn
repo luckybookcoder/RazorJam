@@ -9,6 +9,7 @@ size = Vector2(28, 28)
 [node name="Charger" type="Node2D" unique_id=982181225]
 z_index = -1
 script = ExtResource("1_1ju4u")
+charger = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=323096237]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)

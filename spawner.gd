@@ -9,7 +9,7 @@ func _ready() -> void:
 	g.playerpos = &"menu"
 
 func menu():
-	if g.playerpos != &"menu":
+	if g.playerpos != &"menu" and g.playerpos != &"text":
 		for i in get_children():
 			if i != $Canla:
 				i.queue_free()
@@ -45,6 +45,7 @@ func endlvl():
 func lvlend():
 	popup = load("res://lvlend.tscn").instantiate()
 	add_child(popup)
+	g.lvlsdone.set(g.lvl, true)
 
 func extras():
 	add_child(load("extras.tscn").instantiate())

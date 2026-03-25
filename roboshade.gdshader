@@ -3,7 +3,7 @@ uniform vec4 rand;
 uniform bool highlight;
 void fragment(){
 	vec4 col = texture(TEXTURE,UV).rgba;
-	if (abs(col.r - .21) < .01  && abs(col.g - .23) < .01  &&  abs(col.b - .32) < .01 ) {
+	if (abs(col.r - 1.0) < .6  && abs(col.g - 0.0) < .6  &&  abs(col.b - 0.0) < .6 &&  abs(col.a) > .99999){
 		col = rand;
 	}
 	if (highlight){

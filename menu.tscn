@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0pes66tf5onw"]
 
 [ext_resource type="Script" uid="uid://5mbsjunh30u8" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://cfda2e0j8epqw" path="res://at01.ttf" id="2_4hy44"]
 [ext_resource type="Texture2D" uid="uid://bvr8u6c1ampqi" path="res://addons/grid_display/grid_display.svg" id="2_mae5d"]
 
 [node name="menu" type="Node2D" unique_id=9966468]
@@ -11,7 +12,8 @@ offset_left = 232.0
 offset_top = 334.0
 offset_right = 868.0
 offset_bottom = 419.0
-theme_override_font_sizes/font_size = 56
+theme_override_fonts/font = ExtResource("2_4hy44")
+theme_override_font_sizes/font_size = 87
 text = "Main Game"
 metadata/_edit_use_anchors_ = true
 
@@ -20,7 +22,8 @@ offset_left = 231.0
 offset_top = 446.0
 offset_right = 867.0
 offset_bottom = 608.0
-theme_override_font_sizes/font_size = 56
+theme_override_fonts/font = ExtResource("2_4hy44")
+theme_override_font_sizes/font_size = 87
 text = "Everything Else
 (Including settings)"
 metadata/_edit_use_anchors_ = true

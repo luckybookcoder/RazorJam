@@ -44,7 +44,7 @@ func spec() -> void:
 			set_focus_mode(Control.FOCUS_NONE)
 	else:
 		g.reset1 = true
-	#show()
+	show()
 	if ($TextEdit.text).to_lower() == (correct).to_lower():
 		unlock()
 	elif ($TextEdit.text).length() == (correct).length():

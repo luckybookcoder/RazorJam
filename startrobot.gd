@@ -3,7 +3,7 @@ extends robot
 var text
 
 func _process(delta: float) -> void:
-	buggy = true
+	buggy = 2
 	if not moving:
 		text = moves.duplicate_deep()
 	if g.focus == $".":

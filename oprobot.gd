@@ -2,9 +2,9 @@ extends robot
 
 func _process(delta: float) -> void:
 	if g.playerpos == &"door":
-		buggy = true
+		buggy = 2
 	else:
-		buggy = false
+		buggy = 1
 	if buggy and g.focus == $".":
 		moves.reverse()
 		var text = moves

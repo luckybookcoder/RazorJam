@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 var oneshot = false
-
+var text = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	g.endlvl.connect(reset) # Replace with function body.
@@ -13,10 +13,8 @@ func _process(delta: float) -> void:
 		oneshot = false
 		stop()
 	if get_parent().visible and not oneshot and not is_playing():
-		#g.playerpos = &"door"
 		oneshot = true
 		play("close")
-		print(oneshot, "should be true")
 	elif oneshot and g.playerpos == &"box" and not is_playing():
 		if oneshot and g.playerpos == &"box" and not is_playing():
 			play("open")
@@ -31,11 +29,17 @@ func _process(delta: float) -> void:
 	else:
 		if oneshot:
 			$"../Locks".show()
+	if g.playerpos == &"text":
+		animation = "open"
+		frame = 0
+		text = true
+		$"..".show()
+		print(visible)
+	elif text:
+		text = false
+		play("open")
 
 func reset():
 	oneshot = false
 	stop()
 	animation = "close"
-
-func animation_looped():
-	print("why")

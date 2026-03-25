@@ -15,8 +15,7 @@ func lvl():
 	await $Levels.pressed
 	if g.lvl is int:
 		g.lvl -= 1
-	$"..".endlvl()
-	g.playerpos = &"box"
+	$"..".add_child(load("select.tscn").instantiate())
 	queue_free()
 
 func xtra():

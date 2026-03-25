@@ -5,14 +5,15 @@
 [ext_resource type="Script" uid="uid://wx071nll2b0g" path="res://realtime.gd" id="1_l54kx"]
 [ext_resource type="Script" uid="uid://cdyib5ye42ffi" path="res://menuify.gd" id="1_ul0xv"]
 [ext_resource type="Script" uid="uid://bb3ckd5euxx6u" path="res://lvleditspawn.gd" id="1_yieck"]
+[ext_resource type="Script" uid="uid://dy3c6gtbvnar8" path="res://automove.gd" id="5_wlvcr"]
 
 [node name="Extras" type="Node2D" unique_id=1459839539]
 
 [node name="Button" type="Button" parent="." unique_id=1582623262]
 offset_left = 23.0
-offset_top = 160.0
+offset_top = 87.0
 offset_right = 205.0
-offset_bottom = 225.0
+offset_bottom = 152.0
 theme_override_font_sizes/font_size = 41
 text = "Try locks"
 
@@ -37,36 +38,45 @@ horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="." unique_id=1088511165]
 offset_left = 23.0
-offset_top = 353.0
+offset_top = 280.0
 offset_right = 263.0
-offset_bottom = 418.0
+offset_bottom = 345.0
 theme_override_font_sizes/font_size = 41
 text = "Level Editor"
 script = ExtResource("1_yieck")
 
 [node name="Button3" type="Button" parent="." unique_id=1531380122]
 offset_left = 604.0
-offset_top = 160.0
+offset_top = 87.0
 offset_right = 1039.0
-offset_bottom = 225.0
+offset_bottom = 152.0
 theme_override_font_sizes/font_size = 41
 text = "Simpler gameplay:Off"
 script = ExtResource("1_5drf3")
 
 [node name="Button4" type="Button" parent="." unique_id=1143549369]
 offset_left = 604.0
-offset_top = 353.0
+offset_top = 280.0
 offset_right = 1134.0
-offset_bottom = 418.0
+offset_bottom = 345.0
 theme_override_font_sizes/font_size = 41
 text = "Real Time(ish):30s -> 1 Min"
 script = ExtResource("1_l54kx")
 
+[node name="Button6" type="Button" parent="." unique_id=756405944]
+offset_left = 144.0
+offset_top = 407.0
+offset_right = 674.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 41
+text = "Automatically wait for all moves to finish:On"
+script = ExtResource("5_wlvcr")
+
 [node name="HSlider" type="HSlider" parent="." unique_id=388194723]
 offset_left = 266.0
-offset_top = 252.0
+offset_top = 179.0
 offset_right = 380.66663
-offset_bottom = 268.0
+offset_bottom = 195.0
 scale = Vector2(3, 3)
 value = 100.0
 tick_count = 100
@@ -88,3 +98,4 @@ script = ExtResource("1_48roi")
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
 [connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="Button6" to="Button6" method="_on_pressed"]

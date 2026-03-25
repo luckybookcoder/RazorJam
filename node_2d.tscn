@@ -228,8 +228,6 @@ position = Vector2(576.64996, 326.99994)
 scale = Vector2(1.0883522, 1.1)
 sprite_frames = SubResource("SpriteFrames_7mj2a")
 animation = &"close"
-frame = 3
-frame_progress = 1.0
 script = ExtResource("4_bjha6")
 
 [node name="Locks" type="Control" parent="Canla/Dore controls" unique_id=1879896222]
@@ -547,7 +545,11 @@ offset_bottom = 126.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Lock6" type="Control" parent="Canla/Dore controls/Locks" unique_id=463720256]
-anchors_preset = 0
+layout_mode = 1
+anchor_left = 1.725
+anchor_top = 5.05
+anchor_right = 1.725
+anchor_bottom = 5.05
 offset_left = 130.0
 offset_right = 258.0
 offset_bottom = 128.0
@@ -969,23 +971,8 @@ offset_top = 15.0
 offset_right = 1152.0
 offset_bottom = 199.0
 theme_override_constants/line_separation = -9
-theme_override_fonts/normal_font = ExtResource("24_bjha6")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
-text = "1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14"
 script = ExtResource("10_ta5nu")
 
 [node name="1" type="Button" parent="Canla/Dore controls/Phone" unique_id=419437709]

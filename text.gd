@@ -31,11 +31,11 @@ func _process(delta: float) -> void:
 		pointer = 0
 	if speeds.get(g.lvl) and speeds.get(g.lvl).get(pointer):
 		show()
-		if g.playerpos != &"menu":
+		if g.playerpos != &"text":
 			oldplace = g.playerpos
-			g.playerpos = &"menu"
+			g.playerpos = &"text"
 	else:
-		if g.playerpos == &"menu" && oldplace != '':
+		if g.playerpos == &"text" && oldplace != '':
 			g.playerpos = oldplace
 			oldplace = ''
 		hide()
@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	else:
 		$advance.hide()
 
-	if has_focus() or Input.is_action_just_pressed("cancel") and texts.get(pointer):
+	if has_focus() or Input.is_action_just_pressed("cancel") and texts.get(g.lvl):
 		focus_mode = Control.FOCUS_NONE
 		if visible_ratio == 1:
 			pointer += 1
@@ -66,8 +66,8 @@ func _process(delta: float) -> void:
 		await get_tree().process_frame
 		focus_mode = Control.FOCUS_CLICK
 
-	if $"..".visible and visible and texts.get(pointer):
-		text = texts.get(pointer)
+	if $"..".visible and visible and texts.get(g.lvl).get(pointer):
+		text = texts.get(g.lvl).get(pointer)
 		visible_ratio += speeds.get(g.lvl).get(pointer)
 	else:
 		visible_ratio = 0

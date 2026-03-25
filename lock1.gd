@@ -32,7 +32,6 @@ func spec() -> void:
 	if position != Vector2.LEFT:
 		newpos = position/128
 	position = Vector2.LEFT
-	g.truelockposses[1] = null
 	num = 1
 	if locked:
 		phoneify(str(int(newpos.x), ">, ", int(newpos.y), "v"))
