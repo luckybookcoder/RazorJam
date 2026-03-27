@@ -9,10 +9,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	show()
 	if g.lvleditem is int:
-		value = 1
+		value = 4
 	else:
 		if g.lvleditem:
-			value = {"WALL":0, "GOAL":2, "ITEM":3}[g.lvleditem]
+			value = 5 - {"CHARGE":0, "WALL":2, "DOOR":3, "GOAL":4, "ITEM":5}[g.lvleditem]
 		else:
 			hide()
 	if g.lvlediting:

@@ -1,6 +1,7 @@
 extends Node2D
 var popup
 var inc = 0
+var pause
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	menu()
@@ -9,20 +10,42 @@ func _ready() -> void:
 	g.playerpos = &"menu"
 
 func menu():
-	if g.playerpos != &"menu" and g.playerpos != &"text":
+	if g.playerpos != &"menu":
 		for i in get_children():
-			if i != $Canla:
+			if i != $Canla and i != $Mainmusic:
 				i.queue_free()
 		add_child(load("menu.tscn").instantiate())
 		$Canla.hide()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset") and g.reset and g.lvl:
-		if not g.lvl is String:
+		if g.lvl is String:
+			g.endlvl.emit()
+			for i in 3:
+				await get_tree().process_frame
+				g.lvlediting = true
+		else:
 			g.lvl -= 1
-		g.endlvl.emit()
-	if Input.is_action_just_pressed("pause") and g.playerpos != &"menu":
-		add_child(load('pause.tscn').instantiate())
+			g.endlvl.emit()
+	$Mainmusic.volume_linear = g.volume
+	if g.playerpos == &"box" or g.playerpos == &"door" or g.playerpos == &"text" or is_instance_valid(pause):
+		if $Mainmusic.stream == load("res://null.mp3"):
+			$Mainmusic.stop()
+			
+		if not $"Mainmusic".playing:
+			$Mainmusic.stream = load("res://Drones.mp3")
+			$"Mainmusic".play()
+		#AudioStreamPlayer
+	else:
+		if $Mainmusic.stream == load("res://Drones.mp3"):
+			$Mainmusic.stop()
+		if not $"Mainmusic".playing:
+			$Mainmusic.stream = load("res://null.mp3")
+			$"Mainmusic".play()
+	if Input.is_action_just_pressed("pause") and g.playerpos != &"menu" and g.playerpos != &"text":
+		pause = load('pause.tscn').instantiate()
+		add_child(pause)
+
 
 func endlvl():
 	g.longest = 0
@@ -40,6 +63,10 @@ func endlvl():
 	g.locked = false
 	g.playerpos = &"box"
 	g.focus = null
+	if g.lvl is String:
+		for i in 3:
+			await get_tree().process_frame
+			g.lvlediting = true
 
 
 func lvlend():
@@ -49,3 +76,4 @@ func lvlend():
 
 func extras():
 	add_child(load("extras.tscn").instantiate())
+	g.playerpos = &"menu"

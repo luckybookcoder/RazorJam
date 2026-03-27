@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 func input() -> void:
 			clone.emit(get_global_mouse_position())
-			print(913018410)
+			#print(913018410)
 
 func mousin():
 	mousing = true

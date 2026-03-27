@@ -26,12 +26,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if g.lvl != lvl:
-		lvl = g.lvl
-		pointer = 0
+	if not g.lvl is String:
+		if g.lvl != lvl:
+			lvl = g.lvl
+			pointer = 0
 	if speeds.get(g.lvl) and speeds.get(g.lvl).get(pointer):
 		show()
-		if g.playerpos != &"text":
+		if g.playerpos != &"text" and g.playerpos != &"menu":
+			print("??????")
 			oldplace = g.playerpos
 			g.playerpos = &"text"
 	else:

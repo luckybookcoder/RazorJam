@@ -9,7 +9,7 @@ var use = []
 var moving = false
 var pointer = -1
 var currentitem = 0
-var buggy = 0
+var buggy
 var savedtext = false
 var lastcommands = []
 var ghost
@@ -44,7 +44,6 @@ func _ready() -> void:
 	shader_material.shader = preload('res://roboshade.gdshader')
 	shader_material.set_shader_parameter("rand", rand)
 	$Sprite2D.material = shader_material
-	print($Sprite2D)
 	for i in get_children():
 		if i is Button:
 			but = true
@@ -76,8 +75,9 @@ func _physics_process(delta: float) -> void:
 	if g.playerpos != &"box" and g.playerpos != &"door":
 		$Sprite2D.stop()
 		droneplay = true
+	set_process(true)
 	if buggy:
-		if not randi()%10:
+		if not randi()%100:
 			add_child(load("glitch.tscn").instantiate())
 	modulate = Color.WHITE
 	if Input.is_action_pressed("all"):
@@ -125,7 +125,8 @@ func _physics_process(delta: float) -> void:
 			ghost.show()
 		else:
 			ghost.hide()
-		shader_material.set_shader_parameter("highlight", true)
+		if shader_material:
+			shader_material.set_shader_parameter("highlight", true)
 		if g.playerpos == &"box" and not Input.is_action_pressed("all"):
 			if Input.is_action_just_pressed("left"):
 				moves.append(Vector2.LEFT*32)
@@ -166,7 +167,9 @@ func _physics_process(delta: float) -> void:
 				moves.pop_back()
 				if not Input.is_action_pressed("all"):
 					alltick = 0
-		if buggy < 2:
+		if not buggy is int:
+			g.text = moves
+		elif buggy == 1:
 			g.text = moves
 		g.pointer = pointer
 		collision_layer = 1
@@ -177,7 +180,8 @@ func _physics_process(delta: float) -> void:
 			g.held = "nothing"
 
 	else:
-		shader_material.set_shader_parameter("highlight", false)
+		if shader_material:
+			shader_material.set_shader_parameter("highlight", false)
 		collision_layer = 3
 		ghost.hide()
 	global_position = round(global_position/32)*32

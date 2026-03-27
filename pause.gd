@@ -10,6 +10,7 @@ func _ready() -> void:
 	esc()
 	await $"Popup/Button3".pressed
 	#g.lvl -= 1
+	playerpos = &"box"
 	g.endlvl.emit()
 
 func esc():

@@ -17,9 +17,10 @@ func _process(delta: float) -> void:
 		if g.focus.global_position.distance_to(global_position) < 32:
 			g.ondoor = true
 	if count == 1:
-		$Control.tooltip_text = str("Opens/closes every minute")
+		$Button.tooltip_text = str("Opens/closes every minute")
 	else:
-		$Control.tooltip_text = str("Opens/closes every ", count, " minutes")
+		$Button.tooltip_text = str("Opens/closes every ", count, " minutes")
+	print(count)
 	super(delta)
 	if not wait and counter == count:
 		while ($Area2D2.get_overlapping_bodies().size() > 1 and $Area2D.collision_layer) or ($Area2D2.get_overlapping_bodies().size() > 0 and $Area2D.collision_layer == 0):

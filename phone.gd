@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	text = g.phone
 	for i in get_children():
+		i.tooltip_text = ""
 		if g.locks.has(int(i.name)):
 			i.mouse_filter = MOUSE_FILTER_PASS
 			var num = 0
@@ -22,12 +23,16 @@ func _process(delta: float) -> void:
 		else:
 			i.mouse_filter = MOUSE_FILTER_IGNORE
 			i.get_child(0).hide()
+			i.get_child(0).stop()
 
 func but(num:Node):
 	num.get_child(0).show()
-	#hideall(num)
+	num.get_child(0).play()
+	num.get_child(0).global_position = Vector2(15*64,64) 
+	hideall(num)
 
 func hideall(num:Node):
 	for i in get_children():
 		if i != num:
 			i.get_child(0).hide()
+			i.get_child(0).stop()

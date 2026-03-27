@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://r1vubmkonrvc" path="res://lvl.gd" id="1_63fig"]
 [ext_resource type="Script" uid="uid://b0y3wwj43iu3r" path="res://robot.gd" id="2_husgh"]
 [ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="3_l7yd6"]
-[ext_resource type="Texture2D" uid="uid://bxlyg4ntueuw6" path="res://pixil-frame-0(35).png" id="4_l7yd6"]
+[ext_resource type="Texture2D" uid="uid://bxlyg4ntueuw6" path="res://sprites/pixil-frame-0(35).png" id="4_l7yd6"]
 [ext_resource type="PackedScene" uid="uid://cvr2ca2ctoqmp" path="res://items.tscn" id="4_m2kja"]
 [ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="5_celld"]
 [ext_resource type="Script" uid="uid://daqg8cokt3f6a" path="res://wallsprite.gd" id="5_m2kja"]

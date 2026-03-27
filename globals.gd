@@ -67,7 +67,7 @@ var timeup = 0
 var itemposses := {}
 var simplemode = false
 var realtime = 0
-var volume = 100
+var volume = 1
 var lvlsdone = {0:true}
 var realtimetick = 0
 var realtimecheck = true
@@ -76,7 +76,8 @@ var realtimetime = 0
 func _ready():
 	for x in 8:
 		for y in 5:
-			lockposses.append(Vector2(x,y))
+			if Vector2(x,y) != Vector2(7,0):
+				g.lockposses.append(Vector2(x,y))
 	for i in 12:
 		lvlsdone.get_or_add(i+1, false)
 	tick.connect(ticker)

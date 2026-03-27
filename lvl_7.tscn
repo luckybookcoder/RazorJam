@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1yd5f31egvu" path="res://goal.tscn" id="5_lcgbr"]
 [ext_resource type="Script" uid="uid://c2a1fvjh0q3k5" path="res://addons/grid_display/grid_display.gd" id="6_bjw57"]
 [ext_resource type="PackedScene" uid="uid://yyx72dpbp665" path="res://door.tscn" id="7_2ghqk"]
-[ext_resource type="Texture2D" uid="uid://bxlyg4ntueuw6" path="res://pixil-frame-0(35).png" id="8_nky3y"]
+[ext_resource type="Texture2D" uid="uid://bxlyg4ntueuw6" path="res://sprites/pixil-frame-0(35).png" id="8_nky3y"]
 [ext_resource type="Script" uid="uid://daqg8cokt3f6a" path="res://wallsprite.gd" id="9_dxufq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvyyw"]

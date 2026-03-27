@@ -29,7 +29,7 @@ func spec() -> void:
 			result += char((char_code - 65 + shift) % 26 + 65)
 		elif char_code >= 97 and char_code <= 122:
 			result += char((char_code - 97 + shift) % 26 + 97)
-	$RichTextLabel.text = str(result, "\n", correct)
+	$RichTextLabel.text = str(result)
 	if ($TextEdit.text).to_lower() == (correct).to_lower():
 		unlock()
 	elif $TextEdit.text.length() == correct.length():

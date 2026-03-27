@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://8wwu5uqexctn" path="res://heightlabel.gd" id="7_ltt6d"]
 [ext_resource type="Script" uid="uid://btdv4gia0mbfo" path="res://focustracker.gd" id="9_owks4"]
 [ext_resource type="Script" uid="uid://bv7ry2alixh1t" path="res://lvleditmenuify.gd" id="11_f8cvi"]
+[ext_resource type="Script" uid="uid://sqw0ahwc3sq5" path="res://save.gd" id="12_b2d1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p06wj"]
 size = Vector2(128, 32)
@@ -24,28 +25,28 @@ size = Vector2(32, 128)
 [node name="Lvl Editor" type="Node2D" unique_id=416613740]
 script = ExtResource("1_jv7us")
 
-[node name="ITEM" type="Button" parent="." unique_id=621503856]
+[node name="ITEM" type="Button" parent="." unique_id=621503856 groups=["lvleditors"]]
 offset_left = 64.0
-offset_top = 64.0
+offset_top = 204.0
 offset_right = 108.0
-offset_bottom = 104.0
+offset_bottom = 244.0
 text = "item
 "
 script = ExtResource("2_owks4")
 
-[node name="GOAL" type="Button" parent="." unique_id=762648334]
+[node name="GOAL" type="Button" parent="." unique_id=762648334 groups=["lvleditors"]]
 offset_left = 64.0
-offset_top = 104.0
+offset_top = 164.0
 offset_right = 108.0
-offset_bottom = 144.0
+offset_bottom = 204.0
 text = "goal"
 script = ExtResource("2_owks4")
 
-[node name="ROBOT" type="OptionButton" parent="." unique_id=1851420723]
+[node name="ROBOT" type="OptionButton" parent="." unique_id=1851420723 groups=["lvleditors"]]
 offset_left = 64.0
-offset_top = 144.0
+offset_top = 44.0
 offset_right = 180.0
-offset_bottom = 184.0
+offset_bottom = 84.0
 item_count = 9
 popup/item_0/text = "Clean"
 popup/item_0/id = 0
@@ -67,7 +68,7 @@ popup/item_8/text = "Latestart"
 popup/item_8/id = 8
 script = ExtResource("3_ltt6d")
 
-[node name="SpinBox" type="SpinBox" parent="ROBOT" unique_id=1794474710]
+[node name="SpinBox" type="SpinBox" parent="ROBOT" unique_id=1794474710 groups=["lvleditors"]]
 layout_mode = 0
 offset_left = 116.0
 offset_right = 202.5
@@ -79,22 +80,59 @@ value = 2.0
 allow_greater = true
 prefix = "Every"
 
-[node name="WALL" type="Button" parent="." unique_id=512038098]
+[node name="RichTextLabel" type="RichTextLabel" parent="ROBOT" unique_id=1335055202]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "robots"
+
+[node name="WALL" type="Button" parent="." unique_id=512038098 groups=["lvleditors"]]
 offset_left = 64.0
-offset_top = 184.0
+offset_top = 84.0
 offset_right = 104.0
-offset_bottom = 224.0
+offset_bottom = 124.0
 text = "wall"
 script = ExtResource("2_owks4")
 
-[node name="Griddisplay" type="Node2D" parent="." unique_id=1533209627]
+[node name="DOOR" type="Button" parent="." unique_id=1917062650 groups=["lvleditors"]]
+offset_left = 64.0
+offset_top = 124.0
+offset_right = 109.0
+offset_bottom = 164.0
+text = "door"
+script = ExtResource("2_owks4")
+
+[node name="SpinBox" type="SpinBox" parent="DOOR" unique_id=1065866833]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 217.0
+offset_bottom = 40.0
+min_value = 1.0
+max_value = 1.0
+value = 1.0
+allow_greater = true
+prefix = "Minutes to open:"
+
+[node name="CHARGE" type="Button" parent="." unique_id=1743506784 groups=["lvleditors"]]
+offset_left = 64.0
+offset_top = 3.0
+offset_right = 132.0
+offset_bottom = 43.0
+text = "charger
+"
+script = ExtResource("2_owks4")
+
+[node name="Griddisplay" type="Node2D" parent="." unique_id=1533209627 groups=["lvleditors"]]
 z_index = -2
 position = Vector2(400, 80)
 script = ExtResource("1_lwlbw")
 grid_size = Vector2(6, 6)
 cell_size = Vector2(32, 32)
 
-[node name="WIDTH" type="SpinBox" parent="Griddisplay" unique_id=563330856]
+[node name="WIDTH" type="SpinBox" parent="Griddisplay" unique_id=563330856 groups=["lvleditors"]]
 offset_left = -1.0
 offset_top = -63.0
 offset_right = 133.5
@@ -104,20 +142,20 @@ max_value = 20.0
 value = 6.0
 prefix = "Box Width:"
 
-[node name="x" type="StaticBody2D" parent="Griddisplay/WIDTH" unique_id=623689451]
+[node name="x" type="StaticBody2D" parent="Griddisplay/WIDTH" unique_id=623689451 groups=["lvleditors"]]
 position = Vector2(1, 31)
 
-[node name="top" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=556147109]
+[node name="top" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=556147109 groups=["lvleditors"]]
 position = Vector2(64, 16)
 shape = SubResource("RectangleShape2D_p06wj")
 script = ExtResource("2_ibc2m")
 
-[node name="bottom" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=1139676585]
+[node name="bottom" type="CollisionShape2D" parent="Griddisplay/WIDTH/x" unique_id=1139676585 groups=["lvleditors"]]
 position = Vector2(64, 176)
 shape = SubResource("RectangleShape2D_d1pr1")
 script = ExtResource("3_0ec8p")
 
-[node name="HEIGHT" type="SpinBox" parent="Griddisplay" unique_id=959565565]
+[node name="HEIGHT" type="SpinBox" parent="Griddisplay" unique_id=959565565 groups=["lvleditors"]]
 offset_left = -32.0
 offset_top = 34.0
 offset_right = 105.0
@@ -128,29 +166,29 @@ max_value = 16.0
 value = 6.0
 prefix = "Box Height:"
 
-[node name="y" type="StaticBody2D" parent="Griddisplay/HEIGHT" unique_id=1087963082]
+[node name="y" type="StaticBody2D" parent="Griddisplay/HEIGHT" unique_id=1087963082 groups=["lvleditors"]]
 position = Vector2(-32, 66)
 rotation = 3.1415927
 
-[node name="left" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=2017303642]
+[node name="left" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=2017303642 groups=["lvleditors"]]
 position = Vector2(-16, 96)
 shape = SubResource("RectangleShape2D_jv7us")
 script = ExtResource("2_ibc2m")
 
-[node name="right" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=1572447488]
+[node name="right" type="CollisionShape2D" parent="Griddisplay/HEIGHT/y" unique_id=1572447488 groups=["lvleditors"]]
 position = Vector2(144, 96)
 rotation = 3.1415927
 shape = SubResource("RectangleShape2D_jv7us")
 script = ExtResource("3_0ec8p")
 
-[node name="Sprite2D" type="Polygon2D" parent="Griddisplay" unique_id=731741951]
+[node name="Sprite2D" type="Polygon2D" parent="Griddisplay" unique_id=731741951 groups=["lvleditors"]]
 position = Vector2(-96, -27)
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 polygon = PackedVector2Array(62, 28.999996, -53, 28.999996, -55, 30.999996, -55, 57.999996, -53, 59.999996, 61.848755, 60.00003, 64, 56.999996, 64, 30.999996)
 uv = PackedVector2Array(123.1, 0, 5, 0, 0.2, 5, 0, 125, 3.7, 128, 123.6, 128, 127.9, 123, 128, 2.9)
 polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7)]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Griddisplay/Sprite2D" unique_id=1954556833]
+[node name="RichTextLabel" type="RichTextLabel" parent="Griddisplay/Sprite2D" unique_id=1954556833 groups=["lvleditors"]]
 offset_left = -52.0
 offset_top = 33.999996
 offset_right = 67.0
@@ -159,7 +197,7 @@ text = "Box Height: 20"
 script = ExtResource("7_ltt6d")
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="Griddisplay" unique_id=310170047]
+[node name="Control" type="Control" parent="Griddisplay" unique_id=310170047 groups=["lvleditors"]]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
@@ -168,39 +206,63 @@ offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("4_m3nxy")
 
-[node name="Sprite2D" type="Sprite2D" parent="Griddisplay/Control" unique_id=1781926452]
+[node name="Sprite2D" type="Sprite2D" parent="Griddisplay/Control" unique_id=1781926452 groups=["lvleditors"]]
 visible = false
 position = Vector2(225, 226)
 scale = Vector2(3.515625, 3.515625)
 texture = ExtResource("5_p06wj")
 
-[node name="Button" type="Button" parent="Griddisplay/Control" unique_id=670292577]
+[node name="Button" type="Button" parent="Griddisplay/Control" unique_id=670292577 groups=["lvleditors"]]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="Focustracker" type="VSlider" parent="." unique_id=519450511]
+[node name="Focustracker" type="VSlider" parent="." unique_id=519450511 groups=["lvleditors"]]
 offset_left = 38.0
-offset_top = 80.0
+offset_top = 16.0
 offset_right = 54.0
-offset_bottom = 215.0
+offset_bottom = 235.0
 mouse_filter = 2
-max_value = 3.0
+max_value = 5.0
 value = 3.0
 editable = false
 scrollable = false
-tick_count = 4
+tick_count = 6
 ticks_on_borders = true
 script = ExtResource("9_owks4")
 
-[node name="Button" type="Button" parent="." unique_id=1590438116]
-offset_left = 887.0
-offset_right = 1152.0
-offset_bottom = 206.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Focustracker" unique_id=1736629002 groups=["lvleditors"]]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 226.0
+offset_right = 171.0
+offset_bottom = 283.0
+text = "Right-click something to delete it"
+
+[node name="Button" type="Button" parent="." unique_id=1590438116 groups=["lvleditors"]]
+offset_left = 3.0
+offset_top = 445.0
+offset_right = 268.0
+offset_bottom = 651.0
 theme_override_font_sizes/font_size = 72
 text = "Back to 
 Menu"
 script = ExtResource("11_f8cvi")
+
+[node name="Button2" type="Button" parent="." unique_id=1177628710 groups=["lvleditors"]]
+offset_left = 30.0
+offset_top = 296.0
+offset_right = 123.0
+offset_bottom = 327.0
+text = "Save Level"
+script = ExtResource("12_b2d1v")
+
+[node name="Button3" type="Button" parent="." unique_id=1345860747 groups=["lvleditors"]]
+offset_left = 30.0
+offset_top = 338.0
+offset_right = 123.0
+offset_bottom = 369.0
+text = "Load Level"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

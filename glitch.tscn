@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b5srvag4ql0o6"]
+
+[ext_resource type="Script" uid="uid://cf40aoe2avvl" path="res://glitch.gd" id="1_f62fx"]
+[ext_resource type="Texture2D" uid="uid://bhsj6suwmagh0" path="res://pixil-frame-0(36).png" id="2_n1aqk"]
+
+[node name="glitch" type="Node2D" unique_id=513880944]
+script = ExtResource("1_f62fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1608951628]
+texture = ExtResource("2_n1aqk")

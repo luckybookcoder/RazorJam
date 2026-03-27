@@ -12,13 +12,14 @@ func _process(delta: float) -> void:
 		animation = "close"
 		oneshot = false
 		stop()
-	if get_parent().visible and not oneshot and not is_playing():
-		oneshot = true
-		play("close")
-	elif oneshot and g.playerpos == &"box" and not is_playing():
-		if oneshot and g.playerpos == &"box" and not is_playing():
-			play("open")
-			oneshot = false
+	if not g.playerpos == &"menu":
+		if get_parent().visible and not oneshot and not is_playing():
+			oneshot = true
+			play("close")
+		elif oneshot and g.playerpos == &"box" and not is_playing():
+			if oneshot and g.playerpos == &"box" and not is_playing():
+				play("open")
+				oneshot = false
 	if is_playing():
 		match animation:
 			"close":
@@ -34,12 +35,19 @@ func _process(delta: float) -> void:
 		frame = 0
 		text = true
 		$"..".show()
-		print(visible)
 	elif text:
 		text = false
 		play("open")
+	if g.playerpos == &"menu":
+		#oneshot = true
+		pause()
+		#animation = "open"
+	#print(g.playerpos)
 
 func reset():
-	oneshot = false
-	stop()
-	animation = "close"
+	oneshot = true
+	g.playerpos = &"box"
+	animation = "open"
+	pause()
+	print(animation, oneshot, is_playing())
+	frame = 4

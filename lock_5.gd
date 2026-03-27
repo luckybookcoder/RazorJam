@@ -17,7 +17,7 @@ func spec() -> void:
 	else:
 		var text = ''
 		for i in combo:
-			text += {Vector2.LEFT:"L", Vector2.RIGHT:"R", Vector2.UP:"U", Vector2.DOWN:"D"}.get(i)
+			text += {Vector2.LEFT:"R", Vector2.RIGHT:"L", Vector2.UP:"D", Vector2.DOWN:"U"}.get(i)
 		phoneify(text)
 		if inputs == combo:
 			unlock()
@@ -35,13 +35,49 @@ func shuffle():
 
 func down():
 	inputs.append(Vector2.DOWN)
+	$Control.position.y -= 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.y -= 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.y += 20
+	await get_tree().process_frame;
+	$Control.position.y += 20
 
 func left():
 	inputs.append(Vector2.LEFT)
+	$Control.position.x += 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.x += 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.x -= 20
+	await get_tree().process_frame;
+	$Control.position.x -= 20
 
 func right():
 	inputs.append(Vector2.RIGHT)
-
+	$Control.position.x -= 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.x -= 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.x += 20
+	await get_tree().process_frame;
+	$Control.position.x += 20
 
 func up():
 	inputs.append(Vector2.UP)
+	$Control.position.y += 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.y += 20
+	await get_tree().process_frame;
+	await get_tree().process_frame;
+	$Control.position.y -= 20
+	await get_tree().process_frame;
+	$Control.position.y -= 20
+	

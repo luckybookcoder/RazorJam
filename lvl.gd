@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	g.playerpos = &"box"
 	g.endlvl.connect(endlvl)
 	for i in get_children():
 		if i is robot:

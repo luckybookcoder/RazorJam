@@ -46,7 +46,8 @@ func _process(delta: float) -> void:
 			
 			for x in 8:
 				for y in 5:
-					g.lockposses.append(Vector2(x,y))
+					if Vector2(x,y) != Vector2(7,0):
+						g.lockposses.append(Vector2(x,y))
 func spec():
 	pass
 

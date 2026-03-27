@@ -5,14 +5,15 @@ extends Node2D
 func _ready() -> void:
 	for i in get_children():
 		if i is Button:
-			i.set_meta("num", int(i.name)-1)
-			i.pressed.connect(start, CONNECT_APPEND_SOURCE_OBJECT) # Replace with function body.
-
-
+			if i.name == "Button":
+				i.pressed.connect(menu)
+			else:
+				i.set_meta("num", int(i.name)-1)
+				i.pressed.connect(start, CONNECT_APPEND_SOURCE_OBJECT)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for i in get_children():
-		if i is Button:
+		if i is Button and not i.name == "Button":
 			if g.lvlsdone[i.get_meta("num")]:
 				i.disabled = false
 			else:
@@ -21,7 +22,7 @@ func _process(delta: float) -> void:
 				i.get_child(0).text = str("Earned in this level:$",snapped(g.earned[i.get_meta("num")+1],.01))
 			else:
 				i.get_child(0).text = ''
-		else:
+		elif i is RichTextLabel:
 			var moneh :float= 0
 			for cash in g.earned:
 				moneh += g.earned[cash]
@@ -31,3 +32,7 @@ func start(level:Node):
 	g.lvl = level.get_meta("num")
 	g.endlvl.emit()
 	queue_free()
+
+func menu():
+	g.playerpos = &"transfer"
+	$"..".menu()

@@ -1,11 +1,11 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://dxndhoocl82cf"]
 
-[ext_resource type="Texture2D" uid="uid://ptncnhftfmiu" path="res://Keyturning (1).png" id="1_mg1e5"]
-[ext_resource type="Texture2D" uid="uid://b3rx4rvx57nwh" path="res://Keyturning (2).png" id="2_31b24"]
-[ext_resource type="Texture2D" uid="uid://cegje6ydyecae" path="res://Keyturning (3).png" id="3_ek35h"]
-[ext_resource type="Texture2D" uid="uid://b5fqfdu550df2" path="res://Keyturning (4).png" id="4_2isku"]
-[ext_resource type="Texture2D" uid="uid://2fbogn3kmml4" path="res://Keyturning (5).png" id="5_pclca"]
-[ext_resource type="Texture2D" uid="uid://s5hmqi5p3wpo" path="res://lockbase.png" id="6_dnvig"]
+[ext_resource type="Texture2D" uid="uid://ptncnhftfmiu" path="res://sprites/Keyturning (1).png" id="1_mg1e5"]
+[ext_resource type="Texture2D" uid="uid://b3rx4rvx57nwh" path="res://sprites/Keyturning (2).png" id="2_31b24"]
+[ext_resource type="Texture2D" uid="uid://cegje6ydyecae" path="res://sprites/Keyturning (3).png" id="3_ek35h"]
+[ext_resource type="Texture2D" uid="uid://b5fqfdu550df2" path="res://sprites/Keyturning (4).png" id="4_2isku"]
+[ext_resource type="Texture2D" uid="uid://2fbogn3kmml4" path="res://sprites/Keyturning (5).png" id="5_pclca"]
+[ext_resource type="Texture2D" uid="uid://s5hmqi5p3wpo" path="res://sprites/lockbase.png" id="6_dnvig"]
 
 [resource]
 animations = [{

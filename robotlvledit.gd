@@ -11,8 +11,10 @@ func _process(delta: float) -> void:
 	if not has_focus() or Box.has_focus():
 		selected = -1
 		Box.hide()
+		$RichTextLabel.show()
 		Box.value = 2
 	else:
+		$RichTextLabel.hide()
 		g.lvleditem = selected
 		if selected >= 6:
 			Box.show()
