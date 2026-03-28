@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	await get_tree().process_frame;await get_tree().process_frame;await get_tree().process_frame;await get_tree().process_frame
-	print(lerper, g.earned,g.earned[g.lvl])
+	print(g.earned)
 	lerper = lerp(float(lerper),g.earned[g.lvl],.25)
 	if abs(lerper-g.earned[g.lvl]) < .05:
 		lerper = g.earned[g.lvl]

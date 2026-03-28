@@ -19,13 +19,16 @@ func _ready() -> void:
 	for i in get_children():
 		if i is robot:
 			i.get_node("Control").tooltip_text = '' # Replace with function body.
-	g.lvlediting = true
+	for i in 3:
+		await get_tree().process_frame
+		g.lvlediting = true
 	g.items = 0
 	g.robots = false
 	g.playerpos = &"editor"
 
 func _process(delta: float) -> void:
 	name = "Lvl Editor"
+	print(g.lvlediting)
 	if g.lvleditem is int:
 		if g.lvleditem == -1:
 			g.lvleditem = null
@@ -99,7 +102,7 @@ func clone(pos:Vector2):
 				elif robs[g.lvleditem]:
 					kid.set_script(robs[g.lvleditem])
 					if "count" in robs[g.lvleditem]:
-						kid.count = count
+						kid.count = max(2,count)
 			kid.position = pos
 			kiddo.set_meta("type", "ROBOT")
 			kiddo.set_meta("bug", g.lvleditem)
@@ -107,7 +110,7 @@ func clone(pos:Vector2):
 			kid = kids[g.lvleditem].instantiate()
 			add_child(kid)
 			if "count" in kid:
-				kid.count = count
+				kid.count = max(2,count)
 			if g.lvleditem == "ITEM":
 				g.itemposses.set(kid, pos)
 			kid.position = pos
@@ -135,6 +138,28 @@ func lvload():
 			add_child(kid)
 			kid.position = i
 			kid.set_meta("type", "DOOR")
+		for i in clipboard.ITEMS:
+			kid = kids.ITEM.instantiate()
+			add_child(kid)
+			kid.position = i
+			kid.set_meta("type", "ITEM")
+			g.itemposses.set(kid,kid.position)
+		for i in clipboard.GOALS:
+			kid = kids.GOAL.instantiate()
+			add_child(kid)
+			kid.position = i
+			kid.set_meta("type", "GOAL")
+		for i in clipboard.CHARGERS:
+			kid = kids.CHARGER.instantiate()
+			add_child(kid)
+			kid.position = i
+			kid.set_meta("type", "CHARGER")
+			g.itemposses.set(kid,kid.position)
+		for i in clipboard.GOALS:
+			kid = kids.GOAL.instantiate()
+			add_child(kid)
+			kid.position = i
+			kid.set_meta("type", "GOAL")
 		for i in clipboard.ROBOTS:
 			kid = load("res://roblvledit.tscn").instantiate()
 			add_child(kid)

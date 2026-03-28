@@ -20,10 +20,11 @@ func menu():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset") and g.reset and g.lvl:
 		if g.lvl is String:
+			g.waiter = false
 			g.endlvl.emit()
 			for i in 3:
 				await get_tree().process_frame
-				g.lvlediting = true
+				#g.lvlediting = true
 		else:
 			g.lvl -= 1
 			g.endlvl.emit()
@@ -66,7 +67,7 @@ func endlvl():
 	if g.lvl is String:
 		for i in 3:
 			await get_tree().process_frame
-			g.lvlediting = true
+			#g.lvlediting = true
 
 
 func lvlend():

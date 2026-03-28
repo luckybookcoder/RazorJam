@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 		clicked = true
 		text = "Saved!"
 		$"..".clipboard = $"..".savedict.duplicate()
+		
 
 func reset():
 	text = "Save Level"

@@ -5,7 +5,7 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {8:load("lvl8.tscn"),4:load("lvl5.tscn"),6:load("lvl6.tscn"), 7:load("res://lvl_7.tscn"), 5:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), "editor":load("res://lvl_editor.tscn")}
+var lvlitems = {7:load("lvl8.tscn"),9:load("lvl5.tscn"),5:load("lvl6.tscn"), 6:load("res://lvl_7.tscn"), 4:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), "editor":load("res://lvl_editor.tscn")}
 var lvleditem
 var truelockposses = {}
 var ticksleft = 0
@@ -44,15 +44,22 @@ var targettime = {
 var goals = 0
 var earned = {}
 var reward = {
-	1:100,
-	2:120,
-	3:135,
-	4:150,
-	
-	5:200,
-	6:220,
-	7:235,
-	8:250,
+	#Basic robots
+	1:100, #load("res://lvl1.tscn"),
+	2:135, #load("res://lvl2.tscn"),
+	3:170, #load("lvl3.tscn"),
+	#Glitches
+	4:200, #load("res://lvl4.tscn"),
+	5:240, #load("lvl6.tscn"),
+	6:280, #
+	#Dores
+	7:310, #load("res://lvl_7.tscn"),
+	8:350, #load("lvl8.tscn"),
+	9:390, #load("lvl5.tscn"),
+	#Chargers
+	10:520,#
+	11:560,#
+	12:600,#
 	}
 var longest = 0
 var tickwait = false
@@ -79,7 +86,7 @@ func _ready():
 			if Vector2(x,y) != Vector2(7,0):
 				g.lockposses.append(Vector2(x,y))
 	for i in 12:
-		lvlsdone.get_or_add(i+1, false)
+		lvlsdone.get_or_add(i+1, true)
 	tick.connect(ticker)
 	lvltext.connect(cash)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

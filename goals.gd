@@ -14,6 +14,18 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if filled and not charger:
+		if g.itemtype == "laundry":
+			$Sprite2D.play("laundry")
+		else:
+			$Sprite2D.stop()
+			$Sprite2D.animation = "default"
+			$Sprite2D.frame = {"books":3,"dishes":4}[g.itemtype]
+			
+	elif not charger:
+			$Sprite2D.stop()
+			$Sprite2D.animation = "default"
+			$Sprite2D.frame = {"books":0,"dishes":1,"laundry":2}[g.itemtype]
 	if g.focus:
 		if g.focus.global_position.distance_to(global_position) < 32:
 			g.ongoal = true
@@ -32,7 +44,8 @@ func _process(delta: float) -> void:
 			if not filled:
 				filled = true
 				g.goals -= 1
-				
+				if not charger:
+					g.itemposses[$Area2D.get_overlapping_areas().front().get_parent()] = "Held"
 				if g.goals == 0:
 					herewait = true
 	else:

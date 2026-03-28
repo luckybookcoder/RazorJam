@@ -11,7 +11,8 @@ func _ready() -> void:
 	await $"Popup/Button3".pressed
 	#g.lvl -= 1
 	playerpos = &"box"
-	g.endlvl.emit()
+	#g.lvltext.emit()
+	queue_free()
 
 func esc():
 	while $Popup.visible:

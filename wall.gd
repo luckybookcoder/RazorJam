@@ -21,5 +21,5 @@ func _process(delta: float) -> void:
 		
 func buttonoff():
 		if $Button:
-			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$Button.mouse_filter = Control.MOUSE_FILTER_PASS
 # Called when the node enters the scene tree for the first time.

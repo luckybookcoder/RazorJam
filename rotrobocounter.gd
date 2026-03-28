@@ -9,5 +9,6 @@ func _process(a) -> void:
 
 func move():
 	for i in moves.size():
-		moves[i] = round(moves[i].rotated(-PI/2))
+		if moves[i] is int:
+			moves[i] = round(moves[i].rotated(-PI/2))
 	super()

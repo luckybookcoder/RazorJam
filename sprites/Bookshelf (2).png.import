@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://begvaavx2282f"
-path="res://.godot/imported/Bookshelf (2).png-0c8273f833c5555895ce0d99a8d569b7.ctex"
+uid="uid://de8dtpp32yj3f"
+path="res://.godot/imported/bookshelf (2).png-98482c549939a0892dfcf4b10f1cd56f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Bookshelf (2).png"
-dest_files=["res://.godot/imported/Bookshelf (2).png-0c8273f833c5555895ce0d99a8d569b7.ctex"]
+source_file="res://sprites/bookshelf (2).png"
+dest_files=["res://.godot/imported/bookshelf (2).png-98482c549939a0892dfcf4b10f1cd56f.ctex"]
 
 [params]
 

@@ -252,17 +252,17 @@ script = ExtResource("11_f8cvi")
 
 [node name="Button2" type="Button" parent="." unique_id=1177628710 groups=["lvleditors"]]
 offset_left = 30.0
-offset_top = 296.0
+offset_top = 291.0
 offset_right = 123.0
-offset_bottom = 327.0
+offset_bottom = 322.0
 text = "Save Level"
 script = ExtResource("12_b2d1v")
 
 [node name="Button3" type="Button" parent="." unique_id=1345860747 groups=["lvleditors"]]
 offset_left = 30.0
-offset_top = 338.0
+offset_top = 330.0
 offset_right = 123.0
-offset_bottom = 369.0
+offset_bottom = 361.0
 text = "Load Level"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

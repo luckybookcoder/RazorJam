@@ -1,8 +1,8 @@
 extends RichTextLabel
 var pointer = 0
 var oldplace = &""
-const speeds = {1:{0:.007,1:.01,2:.004,4:.01,3:.008,5:.008, 6:.05},9:{}, 13:{}}
-var done = {1:false,9:false, 13:false}
+const speeds = {1:{0:.007,1:.01,2:.004,4:.01,3:.008,5:.008, 6:.05},4:{0:.008,1:.01,2:.006,3:.04}, 7:{0:.0081,1:.02,2:.02,3:.021,4:.051}}
+var done = {1:false,4:false, 7:false}
 var lvl = 0
 const texts = {
 	1:{
@@ -14,11 +14,18 @@ const texts = {
 		5:"Last thing, the door does lock automatically when you leave, but if you just tap whatever pops up on your phone, it'll show you what to do.",
 		6:"Good luck!"
 	},
-	9:{
-		
+	4:{
+		0:"Oh hey, you're back![font_size=8]    [/font_size]Some of the other testers figured out something about some of the bugs, so now I'm here.",
+		1:"They werent able to isolate much, but apparently there's a common symptom between them.",
+		2:"I don't fully understand it, but basically, if you see sparks coming out of a robot, it's most likely glitched somehow.",
+		3:"See ya next time."
 	},
-	13:{
-		
+	7:{
+		0:"Heya! So Tek2Bs testing another thing now, so they sent me to tell you.",
+		1:"It's a door that automatically opens and closes every once in a while.",
+		2:"You know, to make thieves think that you're home when you're not.",
+		3:"They're testing them out with the robots, so you'll probably see them in your next test batch.",
+		4:"Alright, see you later!"
 	}
 }
 func _ready() -> void:
@@ -26,6 +33,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(pointer, done, lvl, g.lvl)
 	if not g.lvl is String:
 		if g.lvl != lvl:
 			lvl = g.lvl

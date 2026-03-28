@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://yyx72dpbp665"]
 
 [ext_resource type="Script" uid="uid://dv7hag2tfqxpq" path="res://onoffdoor.gd" id="1_v6xrn"]
-[ext_resource type="Texture2D" uid="uid://dalds0xuqlbn0" path="res://sprites/Dore (1).png" id="2_0phs7"]
+[ext_resource type="Texture2D" uid="uid://x17vds3r8jhq" path="res://sprites/door2 (1).png" id="3_6hwww"]
 [ext_resource type="Texture2D" uid="uid://cbxf5cveukdat" path="res://sprites/Dore (2).png" id="3_50cdl"]
+[ext_resource type="Texture2D" uid="uid://bvw0epo3pgnng" path="res://sprites/door2 (2).png" id="4_v1oua"]
+[ext_resource type="Texture2D" uid="uid://bnumwefs57gtu" path="res://sprites/door2 (3).png" id="5_ptf7r"]
+[ext_resource type="Texture2D" uid="uid://bbk17s4xk17qm" path="res://sprites/door2 (4).png" id="6_24eas"]
+[ext_resource type="Texture2D" uid="uid://coo6uuyv4w84c" path="res://sprites/door2 (5).png" id="7_xg3tq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
 size = Vector2(28, 28)
@@ -11,17 +15,35 @@ size = Vector2(28, 28)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0phs7")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_50cdl")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6hwww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v1oua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ptf7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_24eas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xg3tq")
+}],
+"loop": true,
+"name": &"waves",
+"speed": 10.0
 }]
 
 [node name="onoffdoor" type="Node2D" unique_id=1364583490]
+rotation = -1.5707964
 script = ExtResource("1_v6xrn")
 
 [node name="Button" type="Button" parent="." unique_id=79818075]
@@ -31,7 +53,6 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 mouse_filter = 1
-theme_override_font_sizes/font_size = 1
 button_mask = 2
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=903537298]
@@ -49,3 +70,5 @@ shape = SubResource("RectangleShape2D_50cdl")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=239019591]
 sprite_frames = SubResource("SpriteFrames_y5njw")
+animation = &"waves"
+frame_progress = 0.10996321

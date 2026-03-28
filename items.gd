@@ -5,7 +5,9 @@ extends Node2D
 func _ready() -> void:
 	g.itemposses.get_or_add($".", position)
 	$Button.pressed.connect(kill)
-	g.items += 1 
+	g.items += 1
+	$Sprite2D.texture = {"books":load("sprites/books.png"), "laundry":load("res://sprites/laundry.png"), "dishes":load("res://sprites/dishes.png")}[g.itemtype]
+	
 
 
 func kill():
@@ -14,6 +16,8 @@ func kill():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Sprite2D.texture = {"books":load("sprites/books.png"), "laundry":load("res://sprites/laundry.png"), "dishes":load("res://sprites/dishes.png")}[g.itemtype]
+	#$Sprite2D.scale = Vector2.ONE*2
 	if g.focus:
 		if g.focus.global_position.distance_to(global_position) < 32:
 			g.onitem = true

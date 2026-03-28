@@ -29,6 +29,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spec() -> void:
+	#$"..".hide()
 	if position != Vector2.LEFT:
 		newpos = position/128
 	position = Vector2.LEFT

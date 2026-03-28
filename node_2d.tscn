@@ -1313,7 +1313,7 @@ layout_mode = 0
 offset_left = 1024.0
 offset_top = 15.0
 offset_right = 1152.0
-offset_bottom = 199.0
+offset_bottom = 256.0
 theme_override_constants/line_separation = -9
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
@@ -1452,7 +1452,7 @@ abcdefghijklmnopqrstuvwxyz"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Canla/Dore controls/Phone/9" unique_id=330139392]
 position = Vector2(-112, 57)
 sprite_frames = SubResource("SpriteFrames_ml7eq")
-frame_progress = 0.3602788
+frame_progress = 0.8696747
 
 [node name="Inputconsole" type="RichTextLabel" parent="Canla" unique_id=1769224364]
 z_index = 1
@@ -1512,9 +1512,9 @@ script = ExtResource("19_7vxoj")
 [node name="Expectedconsole" type="RichTextLabel" parent="Canla" unique_id=246870005]
 z_index = 2
 offset_left = 1026.0
-offset_top = 192.0
+offset_top = 263.0
 offset_right = 1154.0
-offset_bottom = 306.0
+offset_bottom = 377.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("24_bjha6")
 theme_override_font_sizes/normal_font_size = 25

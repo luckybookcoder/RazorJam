@@ -1,5 +1,5 @@
 extends robot
-@export var count : int ##this robot drops every nth input, where n is dropcount
+@export var count : int=2 ##this robot drops every nth input, where n is dropcount
 @export var droppoint = 1 ##if 1: drops the next input. if 0: drops the last input
 var poppers = []
 

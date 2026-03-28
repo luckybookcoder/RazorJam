@@ -51,8 +51,9 @@ func _ready() -> void:
 	area.add_child($CollisionShape2D.duplicate())
 	area.collision_mask = 5
 	ghost.play("ghost")
-	ghost.modulate.a = .8
+	ghost.modulate.a = .3
 	ghost.hide()
+	ghost.global_scale = Vector2.ONE
 	if but:
 		$"Button".pressed.connect(kill)
 		print(position) # Replace with function body.
@@ -65,6 +66,11 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	show()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and\
+ get_global_mouse_position().distance_to(global_position) < 16:
+		$Control.grab_focus()
+		print(Control)
 	if g.playerpos == &"door":
 		$Sprite2D.play_backwards()
 		droneplay = true
@@ -109,16 +115,18 @@ func _physics_process(delta: float) -> void:
 	if g.lvlediting:
 		if but:
 			$Button.mouse_filter = Control.MOUSE_FILTER_STOP
-			$Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var good = (position-$"/root/Main/Lvl Editor/Griddisplay".position)
 		if good.x > g.lvleditsize.x or good.y > g.lvleditsize.y:
 			queue_free()
 	else:
-		if but:
+		
 			$Control.mouse_filter = Control.MOUSE_FILTER_STOP
-			$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			if but:
+				$Button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if $Control.has_focus() and g.playerpos == &"box" and not g.lvlediting:
 		g.focus = $"."
+		#hide()
 	if g.focus == $".":
 		if prevplace != global_position:
 			ghost.position = prevplace
