@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dxuweu8s65307"]
 
 [ext_resource type="Script" uid="uid://d2lrsqqcql8ds" path="res://simplemode.gd" id="1_5drf3"]
+[ext_resource type="Script" uid="uid://do6ukjbajh2qd" path="res://trylocks.gd" id="1_33wm3"]
 [ext_resource type="Script" uid="uid://br7ymsj746r7a" path="res://voltext.gd" id="1_48roi"]
 [ext_resource type="Script" uid="uid://wx071nll2b0g" path="res://realtime.gd" id="1_l54kx"]
 [ext_resource type="Script" uid="uid://cdyib5ye42ffi" path="res://menuify.gd" id="1_ul0xv"]
 [ext_resource type="Script" uid="uid://bb3ckd5euxx6u" path="res://lvleditspawn.gd" id="1_yieck"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="2_2ue7y"]
 [ext_resource type="Script" uid="uid://dy3c6gtbvnar8" path="res://automove.gd" id="5_wlvcr"]
 
 [node name="Extras" type="Node2D" unique_id=1459839539]
@@ -16,6 +18,15 @@ offset_right = 205.0
 offset_bottom = 152.0
 theme_override_font_sizes/font_size = 41
 text = "Try locks"
+script = ExtResource("1_33wm3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Button" unique_id=1613916646]
+visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(557.00006, 274)
+scale = Vector2(10.7421875, 6.421875)
+texture = ExtResource("2_2ue7y")
 
 [node name="Button5" type="Button" parent="." unique_id=848824535]
 offset_left = 130.0
@@ -31,6 +42,7 @@ offset_left = 178.0
 offset_top = 8.0
 offset_right = 739.0
 offset_bottom = 80.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "EXTRAS"
 scroll_active = false
@@ -68,6 +80,7 @@ offset_left = 144.0
 offset_top = 407.0
 offset_right = 674.0
 offset_bottom = 472.0
+tooltip_text = "Press space while at the door to wait a minute"
 theme_override_font_sizes/font_size = 41
 text = "Automatically wait for all moves to finish:On"
 script = ExtResource("5_wlvcr")
@@ -90,6 +103,7 @@ offset_top = 15.9999695
 offset_right = 315.6416
 offset_bottom = 81.065125
 scale = Vector2(0.333, 0.333)
+theme_override_colors/default_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 theme_override_font_sizes/normal_font_size = 44
 text = "Volume:100%"
 script = ExtResource("1_48roi")

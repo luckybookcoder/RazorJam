@@ -14,6 +14,12 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if g.itemtype == "books" and not charger:
+		$Sprite2D.scale = Vector2(2,2)
+		$Sprite2D.position = Vector2(0,-5)
+	else:
+		$Sprite2D.scale = Vector2(1,1)
+		$Sprite2D.position = Vector2(0,0)
 	if filled and not charger:
 		if g.itemtype == "laundry":
 			$Sprite2D.play("laundry")

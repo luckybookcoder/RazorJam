@@ -5,7 +5,7 @@ signal tick
 signal lvltext
 signal move
 signal lock
-var lvlitems = {7:load("lvl8.tscn"),9:load("lvl5.tscn"),5:load("lvl6.tscn"), 6:load("res://lvl_7.tscn"), 4:load("res://lvl4.tscn"),3:load("lvl3.tscn"), 2:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), "editor":load("res://lvl_editor.tscn")}
+var lvlitems = {9:load("res://lvl_9.tscn"),7:load("lvl8.tscn"),8:load("lvl5.tscn"),5:load("lvl6.tscn"), 6:load("res://lvl_7.tscn"), 4:load("res://lvl4.tscn"),2:load("lvl3.tscn"), 3:load("res://lvl2.tscn"), 1:load("res://lvl1.tscn"), "editor":load("res://lvl_editor.tscn")}
 var lvleditem
 var truelockposses = {}
 var ticksleft = 0
@@ -34,32 +34,30 @@ var lvl = 1
 var phone = ''
 var targettime = {
 	1:6.0,
-	2:17.0,
-	3:13.0,
+	2:14.0,
+	3:17.0,
 	4:22.0,
-	5:19.0,
-	6:8.0,
-	7:17.0
+	5:22.0,
+	6:25.0,
+	7:60.0,
+	8:30.0,
+	9:82.0
 }
 var goals = 0
 var earned = {}
 var reward = {
 	#Basic robots
-	1:100, #load("res://lvl1.tscn"),
-	2:135, #load("res://lvl2.tscn"),
+	1:100, #load("lvl1.tscn"),
+	2:135, #load("lvl2.tscn"),
 	3:170, #load("lvl3.tscn"),
 	#Glitches
-	4:200, #load("res://lvl4.tscn"),
+	4:200, #load("lvl4.tscn"),
 	5:240, #load("lvl6.tscn"),
-	6:280, #
 	#Dores
-	7:310, #load("res://lvl_7.tscn"),
-	8:350, #load("lvl8.tscn"),
-	9:390, #load("lvl5.tscn"),
-	#Chargers
-	10:520,#
-	11:560,#
-	12:600,#
+	6:310, #load("lvl_7.tscn"),
+	7:350, #load("lvl8.tscn"),
+	8:390, #load("lvl5.tscn"),
+	9:520, #load("lvl_9.tscn),
 	}
 var longest = 0
 var tickwait = false
@@ -150,6 +148,8 @@ func _process(delta: float) -> void:
 				#if i > 30:
 					#break
 				await get_tree().process_frame
+				await get_tree().process_frame
+			   #await get_tree().process_frame
 				tick.emit()
 				
 			
@@ -169,8 +169,10 @@ func phonetext():
 			phone += ([str("correct keyhole:", "\n\n%s" %phonevars[0]), "Combo:%03d"%[phonevars[1]],phonevars[2],phonevars[3],phonevars[4],phonevars[5],phonevars[6],phonevars[7],phonevars[8]].get(i))
 			phone += "\n"
 			phone += "\n"
+			
+		if i+1 == 7:
 		#else:
-			#print(locks, i+1, locks.has(i+1))
+			print(locks, i+1, locks.has(i+1))
 
 func realtimer():
 	realtimetime += 1

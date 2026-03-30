@@ -163,7 +163,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_fbwgr")
 }, {
-"duration": 1.0,
+"duration": 999999.0,
 "texture": ExtResource("3_kq1c5")
 }],
 "loop": false,
@@ -552,7 +552,8 @@ script = ExtResource("4_q6r6c")
 position = Vector2(576.64996, 326.99994)
 scale = Vector2(1.0883522, 1.1)
 sprite_frames = SubResource("SpriteFrames_7mj2a")
-animation = &"close"
+animation = &"open"
+frame_progress = 0.08634411
 script = ExtResource("4_bjha6")
 
 [node name="Locks" type="Control" parent="Canla/Dore controls" unique_id=1879896222]

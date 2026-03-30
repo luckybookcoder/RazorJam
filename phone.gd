@@ -10,6 +10,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	text = g.phone
+	if g.playerpos == &"door":
+		show()
+	else:
+		hide()
+	#g.phone = "WHAT THE ACTUAL GENUINE FUCK"
 	for i in get_children():
 		i.tooltip_text = ""
 		if g.locks.has(int(i.name)):
@@ -28,7 +33,7 @@ func _process(delta: float) -> void:
 func but(num:Node):
 	num.get_child(0).show()
 	num.get_child(0).play()
-	num.get_child(0).global_position = Vector2(15*64,64) 
+	num.get_child(0).global_position = Vector2(15*64,64)
 	hideall(num)
 
 func hideall(num:Node):

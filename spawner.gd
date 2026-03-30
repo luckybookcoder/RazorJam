@@ -18,6 +18,19 @@ func menu():
 		$Canla.hide()
 
 func _process(delta: float) -> void:
+	#if Input.is_action_pressed("reset") and g.reset:
+		#print("'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+	if g.locks.size():
+		$Canla.show()
+		$"Canla/Dore controls".show()
+		$"Canla/Dore controls/Locks".show()
+		$Canla/Text.hide()
+	elif g.playerpos == &"menu":
+		g.lvl = 0
+		$Canla.hide()
+		$"Canla/Dore controls".hide()
+		$"Canla/Dore controls/Locks".hide()
+		$Canla/Text.show()
 	if Input.is_action_just_pressed("reset") and g.reset and g.lvl:
 		if g.lvl is String:
 			g.waiter = false
@@ -26,6 +39,7 @@ func _process(delta: float) -> void:
 				await get_tree().process_frame
 				#g.lvlediting = true
 		else:
+			
 			g.lvl -= 1
 			g.endlvl.emit()
 	$Mainmusic.volume_linear = g.volume

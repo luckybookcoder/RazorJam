@@ -66,6 +66,11 @@ func kill():
 		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if g.playerpos == &"door" and not savedtext:
+		savedtext = true
+		lastcommands = use.duplicate_deep()
+	else:
+		savedtext = false
 	show()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and\
  get_global_mouse_position().distance_to(global_position) < 16:
@@ -198,11 +203,6 @@ func _physics_process(delta: float) -> void:
 		lastmove = Vector2.ZERO
 	#if name == &"Robot4":
 #print(moves)
-	if g.playerpos == &"door" and not savedtext:
-		savedtext = true
-		lastcommands = use.duplicate_deep()
-	else:
-		savedtext = false
 	if not ghostcheck:
 		ghostcheck = 2
 		prevplace = global_position
@@ -253,7 +253,9 @@ func move():
 				if use.get(pointer) == &"pickup":
 					if area.get_overlapping_areas():
 						var lastitem = currentitem
-						currentitem = area.get_overlapping_areas().front().get_parent()
+						for x in area.get_overlapping_areas():
+							if x.get_parent().get_script() == load("res://items.gd"):
+								currentitem = x.get_parent()
 						g.itemposses[currentitem] = "held"
 						if lastitem:
 							g.itemposses[lastitem] = position

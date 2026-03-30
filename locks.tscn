@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://1qhhjwexnyl"]
+
+[ext_resource type="Script" uid="uid://davufflwcuspr" path="res://locks.gd" id="1_i8jhw"]
+[ext_resource type="Texture2D" uid="uid://cmydfpmhl8opd" path="res://locksprites/locksguide (2).png" id="2_33u3d"]
+[ext_resource type="Texture2D" uid="uid://b46tki1gop7q3" path="res://locksprites/spinguide (2).png" id="3_5iekq"]
+[ext_resource type="Texture2D" uid="uid://c3usc5s1urf6c" path="res://locksprites/10button (2).png" id="4_b7lhn"]
+[ext_resource type="Texture2D" uid="uid://b50g7rsgry0mi" path="res://locksprites/pushlockguide (2).png" id="5_4c6rv"]
+[ext_resource type="Texture2D" uid="uid://cj755o8oq48yd" path="res://locksprites/swaplockguide (2).png" id="6_qvwjl"]
+[ext_resource type="Texture2D" uid="uid://5pu70chutlsx" path="res://locksprites/Anagram guide (2).png" id="7_7yu32"]
+[ext_resource type="Texture2D" uid="uid://cif3e1v53toug" path="res://locksprites/mineguide (2).png" id="8_aswj6"]
+[ext_resource type="Texture2D" uid="uid://djabf1w5vrmq" path="res://locksprites/lock8guide (2).png" id="9_jdqgv"]
+[ext_resource type="Texture2D" uid="uid://bs1fog0mx3ev5" path="res://locksprites/Ceaserguide.png" id="10_6e6c8"]
+
+[node name="locks" type="Node2D" unique_id=1728530441]
+script = ExtResource("1_i8jhw")
+
+[node name="Menu" type="Button" parent="." unique_id=858501331]
+top_level = true
+z_index = 999
+offset_top = 571.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 50
+text = "Back to Menu"
+
+[node name="Button1" type="Button" parent="." unique_id=983878911]
+offset_left = 303.0
+offset_top = 56.0
+offset_right = 443.0
+offset_bottom = 196.0
+icon = ExtResource("2_33u3d")
+
+[node name="Button2" type="Button" parent="." unique_id=477595607]
+offset_left = 473.0
+offset_top = 56.0
+offset_right = 613.0
+offset_bottom = 196.0
+icon = ExtResource("3_5iekq")
+
+[node name="Button3" type="Button" parent="." unique_id=199448211]
+offset_left = 643.0
+offset_top = 56.0
+offset_right = 783.0
+offset_bottom = 196.0
+icon = ExtResource("4_b7lhn")
+
+[node name="Button4" type="Button" parent="." unique_id=651120026]
+offset_left = 303.0
+offset_top = 226.0
+offset_right = 443.0
+offset_bottom = 366.0
+icon = ExtResource("5_4c6rv")
+
+[node name="Button5" type="Button" parent="." unique_id=514381723]
+offset_left = 473.0
+offset_top = 226.0
+offset_right = 613.0
+offset_bottom = 366.0
+icon = ExtResource("6_qvwjl")
+
+[node name="Button6" type="Button" parent="." unique_id=376426966]
+offset_left = 643.0
+offset_top = 226.0
+offset_right = 783.0
+offset_bottom = 366.0
+icon = ExtResource("7_7yu32")
+
+[node name="Button7" type="Button" parent="." unique_id=123947029]
+offset_left = 303.0
+offset_top = 396.0
+offset_right = 443.0
+offset_bottom = 536.0
+icon = ExtResource("8_aswj6")
+
+[node name="Button8" type="Button" parent="." unique_id=835391426]
+offset_left = 473.0
+offset_top = 396.0
+offset_right = 613.0
+offset_bottom = 536.0
+icon = ExtResource("9_jdqgv")
+
+[node name="Button9" type="Button" parent="." unique_id=1002439427]
+offset_left = 643.0
+offset_top = 396.0
+offset_right = 783.0
+offset_bottom = 536.0
+icon = ExtResource("10_6e6c8")

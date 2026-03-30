@@ -55,4 +55,20 @@ func spec() -> void:
 		for i in randi_range(4,8):
 			x += arr.pop_at(randi()%arr.size())
 		correct = x
+		var array = []
+		var pointer = 0
+		var reverse
+		array.resize(correct.length())
+		for i in correct:
+			var rand = randi()%array.size()
+			while array.get(rand) is int:
+				rand = randi()%array.size()
+			result += String.chr(correct.unicode_at(rand))
+			array.set(rand, pointer+1)
+			pointer += 1
+		reverse = correct
+		correct = result
+		result = reverse
 	$RichTextLabel.text = str(result)
+	if g.playerpos == &"door":
+		print("Output:",result,"Correct:",correct)

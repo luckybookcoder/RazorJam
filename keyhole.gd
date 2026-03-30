@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 			if i > 1:
 				if g.truelockposses[i].distance_to( get_meta("pos")*128) < 64:
 					hide()
+	if get_meta("pos") == $"..".newpos and not visible:
+		$"..".relock()
 
 func open():
 	get_child(0).frame = 0

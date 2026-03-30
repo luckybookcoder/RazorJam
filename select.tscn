@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://810uap7hercb" path="res://select.gd" id="1_1wsn2"]
 [ext_resource type="FontFile" uid="uid://cfda2e0j8epqw" path="res://at01.ttf" id="2_8bqbt"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="3_8bqbt"]
 
 [node name="select" type="Node2D" unique_id=2140826566]
 script = ExtResource("1_1wsn2")
 
 [node name="1" type="Button" parent="." unique_id=738196093]
-offset_left = 240.0
+offset_left = 356.0
 offset_top = 146.0
-offset_right = 340.0
+offset_right = 456.0
 offset_bottom = 221.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="1" unique_id=1703652309]
@@ -24,9 +25,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="2" type="Button" parent="." unique_id=1978163195]
-offset_left = 240.0
+offset_left = 356.0
 offset_top = 271.0
-offset_right = 340.0
+offset_right = 456.0
 offset_bottom = 346.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="2" unique_id=811574935]
@@ -41,9 +42,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="3" type="Button" parent="." unique_id=1559091748]
-offset_left = 240.0
+offset_left = 356.0
 offset_top = 396.0
-offset_right = 340.0
+offset_right = 456.0
 offset_bottom = 471.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="3" unique_id=1249276981]
@@ -58,9 +59,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="4" type="Button" parent="." unique_id=934813676]
-offset_left = 425.0
+offset_left = 541.0
 offset_top = 146.0
-offset_right = 525.0
+offset_right = 641.0
 offset_bottom = 221.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="4" unique_id=19696914]
@@ -75,9 +76,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="5" type="Button" parent="." unique_id=1399067650]
-offset_left = 425.0
+offset_left = 541.0
 offset_top = 271.0
-offset_right = 525.0
+offset_right = 641.0
 offset_bottom = 346.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="5" unique_id=1463799714]
@@ -92,9 +93,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="6" type="Button" parent="." unique_id=319884044]
-offset_left = 425.0
+offset_left = 541.0
 offset_top = 396.0
-offset_right = 525.0
+offset_right = 641.0
 offset_bottom = 471.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="6" unique_id=944930042]
@@ -109,9 +110,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="7" type="Button" parent="." unique_id=22842084]
-offset_left = 610.0
+offset_left = 726.0
 offset_top = 146.0
-offset_right = 710.0
+offset_right = 826.0
 offset_bottom = 221.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="7" unique_id=1376471854]
@@ -126,9 +127,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="8" type="Button" parent="." unique_id=1611420600]
-offset_left = 610.0
+offset_left = 726.0
 offset_top = 271.0
-offset_right = 710.0
+offset_right = 826.0
 offset_bottom = 346.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="8" unique_id=583363798]
@@ -143,9 +144,9 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="9" type="Button" parent="." unique_id=1801479646]
-offset_left = 610.0
+offset_left = 726.0
 offset_top = 396.0
-offset_right = 710.0
+offset_right = 826.0
 offset_bottom = 471.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="9" unique_id=1783391386]
@@ -160,6 +161,7 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="10" type="Button" parent="." unique_id=2115377838]
+visible = false
 offset_left = 795.0
 offset_top = 146.0
 offset_right = 895.0
@@ -177,6 +179,7 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="11" type="Button" parent="." unique_id=761235876]
+visible = false
 offset_left = 795.0
 offset_top = 271.0
 offset_right = 895.0
@@ -194,6 +197,7 @@ theme_override_font_sizes/normal_font_size = 23
 text = "Earned in this level: $999.99"
 
 [node name="12" type="Button" parent="." unique_id=361152043]
+visible = false
 offset_left = 795.0
 offset_top = 396.0
 offset_right = 895.0
@@ -227,3 +231,11 @@ offset_bottom = 652.0
 theme_override_fonts/font = ExtResource("2_8bqbt")
 theme_override_font_sizes/font_size = 100
 text = "Back to Menu"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1335225771]
+visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(593.00006, 336)
+scale = Vector2(10.7421875, 6.421875)
+texture = ExtResource("3_8bqbt")

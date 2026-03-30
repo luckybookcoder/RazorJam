@@ -2,7 +2,67 @@
 
 [ext_resource type="Script" uid="uid://5mbsjunh30u8" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="FontFile" uid="uid://cfda2e0j8epqw" path="res://at01.ttf" id="2_4hy44"]
-[ext_resource type="Texture2D" uid="uid://bvr8u6c1ampqi" path="res://addons/grid_display/grid_display.svg" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bm6r8o2atu6p1" path="res://sprites/title (1).png" id="3_g7jxm"]
+[ext_resource type="Texture2D" uid="uid://dotl1tnntcdls" path="res://sprites/title (2).png" id="4_jspdm"]
+[ext_resource type="Texture2D" uid="uid://b072xs475txu7" path="res://sprites/title (3).png" id="5_oxnod"]
+[ext_resource type="Texture2D" uid="uid://c35l7rhow7i77" path="res://sprites/title (4).png" id="6_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://bxdswh0p4jnob" path="res://sprites/title (5).png" id="7_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://dhbp2a80qrrcd" path="res://sprites/title (6).png" id="8_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://bq7bweudva78d" path="res://sprites/title (7).png" id="9_5h80m"]
+[ext_resource type="Texture2D" uid="uid://df84pv6n0svs6" path="res://icon.svg" id="14_jspdm"]
+
+[sub_resource type="Shader" id="Shader_8uog0"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+    vec4 color = texture(TEXTURE, UV);
+    if (color.r > .9 && color.g < .1 && abs(color.b - .74) < .1) {
+        COLOR.rgb = vec3(1.0);
+    }
+    COLOR.a = color.a;
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5x1w"]
+shader = SubResource("Shader_8uog0")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkpqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g7jxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jspdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oxnod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gd0jp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_4ndjb")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_3ls4m")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_5h80m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="menu" type="Node2D" unique_id=9966468]
 script = ExtResource("1_ouk20")
@@ -28,7 +88,17 @@ text = "Everything Else
 (Including settings)"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1559439134]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1013616656]
+material = SubResource("ShaderMaterial_k5x1w")
 position = Vector2(551.75, 147.25)
-scale = Vector2(1.1507491, 0.4428839)
-texture = ExtResource("2_mae5d")
+sprite_frames = SubResource("SpriteFrames_rkpqm")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=405488078]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1
+position = Vector2(623.5, 347)
+scale = Vector2(10.7421875, 6.421875)
+texture = ExtResource("14_jspdm")

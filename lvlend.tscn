@@ -7,60 +7,65 @@
 [node name="lvlend" type="Node2D" unique_id=1726029624]
 script = ExtResource("1_gx7hd")
 
-[node name="Popup" type="Popup" parent="." unique_id=948489018]
+[node name="Popup" type="Window" parent="." unique_id=13145383]
 transparent_bg = true
 oversampling_override = 1.0
 initial_position = 1
-size = Vector2i(800, 329)
-visible = true
+size = Vector2i(800, 400)
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Popup" unique_id=1889957426]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(400, 150)
-scale = Vector2(6, 2)
+position = Vector2(400, 207.5)
+scale = Vector2(6, 2.8984375)
 texture = ExtResource("2_jy6o6")
 
+[node name="Continue" type="Button" parent="Popup" unique_id=356911363]
+offset_left = 85.0
+offset_top = 186.0
+offset_right = 685.0
+offset_bottom = 246.0
+theme_override_fonts/font = ExtResource("3_jy6o6")
+theme_override_font_sizes/font_size = 50
+text = "Next Level"
+
 [node name="Reset" type="Button" parent="Popup" unique_id=1843542473]
-offset_left = 244.0
-offset_top = 215.0
-offset_right = 453.0
-offset_bottom = 268.0
+offset_left = 85.0
+offset_top = 255.0
+offset_right = 685.0
+offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_jy6o6")
 theme_override_font_sizes/font_size = 50
 text = "Restart Level"
 
-[node name="Continue" type="Button" parent="Popup" unique_id=356911363]
-offset_left = 51.0
-offset_top = 215.0
-offset_right = 200.0
-offset_bottom = 268.0
-theme_override_fonts/font = ExtResource("3_jy6o6")
-theme_override_font_sizes/font_size = 50
-text = "Continue"
-
 [node name="Menu" type="Button" parent="Popup" unique_id=271087325]
-offset_left = 498.0
-offset_top = 215.0
-offset_right = 647.0
-offset_bottom = 268.0
+offset_left = 85.0
+offset_top = 321.0
+offset_right = 685.0
+offset_bottom = 381.0
 theme_override_fonts/font = ExtResource("3_jy6o6")
 theme_override_font_sizes/font_size = 50
 text = "Exit to Menu"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup" unique_id=856780962]
-offset_left = 125.0
-offset_top = 44.0
-offset_right = 648.0
-offset_bottom = 140.0
+clip_contents = false
+offset_left = 194.0
+offset_top = 17.0
+offset_right = 10194.0
+offset_bottom = 77.0
 theme_override_fonts/normal_font = ExtResource("3_jy6o6")
 theme_override_font_sizes/normal_font_size = 100
 text = "Level Complete!"
 
 [node name="Moneh" type="RichTextLabel" parent="Popup" unique_id=1793752877]
-offset_left = 138.0
-offset_top = 127.0
-offset_right = 612.0
-offset_bottom = 190.0
+clip_contents = false
+offset_left = 211.0
+offset_top = 105.0
+offset_right = 10211.0
+offset_bottom = 165.0
 theme_override_colors/default_color = Color(0, 1, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_jy6o6")
 theme_override_font_sizes/normal_font_size = 68

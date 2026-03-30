@@ -10,6 +10,8 @@ func _ready() -> void:
 	g.endlvl.connect(die) # Replace with function body.
 
 func _process(delta: float) -> void:
+	if g.playerpos == &"box":
+		unlock()
 	if locked:
 		g.truelockposses[num] = global_position
 		show()
@@ -62,6 +64,8 @@ func unlock():
 		g.locked -= 1
 		if not g.realtime:
 			g.tick.emit()
+		g.locks.erase(num)
+	#print(locked, g.locked, g.locks)
 
 func die():
 	locked = false

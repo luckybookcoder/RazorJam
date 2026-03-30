@@ -47,5 +47,9 @@ func delock():
 		locked = false
 		modulate.a = 1
 		g.locked -= 1
+		g.locks.erase(num)
 		if not g.realtime:
 			g.tick.emit()
+
+func relock():
+	posset = true

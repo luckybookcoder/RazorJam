@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		oneshot = false
 		stop()
 	if not g.playerpos == &"menu":
-		if get_parent().visible and not oneshot and not is_playing():
+		if g.playerpos == &"door" and not oneshot and not is_playing():
 			oneshot = true
 			play("close")
 		elif oneshot and g.playerpos == &"box" and not is_playing():

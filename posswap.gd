@@ -16,9 +16,11 @@ func _process(delta: float) -> void:
 		disabled = false
 		if g.playerpos == &"box":
 			show()
+			$"..".show()
 			text = "Go... OUTSIDE THE BOX"
 		elif g.playerpos == &"door" and not g.locked:
 			show()
+			$"..".show()
 			text = "reenter... THE BOX"
 		else:
 			hide()

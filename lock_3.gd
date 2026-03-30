@@ -41,6 +41,7 @@ func spec() -> void:
 			textnum = 0
 		text += "\n"
 	if locked:
+		#print(text, g.phonevars, "Lock")
 		phoneify(text)
 
 func reset():

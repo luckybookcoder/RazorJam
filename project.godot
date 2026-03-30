@@ -42,6 +42,8 @@ lvleditors=""
 
 [gui]
 
+timers/tooltip_delay_sec=0.01
+timers/tooltip_delay_sec.editor_hint=0.01
 fonts/dynamic_fonts/use_oversampling=false
 
 [input]
