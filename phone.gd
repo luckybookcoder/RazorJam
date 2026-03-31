@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 	for i in get_children():
 		i.tooltip_text = ""
 		if g.locks.has(int(i.name)):
+			if g.playerpos == &"menu":
+				but(i)
 			i.mouse_filter = MOUSE_FILTER_PASS
 			var num = 0
 			for x in g.locks:

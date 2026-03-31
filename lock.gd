@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if g.playerpos == &"box":
+		g.truelockposses[num] = null
 		unlock()
 	if locked:
 		g.truelockposses[num] = global_position
